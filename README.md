@@ -2,7 +2,7 @@
 
 ![Downloads](https://img.shields.io/packagist/dt/akaunting/laravel-apexcharts)
 ![Tests](https://img.shields.io/github/workflow/status/akaunting/laravel-apexcharts/Tests?label=tests)
-[![StyleCI](https://github.styleci.io/repos/452210726/shield?style=flat&branch=master)](https://styleci.io/repos/452210726)
+[![StyleCI](https://github.styleci.io/repos/452221855/shield?style=flat&branch=master)](https://styleci.io/repos/452221855)
 [![Quality](https://img.shields.io/scrutinizer/quality/g/akaunting/laravel-apexcharts?label=quality)](https://scrutinizer-ci.com/g/akaunting/laravel-apexcharts)
 [![License](https://img.shields.io/github/license/akaunting/laravel-apexcharts)](LICENSE.md)
 
