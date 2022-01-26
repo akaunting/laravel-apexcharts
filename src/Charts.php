@@ -121,7 +121,7 @@ class Charts
      * @param null $type
      * @return $this
      */
-    public function setType($type = null) :Apexcharts
+    public function setType($type = null) :Charts
     {
         $this->type = $type;
 
@@ -147,7 +147,7 @@ class Charts
      * @param string $color
      * @return $this
      */
-    public function setColor($color) :Apexcharts
+    public function setColor($color) :Charts
     {
         $colors = $this->colors;
 
@@ -161,7 +161,7 @@ class Charts
      * @param array $colors
      * @return $this
      */
-    public function setColors($colors) :Apexcharts
+    public function setColors($colors) :Charts
     {
         $this->colors = $colors;
 
@@ -185,7 +185,7 @@ class Charts
      * @param array $labels
      * @return $this
      */
-    public function setLabels($labels) :Apexcharts
+    public function setLabels($labels) :Charts
     {
         $this->labels = $labels;
 
@@ -209,7 +209,7 @@ class Charts
      * @param array $series
      * @return $this
      */
-    public function setSeries($series) :Apexcharts
+    public function setSeries($series) :Charts
     {
         $this->series = $series;
 
@@ -257,7 +257,7 @@ class Charts
      *
      * @return $this
      */
-    public function setOption($options = []) :Apexcharts
+    public function setOption($options = []) :Charts
     {
         if ($options instanceof Collection) {
             $options = $options->toArray();
@@ -274,7 +274,7 @@ class Charts
      * @param bool             $overwrite
      * @return $this
      */
-    public function setOptions($options = [], bool $overwrite = false) :Apexcharts
+    public function setOptions($options = [], bool $overwrite = false) :Charts
     {
         if ($options instanceof Collection) {
             $options = $options->toArray();
