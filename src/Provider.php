@@ -3,8 +3,8 @@
 namespace Akaunting\Apexcharts;
 
 use Akaunting\Apexcharts\Charts;
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\Compilers\BladeCompiler;
 
 class Provider extends ServiceProvider
 {
@@ -40,8 +40,10 @@ class Provider extends ServiceProvider
 
     public function registerBladeDirectives()
     {
-        Blade::directive('apexchartsScripts', function ($expression) {
-            return '{!! \Akaunting\Apexcharts\Charts::loadScript(' . $expression . ') !!}';
+        $this->app->afterResolving('blade.compiler', function (BladeCompiler $bladeCompiler) {
+            $bladeCompiler->directive('apexchartsScripts', function ($expression) {
+                return '{!! \Akaunting\Apexcharts\Charts::loadScript(' . $expression . ') !!}';
+            });
         });
     }
 }
