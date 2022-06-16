@@ -23,7 +23,7 @@
         "php": "^8.0",
         "ext-json": "*",
         "balping/json-raw-encoder": "^1.0",
-        "illuminate/support": ">=8.0"
+        "illuminate/support": "^8.67|^9.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.5",
