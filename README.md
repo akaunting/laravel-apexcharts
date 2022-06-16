@@ -42,14 +42,11 @@ use Akaunting\Apexcharts\Chart;
 
 ...
 
-$chart = new Chart();
-
-$chart->setType('donut')
+$chart = (new Chart)->setType('donut')
     ->setWidth('100%')
     ->setHeight(300)
-    ->setLabels(['Sales', 'Deposit']);
-
-$chart->setDataset('Name', 'donut', [1907, 1923]);
+    ->setLabels(['Sales', 'Deposit'])
+    ->setDataset('Income by Category', 'donut', [1907, 1923]);
 ```
 
 Then, include the JavaScript (on every page using charts).

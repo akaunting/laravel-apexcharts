@@ -4,74 +4,70 @@ namespace Akaunting\Apexcharts\Tests\Feature;
 
 use Akaunting\Apexcharts\Chart;
 use Akaunting\Apexcharts\Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ChartsTest extends TestCase
 {
-    use RefreshDatabase;
-
     /** @test */
-    public function it_tests_apexcharts_can_render_pie_charts_by_default()
+    public function testDefaultChart()
     {
         $chart = (new Chart)->setTitle('Users Test Chart');
-        $this->assertEquals('line', $chart->getType());
 
-        $anotherChart = (new Chart)->setType('area');
-        $this->assertEquals('area', $anotherChart->getType());
+        $this->assertEquals($chart, $chart->script()['chart']);
+        $this->assertEquals('line', $chart->getType());
     }
 
     /** @test */
-    public function it_tests_apexcharts_can_render_pie_chart()
+    public function testPieChart()
     {
         $chart = (new Chart)->setType('pie')
             ->setTitle('Posts')
             ->setSubtitle('From January To March')
             ->setLabels(['Product One', 'Product Two', 'Product Three'])
             ->setSeries(['Jan', 'Feb', 'Mar'])
-            ->setDataset('posts', 'pie', [150, 120]);
+            ->setDataset('Posts', 'pie', [150, 120]);
 
         $this->assertEquals($chart, $chart->script()['chart']);
         $this->assertEquals('pie', $chart->getType());
     }
 
     /** @test */
-    public function it_tests_apexcharts_can_render_donut_chart()
+    public function testDonutChart()
     {
         $chart = (new Chart)->setType('donut')
             ->setTitle('Posts')
             ->setSeries(['Jan', 'Feb', 'Mar'])
-            ->setDataset('posts', 'donut', [150, 120]);
+            ->setDataset('Posts', 'donut', [150, 120]);
 
         $this->assertEquals($chart, $chart->script()['chart']);
         $this->assertEquals('donut', $chart->getType());
     }
 
     /** @test */
-    public function it_tests_larapex_can_render_radial_bar_charts()
+    public function testRadialChart()
     {
         $chart = (new Chart)->setType('radial')
             ->setTitle('Products with more profit')
             ->setSeries(['Jan', 'Feb', 'Mar'])
-            ->setDataset('products', 'radial', [60, 40, 79]);
+            ->setDataset('Products', 'radial', [60, 40, 79]);
 
         $this->assertEquals($chart, $chart->script()['chart']);
         $this->assertEquals('radial', $chart->getType());
     }
 
     /** @test */
-    public function it_tests_apexcharts_can_render_polar_chart()
+    public function testPolarChart()
     {
         $chart = (new Chart)->setType('polarArea')
             ->setTitle('Products with more profit')
             ->setSeries(['Jan', 'Feb', 'Mar'])
-            ->setDataset('polarArea', 'radial', [60, 40, 79]);
+            ->setDataset('Products', 'polarArea', [60, 40, 79]);
 
         $this->assertEquals($chart, $chart->script()['chart']);
         $this->assertEquals('polarArea', $chart->getType());
     }
 
     /** @test */
-    public function larapex_can_render_line_charts()
+    public function testLineChart()
     {
         $chart = (new Chart)->setType('line')
             ->setTitle('Total Users Monthly')
@@ -79,7 +75,7 @@ class ChartsTest extends TestCase
             ->setSeries([
                 'Jan', 'Feb', 'Mar'
             ])
-            ->setDataset('line', 'users', [
+            ->setDataset('Users', 'line', [
                 [
                     'name'  =>  'Active Users',
                     'data'  =>  [250, 700, 1200]
@@ -95,7 +91,7 @@ class ChartsTest extends TestCase
     }
 
     /** @test */
-    public function it_tests_apexcharts_can_create_an_area_chart()
+    public function testAreaChart()
     {
         $chart = (new Chart)->setType('area')
             ->setTitle('Total Users Monthly')
@@ -103,7 +99,7 @@ class ChartsTest extends TestCase
             ->setSeries([
                 'Jan', 'Feb', 'Mar'
             ])
-            ->setDataset('area', 'users', [
+            ->setDataset('Users', 'area', [
                 [
                     'name'  =>  'Active Users',
                     'data'  =>  [250, 700, 1200]
@@ -120,12 +116,12 @@ class ChartsTest extends TestCase
     }
 
     /** @test */
-    public function it_tests_apexcharts_can_render_bar_charts()
+    public function testBarChart()
     {
         $chart = (new Chart)->setType('bar')
             ->setTitle('Net Profit')
             ->setSeries(['Jan', 'Feb', 'Mar'])
-            ->setDataset('bar', 'profit', [
+            ->setDataset('Net Profit', 'bar', [
                 [
                     'name'  => 'Company A',
                     'data'  =>  [500, 1000, 1900]
@@ -158,13 +154,13 @@ class ChartsTest extends TestCase
     }
 
     /** @test */
-    public function it_tests_apexcharts_can_render_horizontal_bar_chart()
+    public function testHorizontalBarChart()
     {
         $chart = (new Chart)->setType('bar')
             ->setTitle('Net Profit')
             ->setHorizontal(true)
             ->setSeries(['Jan', 'Feb', 'Mar'])
-            ->setDataset('bar', 'profit', [
+            ->setDataset('Net Profit', 'bar', [
                 [
                     'name'  => 'Company A',
                     'data'  =>  [500, 1000, 1900]
@@ -186,14 +182,14 @@ class ChartsTest extends TestCase
     }
 
     /** @test */
-    public function it_tests_apexcharts_can_render_heatmap_chart()
+    public function testHeatmapChart()
     {
         $chart = (new Chart)->setType('heatmap')
             ->setTitle('Total Users')
             ->setSeries([
                 'Jan', 'Feb', 'Mar'
             ])
-            ->setDataset('heatmap', 'users', [
+            ->setDataset('Users', 'heatmap', [
                 [
                     'name'  =>  'Users of Basic Plan',
                     'data'  =>  [250, 700, 1200]
@@ -210,14 +206,14 @@ class ChartsTest extends TestCase
     }
 
     /** @test */
-    public function it_tests_apexcharts_can_render_radar_chart()
+    public function testRadarChart()
     {
         $chart = (new Chart)->setType('radar')
             ->setTitle('Total Users')
             ->setSeries([
                 'Jan', 'Feb', 'Mar'
             ])
-            ->setDataset('radar', 'users', [
+            ->setDataset('Users', 'radar', [
                 [
                     'name'  =>  'Users of Basic Plan',
                     'data'  =>  [250, 700, 1200]
