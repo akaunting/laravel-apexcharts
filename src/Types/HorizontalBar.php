@@ -2,10 +2,10 @@
 
 namespace Akaunting\Apexcharts\Types;
 
-use Akaunting\Apexcharts\Charts;
+use Akaunting\Apexcharts\Chart;
 use Illuminate\Support\Collection;
 
-class HorizontalBar extends Charts
+class HorizontalBar extends Chart
 {
     public function __construct()
     {

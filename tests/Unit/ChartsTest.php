@@ -2,7 +2,7 @@
 
 namespace Akaunting\Apexcharts\Tests\Unit;
 
-use Akaunting\Apexcharts\Charts;
+use Akaunting\Apexcharts\Chart;
 use Akaunting\Apexcharts\Tests\TestCase;
 
 class ChartsTest extends TestCase
@@ -27,7 +27,7 @@ class ChartsTest extends TestCase
     /** @test */
     public function it_tests_apexcharts_can_load_script_correctly()
     {
-        $chart = (new Charts)
+        $chart = (new Chart)
             ->setTitle('Posts')
             ->setXAxis(['Jan', 'Feb', 'Mar'])
             ->setDataset([150, 120])
@@ -39,7 +39,7 @@ class ChartsTest extends TestCase
     /** @test */
     public function it_tests_apexcharts_can_change_default_config_colors()
     {
-        $chart = (new Charts)->setTitle('Posts')->setXAxis(['Jan', 'Feb', 'Mar'])->setDataset([150, 120]);
+        $chart = (new Chart)->setTitle('Posts')->setXAxis(['Jan', 'Feb', 'Mar'])->setDataset([150, 120]);
 
         $oldColors = $chart->colors();
 
@@ -50,6 +50,6 @@ class ChartsTest extends TestCase
     /** @test */
     public function it_tests_larapex_chart_cdn_returns_a_correct_url()
     {
-        $this->assertEquals('https://cdn.jsdelivr.net/npm/apexcharts', (new Charts)->cdn());
+        $this->assertEquals('https://cdn.jsdelivr.net/npm/apexcharts', (new Chart)->cdn());
     }
 }

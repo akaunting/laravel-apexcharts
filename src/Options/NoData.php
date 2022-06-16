@@ -2,7 +2,7 @@
 
 namespace Akaunting\Apexcharts\Options;
 
-use Akaunting\Apexcharts\Charts;
+use Akaunting\Apexcharts\Chart;
 
 trait NoData
 {

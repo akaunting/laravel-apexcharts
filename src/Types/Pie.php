@@ -2,9 +2,9 @@
 
 namespace Akaunting\Apexcharts\Types;
 
-use Akaunting\Apexcharts\Charts;
+use Akaunting\Apexcharts\Chart;
 
-class Pie extends Charts
+class Pie extends Chart
 {
     public function __construct()
     {

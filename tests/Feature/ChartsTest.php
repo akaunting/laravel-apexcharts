@@ -2,7 +2,7 @@
 
 namespace Akaunting\Apexcharts\Tests\Feature;
 
-use Akaunting\Apexcharts\Charts;
+use Akaunting\Apexcharts\Chart;
 use Akaunting\Apexcharts\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -13,17 +13,17 @@ class ChartsTest extends TestCase
     /** @test */
     public function it_tests_apexcharts_can_render_pie_charts_by_default()
     {
-        $chart = (new Charts)->setTitle('Users Test Chart');
+        $chart = (new Chart)->setTitle('Users Test Chart');
         $this->assertEquals('donut', $chart->type());
 
-        $anotherChart = (new Charts)->areaChart();
+        $anotherChart = (new Chart)->areaChart();
         $this->assertEquals('area', $anotherChart->type());
     }
 
     /** @test */
     public function it_tests_apexcharts_can_render_pie_chart()
     {
-        $chart = (new Charts)->pieChart()
+        $chart = (new Chart)->pieChart()
             ->setTitle('Posts')
             ->setSubtitle('From January To March')
             ->setLabels(['Product One', 'Product Two', 'Product Three'])
@@ -37,7 +37,7 @@ class ChartsTest extends TestCase
     /** @test */
     public function it_tests_apexcharts_can_render_donut_chart()
     {
-        $chart = (new Charts)->donutChart()
+        $chart = (new Chart)->donutChart()
             ->setTitle('Posts')
             ->setXAxis(['Jan', 'Feb', 'Mar'])
             ->setDataset([150, 120]);
@@ -49,7 +49,7 @@ class ChartsTest extends TestCase
     /** @test */
     public function it_tests_larapex_can_render_radial_bar_charts()
     {
-        $chart = (new Charts)->radialChart()
+        $chart = (new Chart)->radialChart()
             ->setTitle('Products with more profit')
             ->setXAxis(['Jan', 'Feb', 'Mar'])
             ->setDataset([60, 40, 79]);
@@ -61,7 +61,7 @@ class ChartsTest extends TestCase
     /** @test */
     public function it_tests_apexcharts_can_render_polar_chart()
     {
-        $chart = (new Charts)->polarAreaChart()
+        $chart = (new Chart)->polarAreaChart()
             ->setTitle('Products with more profit')
             ->setXAxis(['Jan', 'Feb', 'Mar'])
             ->setDataset([60, 40, 79]);
@@ -73,7 +73,7 @@ class ChartsTest extends TestCase
     /** @test */
     public function larapex_can_render_line_charts()
     {
-        $chart = (new Charts)->lineChart()
+        $chart = (new Chart)->lineChart()
             ->setTitle('Total Users Monthly')
             ->setSubtitle('From January to March')
             ->setXAxis([
@@ -97,7 +97,7 @@ class ChartsTest extends TestCase
     /** @test */
     public function it_tests_apexcharts_can_create_an_area_chart()
     {
-        $chart = (new Charts)->areaChart()
+        $chart = (new Chart)->areaChart()
             ->setTitle('Total Users Monthly')
             ->setSubtitle('From January to March')
             ->setXAxis([
@@ -122,7 +122,7 @@ class ChartsTest extends TestCase
     /** @test */
     public function it_tests_apexcharts_can_render_bar_charts()
     {
-        $chart = (new Charts)->barChart()
+        $chart = (new Chart)->barChart()
             ->setTitle('Net Profit')
             ->setXAxis(['Jan', 'Feb', 'Mar'])
             ->setDataset([
@@ -160,7 +160,7 @@ class ChartsTest extends TestCase
     /** @test */
     public function it_tests_apexcharts_can_render_horizontal_bar_chart()
     {
-        $chart = (new Charts)->barChart()
+        $chart = (new Chart)->barChart()
             ->setTitle('Net Profit')
             ->setHorizontal(true)
             ->setXAxis(['Jan', 'Feb', 'Mar'])
@@ -189,7 +189,7 @@ class ChartsTest extends TestCase
     /** @test */
     public function it_tests_apexcharts_can_render_heatmap_chart()
     {
-        $chart = (new Charts)->heatMapChart()
+        $chart = (new Chart)->heatMapChart()
             ->setTitle('Total Users')
             ->setXAxis([
                 'Jan', 'Feb', 'Mar'
@@ -213,7 +213,7 @@ class ChartsTest extends TestCase
     /** @test */
     public function it_tests_apexcharts_can_render_radar_chart()
     {
-        $chart = (new Charts)->radarChart()
+        $chart = (new Chart)->radarChart()
             ->setTitle('Total Users')
             ->setXAxis([
                 'Jan', 'Feb', 'Mar'

@@ -2,7 +2,7 @@
 
 namespace Akaunting\Apexcharts;
 
-use Akaunting\Apexcharts\Charts;
+use Akaunting\Apexcharts\Chart;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 
@@ -13,7 +13,7 @@ class Provider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->alias(Charts::class, 'apexcharts');
+        $this->app->alias(Chart::class, 'apexcharts');
 
         $this->mergeConfigFrom(__DIR__ . '/Config/apexcharts.php', 'apexcharts');
     }
@@ -38,7 +38,7 @@ class Provider extends ServiceProvider
     {
         $this->app->afterResolving('blade.compiler', function (BladeCompiler $bladeCompiler) {
             $bladeCompiler->directive('apexchartsScripts', function ($expression) {
-                return '{!! \Akaunting\Apexcharts\Charts::loadScript(' . $expression . ') !!}';
+                return '{!! \Akaunting\Apexcharts\Chart::loadScript(' . $expression . ') !!}';
             });
         });
     }

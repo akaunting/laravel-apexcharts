@@ -2,10 +2,10 @@
 
 namespace Akaunting\Apexcharts\Types;
 
-use Akaunting\Apexcharts\Charts;
+use Akaunting\Apexcharts\Chart;
 use Illuminate\Support\Collection;
 
-class Radar extends Charts
+class Radar extends Chart
 {
     public function __construct()
     {

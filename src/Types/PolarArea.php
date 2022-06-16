@@ -2,9 +2,9 @@
 
 namespace Akaunting\Apexcharts\Types;
 
-use Akaunting\Apexcharts\Charts;
+use Akaunting\Apexcharts\Chart;
 
-class PolarArea extends Charts
+class PolarArea extends Chart
 {
     public function __construct()
     {

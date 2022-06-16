@@ -2,7 +2,7 @@
 
 namespace Akaunting\Apexcharts\Options;
 
-use Akaunting\Apexcharts\Charts;
+use Akaunting\Apexcharts\Chart as MainChart;
 
 trait Chart
 {
@@ -52,7 +52,7 @@ trait Chart
 
     public array $zoom = [];
 
-    public function setAnimations(array $animations): Chart
+    public function setAnimations(array $animations): MainChart
     {
         $this->animations = $animations;
 
@@ -70,7 +70,7 @@ trait Chart
         return $this->animations;
     }
 
-    public function setBackground(string $background): Chart
+    public function setBackground(string $background): MainChart
     {
         $this->background = $background;
 
@@ -88,7 +88,7 @@ trait Chart
         return $this->background;
     }
 
-    public function setBrush(array $brush): Chart
+    public function setBrush(array $brush): MainChart
     {
         $this->brush = $brush;
 
@@ -106,7 +106,7 @@ trait Chart
         return $this->brush;
     }
 
-    public function setDefaultLocale(string $defaultLocale): Chart
+    public function setDefaultLocale(string $defaultLocale): MainChart
     {
         $this->defaultLocale = $defaultLocale;
 
@@ -124,7 +124,7 @@ trait Chart
         return $this->defaultLocale;
     }
 
-    public function setDropShadow(array $dropShadow): Chart
+    public function setDropShadow(array $dropShadow): MainChart
     {
         $this->dropShadow = $dropShadow;
 
@@ -142,7 +142,7 @@ trait Chart
         return $this->dropShadow;
     }
 
-    public function setFontFamily(string $fontFamily): Chart
+    public function setFontFamily(string $fontFamily): MainChart
     {
         $this->fontFamily = $fontFamily;
 
@@ -160,7 +160,7 @@ trait Chart
         return $this->fontFamily;
     }
 
-    public function setForeColor(string $foreColor): Chart
+    public function setForeColor(string $foreColor): MainChart
     {
         $this->foreColor = $foreColor;
 
@@ -178,7 +178,7 @@ trait Chart
         return $this->foreColor;
     }
 
-    public function setGroup(string $group): Chart
+    public function setGroup(string $group): MainChart
     {
         $this->group = $group;
 
@@ -196,7 +196,7 @@ trait Chart
         return $this->group;
     }
 
-    public function setEvents(array $events): Chart
+    public function setEvents(array $events): MainChart
     {
         $this->events = $events;
 
@@ -214,7 +214,7 @@ trait Chart
         return $this->events;
     }
 
-    public function setHeight(int|string|null $height): Chart
+    public function setHeight(int|string|null $height): MainChart
     {
         $this->height = $height;
 
@@ -232,7 +232,7 @@ trait Chart
         return $this->height;
     }
 
-    public function setLocales(array $locales): Chart
+    public function setLocales(array $locales): MainChart
     {
         $this->locales = $locales;
 
@@ -250,7 +250,7 @@ trait Chart
         return $this->locales;
     }
 
-    public function setOffsetX(int $offsetX): Chart
+    public function setOffsetX(int $offsetX): MainChart
     {
         $this->offsetX = $offsetX;
 
@@ -268,7 +268,7 @@ trait Chart
         return $this->offsetX;
     }
 
-    public function setOffsetY(int $offsetY): Chart
+    public function setOffsetY(int $offsetY): MainChart
     {
         $this->offsetY = $offsetY;
 
@@ -286,7 +286,7 @@ trait Chart
         return $this->offsetY;
     }
 
-    public function setParentHeightOffset(int $parentHeightOffset): Chart
+    public function setParentHeightOffset(int $parentHeightOffset): MainChart
     {
         $this->parentHeightOffset = $parentHeightOffset;
 
@@ -304,7 +304,7 @@ trait Chart
         return $this->parentHeightOffset;
     }
 
-    public function setRedrawOnParentResize(bool $redrawOnParentResize): Chart
+    public function setRedrawOnParentResize(bool $redrawOnParentResize): MainChart
     {
         $this->redrawOnParentResize = $redrawOnParentResize;
 
@@ -322,7 +322,7 @@ trait Chart
         return $this->redrawOnParentResize;
     }
 
-    public function setRedrawOnWindowResize(bool $redrawOnWindowResize): Chart
+    public function setRedrawOnWindowResize(bool $redrawOnWindowResize): MainChart
     {
         $this->redrawOnWindowResize = $redrawOnWindowResize;
 
@@ -340,7 +340,7 @@ trait Chart
         return $this->redrawOnWindowResize;
     }
 
-    public function setSelection(array $selection): Chart
+    public function setSelection(array $selection): MainChart
     {
         $this->selection = $selection;
 
@@ -358,7 +358,7 @@ trait Chart
         return $this->selection;
     }
 
-    public function setSparkline(array $sparkline): Chart
+    public function setSparkline(array $sparkline): MainChart
     {
         $this->sparkline = $sparkline;
 
@@ -376,7 +376,7 @@ trait Chart
         return $this->sparkline;
     }
 
-    public function setStacked(bool $stacked): Chart
+    public function setStacked(bool $stacked): MainChart
     {
         $this->stacked = $stacked;
 
@@ -394,7 +394,7 @@ trait Chart
         return $this->stacked;
     }
 
-    public function setStackType(string $stackType): Chart
+    public function setStackType(string $stackType): MainChart
     {
         $this->stackType = $stackType;
 
@@ -412,7 +412,7 @@ trait Chart
         return $this->stackType;
     }
 
-    public function setToolbar(array $toolbar): Chart
+    public function setToolbar(array $toolbar): MainChart
     {
         $this->toolbar = $toolbar;
 
@@ -430,7 +430,7 @@ trait Chart
         return $this->toolbar;
     }
 
-    public function setWidth(int|string|null $width): Chart
+    public function setWidth(int|string|null $width): MainChart
     {
         $this->width = $width;
 
@@ -448,7 +448,7 @@ trait Chart
         return $this->width;
     }
 
-    public function setZoom(array $zoom): Chart
+    public function setZoom(array $zoom): MainChart
     {
         $this->zoom = $zoom;
 

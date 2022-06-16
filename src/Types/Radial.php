@@ -2,9 +2,9 @@
 
 namespace Akaunting\Apexcharts\Types;
 
-use Akaunting\Apexcharts\Charts;
+use Akaunting\Apexcharts\Chart;
 
-class Radial extends Charts
+class Radial extends Chart
 {
     public function __construct()
     {
