@@ -6,56 +6,19 @@ use Akaunting\Apexcharts\Charts;
 
 trait NoData
 {
-    /**
-     * Stores the text of the noData.
-     *
-     * @var string
-     */
-    public $noDataText = '';
+    public string $noDataText = '';
 
-    /**
-     * Stores the align of the noData.
-     *
-     * @var string
-     */
-    public $noDataAlign = 'center';
+    public string $noDataAlign = 'center';
 
-    /**
-     * Stores the verticalAlign of the noData.
-     *
-     * @var string
-     */
-    public $noDataVerticalAlign = 'middle';
+    public string $noDataVerticalAlign = 'middle';
 
-    /**
-     * Stores the offsetX of the noData.
-     *
-     * @var int
-     */
-    public $noDataOffsetX = 0;
+    public int $noDataOffsetX = 0;
 
-    /**
-     * Stores the offsetY of the noData.
-     *
-     * @var int
-     */
-    public $noDataOffsetY = 0;
+    public int $noDataOffsetY = 0;
 
-    /**
-     * Stores the style of the noData.
-     *
-     * @var array
-     */
-    public $noDataStyle = [];
+    public array $noDataStyle = [];
 
-    /**
-     * Set the noData text.
-     *
-     * @param string $noDataText
-     *
-     * @return this
-     */
-    public function setNoDataText($noDataText) :Charts
+    public function setNoDataText(string $noDataText): Chart
     {
         $this->noDataText = $noDataText;
 
@@ -68,22 +31,12 @@ trait NoData
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getNoDataText()
+    public function getNoDataText(): string
     {
         return $this->noDataText;
     }
 
-    /**
-     * Set the noData align.
-     *
-     * @param string $noDataAlign
-     *
-     * @return this
-     */
-    public function setNoDataAlign($noDataAlign) :Charts
+    public function setNoDataAlign(string $noDataAlign): Chart
     {
         $this->noDataAlign = $noDataAlign;
 
@@ -96,22 +49,12 @@ trait NoData
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getNoDataAlign()
+    public function getNoDataAlign(): string
     {
         return $this->noDataAlign;
     }
 
-    /**
-     * Set the noData verticalAlign.
-     *
-     * @param string $noDataVerticalAlign
-     *
-     * @return this
-     */
-    public function setNoDataVerticalAlign($noDataVerticalAlign) :Charts
+    public function setNoDataVerticalAlign(string $noDataVerticalAlign): Chart
     {
         $this->noDataVerticalAlign = $noDataVerticalAlign;
 
@@ -124,22 +67,12 @@ trait NoData
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getNoDataVerticalAlign()
+    public function getNoDataVerticalAlign(): string
     {
         return $this->noDataVerticalAlign;
     }
 
-    /**
-     * Set the noData offsetX.
-     *
-     * @param int $noDataOffsetX
-     *
-     * @return this
-     */
-    public function setNoDataOffsetX($noDataOffsetX) :Charts
+    public function setNoDataOffsetX(int $noDataOffsetX): Chart
     {
         $this->noDataOffsetX = $noDataOffsetX;
 
@@ -152,22 +85,12 @@ trait NoData
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getNoDataOffsetX()
+    public function getNoDataOffsetX(): int
     {
         return $this->noDataOffsetX;
     }
 
-    /**
-     * Set the noData offsetY.
-     *
-     * @param int $noDataOffsetY
-     *
-     * @return this
-     */
-    public function setNoDataOffsetY($noDataOffsetY) :Charts
+    public function setNoDataOffsetY(int $noDataOffsetY): Chart
     {
         $this->noDataOffsetY = $noDataOffsetY;
 
@@ -180,22 +103,12 @@ trait NoData
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getNoDataOffsetY()
+    public function getNoDataOffsetY(): int
     {
         return $this->noDataOffsetY;
     }
 
-    /**
-     * Set the noData style.
-     *
-     * @param array $noDataStyle
-     *
-     * @return this
-     */
-    public function setNoDataStyle($noDataStyle) :Charts
+    public function setNoDataStyle(array $noDataStyle): Chart
     {
         $this->noDataStyle = $noDataStyle;
 
@@ -208,10 +121,7 @@ trait NoData
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getNoDataStyle()
+    public function getNoDataStyle(): array
     {
         return $this->noDataStyle;
     }

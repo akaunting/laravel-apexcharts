@@ -6,175 +6,53 @@ use Akaunting\Apexcharts\Charts;
 
 trait Chart
 {
-    /**
-     * Stores the animations of the chart.
-     *
-     * @var array
-     */
-    public $animations = [];
+    public array $animations = [];
 
-    /**
-     * Stores the animations of the chart.
-     *
-     * @var string
-     */
-    public $background = '#fff';
+    public string $background = '#fff';
 
-    /**
-     * Stores the animations of the chart.
-     *
-     * @var array
-     */
-    public $brush = [];
+    public array $brush = [];
 
-    /**
-     * Stores the defaultLocale of the chart.
-     *
-     * @var string
-     */
-    public $defaultLocale = 'en';
+    public string $defaultLocale = 'en';
 
-    /**
-     * Stores the dropShadow of the chart.
-     *
-     * @var array
-     */
-    public $dropShadow = [];
+    public array $dropShadow = [];
 
-    /**
-     * Stores the fontFamily of the chart.
-     *
-     * @var string
-     */
-    public $fontFamily = '';
+    public string $fontFamily = '';
 
-    /**
-     * Stores the foreColor of the chart.
-     *
-     * @var string
-     */
-    public $foreColor = '';
+    public string $foreColor = '';
 
-    /**
-     * Stores the group of the chart.
-     *
-     * @var string
-     */
-    public $group = '';
+    public string $group = '';
 
-    /**
-     * Stores the events of the chart.
-     *
-     * @var array
-     */
-    public $events = [];
+    public array $events = [];
 
-    /**
-     * Stores the height of the chart.
-     *
-     * @var int
-     */
-    public $height = 400;
+    public int|string|null $height = 400;
 
-    /**
-     * Stores the locales of the chart.
-     *
-     * @var array
-     */
-    public $locales = [];
+    public array $locales = [];
 
-    /**
-     * Stores the offsetX of the chart.
-     *
-     * @var int
-     */
-    public $offsetX = 0;
+    public int $offsetX = 0;
 
-    /**
-     * Stores the offsetY of the chart.
-     *
-     * @var int
-     */
-    public $offsetY = 0;
+    public int $offsetY = 0;
 
-    /**
-     * Stores the parentHeightOffset of the chart.
-     *
-     * @var int
-     */
-    public $parentHeightOffset = 15;
+    public int $parentHeightOffset = 15;
 
-    /**
-     * Stores the redrawOnParentResize of the chart.
-     *
-     * @var booelan
-     */
-    public $redrawOnParentResize = true;
+    public bool $redrawOnParentResize = true;
 
-    /**
-     * Stores the redrawOnWindowResize of the chart.
-     *
-     * @var booelan
-     */
-    public $redrawOnWindowResize = true;
+    public bool $redrawOnWindowResize = true;
 
-    /**
-     * Stores the selection of the chart.
-     *
-     * @var array
-     */
-    public $selection = [];
+    public array $selection = [];
 
-    /**
-     * Stores the sparkline of the chart.
-     *
-     * @var array
-     */
-    public $sparkline = [];
+    public array $sparkline = [];
 
-    /**
-     * Stores the stacked of the chart.
-     *
-     * @var string
-     */
-    public $stacked = false;
+    public bool $stacked = false;
 
-    /**
-     * Stores the stackType of the chart.
-     *
-     * @var string
-     */
-    public $stackType = 'normal';
+    public string $stackType = 'normal';
 
-    /**
-     * Stores the toolbar options.
-     *
-     * @var array
-     */
-    public $toolbar = [];
+    public array $toolbar = [];
 
-    /**
-     * Stores the width of the chart.
-     *
-     * @var int|string
-     */
-    public $width = null;
+    public int|string|null $width = null;
 
-    /**
-     * Stores the zoom options.
-     *
-     * @var array
-     */
-    public $zoom = [];
+    public array $zoom = [];
 
-    /**
-     * Set the chart animations.
-     *
-     * @param array $animations
-     *
-     * @return this
-     */
-    public function setAnimations(int $animations) :Charts
+    public function setAnimations(array $animations): Chart
     {
         $this->animations = $animations;
 
@@ -187,22 +65,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getAnimations()
+    public function getAnimations(): array
     {
         return $this->animations;
     }
 
-    /**
-     * Set the chart background.
-     *
-     * @param array $background
-     *
-     * @return this
-     */
-    public function setBackground(string $background) :Charts
+    public function setBackground(string $background): Chart
     {
         $this->background = $background;
 
@@ -215,22 +83,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBackground()
+    public function getBackground(): string
     {
         return $this->background;
     }
 
-    /**
-     * Set the chart brush.
-     *
-     * @param array $brush
-     *
-     * @return this
-     */
-    public function setBrush($brush) :Charts
+    public function setBrush(array $brush): Chart
     {
         $this->brush = $brush;
 
@@ -243,22 +101,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBrush()
+    public function getBrush(): array
     {
         return $this->brush;
     }
 
-    /**
-     * Set the chart defaultLocale.
-     *
-     * @param array $defaultLocale
-     *
-     * @return this
-     */
-    public function setDefaultLocale($defaultLocale) :Charts
+    public function setDefaultLocale(string $defaultLocale): Chart
     {
         $this->defaultLocale = $defaultLocale;
 
@@ -271,22 +119,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDefaultLocale()
+    public function getDefaultLocale(): string
     {
         return $this->defaultLocale;
     }
 
-    /**
-     * Set the chart dropShadow.
-     *
-     * @param array $dropShadow
-     *
-     * @return this
-     */
-    public function setDropShadow($dropShadow) :Charts
+    public function setDropShadow(array $dropShadow): Chart
     {
         $this->dropShadow = $dropShadow;
 
@@ -299,22 +137,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDropShadow()
+    public function getDropShadow(): array
     {
         return $this->dropShadow;
     }
 
-    /**
-     * Set the chart fontFamily.
-     *
-     * @param string $fontFamily
-     *
-     * @return this
-     */
-    public function setFontFamily(string $fontFamily) :Charts
+    public function setFontFamily(string $fontFamily): Chart
     {
         $this->fontFamily = $fontFamily;
 
@@ -327,22 +155,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFontFamily()
+    public function getFontFamily(): string
     {
         return $this->fontFamily;
     }
 
-    /**
-     * Set the chart foreColor.
-     *
-     * @param string $foreColor
-     *
-     * @return this
-     */
-    public function setForeColor(string $foreColor) :Charts
+    public function setForeColor(string $foreColor): Chart
     {
         $this->foreColor = $foreColor;
 
@@ -355,22 +173,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getForeColor()
+    public function getForeColor(): string
     {
         return $this->foreColor;
     }
 
-    /**
-     * Set the chart group.
-     *
-     * @param int $group
-     *
-     * @return this
-     */
-    public function setGroup(int $group) :Charts
+    public function setGroup(string $group): Chart
     {
         $this->group = $group;
 
@@ -383,22 +191,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getGroup()
+    public function getGroup(): string
     {
         return $this->group;
     }
 
-    /**
-     * Set the chart events.
-     *
-     * @param int $events
-     *
-     * @return this
-     */
-    public function setEvents(int $events) :Charts
+    public function setEvents(array $events): Chart
     {
         $this->events = $events;
 
@@ -411,22 +209,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getEvents()
+    public function getEvents(): array
     {
         return $this->events;
     }
 
-    /**
-     * Set the chart height.
-     *
-     * @param int $height
-     *
-     * @return this
-     */
-    public function setHeight(int $height) :Charts
+    public function setHeight(int|string|null $height): Chart
     {
         $this->height = $height;
 
@@ -439,22 +227,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getHeight()
+    public function getHeight(): int|string|null
     {
         return $this->height;
     }
 
-    /**
-     * Set the chart locales.
-     *
-     * @param array $locales
-     *
-     * @return this
-     */
-    public function setLocales($locales) :Charts
+    public function setLocales(array $locales): Chart
     {
         $this->locales = $locales;
 
@@ -467,22 +245,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getLocales()
+    public function getLocales(): array
     {
         return $this->locales;
     }
 
-    /**
-     * Set the chart offsetX.
-     *
-     * @param int $offsetX
-     *
-     * @return this
-     */
-    public function setOffsetX(int $offsetX) :Charts
+    public function setOffsetX(int $offsetX): Chart
     {
         $this->offsetX = $offsetX;
 
@@ -495,22 +263,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getOffsetX()
+    public function getOffsetX(): int
     {
         return $this->offsetX;
     }
 
-    /**
-     * Set the chart offsetY.
-     *
-     * @param int $offsetY
-     *
-     * @return this
-     */
-    public function setOffsetY(int $offsetY) :Charts
+    public function setOffsetY(int $offsetY): Chart
     {
         $this->offsetY = $offsetY;
 
@@ -523,22 +281,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getOffsetY()
+    public function getOffsetY(): int
     {
         return $this->offsetY;
     }
 
-    /**
-     * Set the chart parentHeightOffset.
-     *
-     * @param string $parentHeightOffset
-     *
-     * @return this
-     */
-    public function setParentHeightOffset(int $parentHeightOffset) :Charts
+    public function setParentHeightOffset(int $parentHeightOffset): Chart
     {
         $this->parentHeightOffset = $parentHeightOffset;
 
@@ -551,22 +299,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getParentHeightOffset()
+    public function getParentHeightOffset(): int
     {
         return $this->parentHeightOffset;
     }
 
-    /**
-     * Set the chart redrawOnParentResize.
-     *
-     * @param boolean $redrawOnParentResize
-     *
-     * @return this
-     */
-    public function setRedrawOnParentResize($redrawOnParentResize) :Charts
+    public function setRedrawOnParentResize(bool $redrawOnParentResize): Chart
     {
         $this->redrawOnParentResize = $redrawOnParentResize;
 
@@ -579,22 +317,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getRedrawOnParentResize()
+    public function getRedrawOnParentResize(): bool
     {
         return $this->redrawOnParentResize;
     }
 
-    /**
-     * Set the chart redrawOnWindowResize.
-     *
-     * @param string $redrawOnWindowResize
-     *
-     * @return this
-     */
-    public function setRedrawOnWindowResize($redrawOnWindowResize) :Charts
+    public function setRedrawOnWindowResize(bool $redrawOnWindowResize): Chart
     {
         $this->redrawOnWindowResize = $redrawOnWindowResize;
 
@@ -607,22 +335,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getRedrawOnWindowResize()
+    public function getRedrawOnWindowResize(): bool
     {
         return $this->redrawOnWindowResize;
     }
 
-    /**
-     * Set the chart selection.
-     *
-     * @param string $selection
-     *
-     * @return this
-     */
-    public function setSelection($selection) :Charts
+    public function setSelection(array $selection): Chart
     {
         $this->selection = $selection;
 
@@ -635,22 +353,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getSelection()
+    public function getSelection(): array
     {
         return $this->selection;
     }
 
-    /**
-     * Set the chart sparkline.
-     *
-     * @param string $sparkline
-     *
-     * @return this
-     */
-    public function setSparkline($sparkline) :Charts
+    public function setSparkline(array $sparkline): Chart
     {
         $this->sparkline = $sparkline;
 
@@ -663,22 +371,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getSparkline()
+    public function getSparkline(): array
     {
         return $this->sparkline;
     }
 
-    /**
-     * Set the chart stacked.
-     *
-     * @param string $stacked
-     *
-     * @return this
-     */
-    public function setStacked(string $stacked) :Charts
+    public function setStacked(bool $stacked): Chart
     {
         $this->stacked = $stacked;
 
@@ -691,22 +389,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getStacked()
+    public function getStacked(): bool
     {
         return $this->stacked;
     }
 
-    /**
-     * Set the chart stackType.
-     *
-     * @param string $stackType
-     *
-     * @return this
-     */
-    public function setStackType(string $stackType) :Charts
+    public function setStackType(string $stackType): Chart
     {
         $this->stackType = $stackType;
 
@@ -719,22 +407,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStackType()
+    public function getStackType(): string
     {
         return $this->stackType;
     }
 
-    /**
-     * Set the chart width.
-     *
-     * @param array $toolbar
-     *
-     * @return this
-     */
-    public function setToolbar(array $toolbar) :Charts
+    public function setToolbar(array $toolbar): Chart
     {
         $this->toolbar = $toolbar;
 
@@ -747,22 +425,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getToolbar()
+    public function getToolbar(): array
     {
         return $this->toolbar;
     }
 
-    /**
-     * Set the chart width.
-     *
-     * @param int|string $width
-     *
-     * @return this
-     */
-    public function setWidth($width) :Charts
+    public function setWidth(int|string|null $width): Chart
     {
         $this->width = $width;
 
@@ -775,22 +443,12 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getWidth()
+    public function getWidth(): int|string|null
     {
         return $this->width;
     }
 
-    /**
-     * Set the chart width.
-     *
-     * @param array $zoom
-     *
-     * @return this
-     */
-    public function setZoom(array $zoom) :Charts
+    public function setZoom(array $zoom): Chart
     {
         $this->zoom = $zoom;
 
@@ -803,10 +461,7 @@ trait Chart
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getZoom()
+    public function getZoom(): array
     {
         return $this->zoom;
     }

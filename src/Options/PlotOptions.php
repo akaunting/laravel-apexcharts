@@ -6,93 +6,31 @@ use Akaunting\Apexcharts\Charts;
 
 trait PlotOptions
 {
-    /**
-     * Stores the area of the plotOptions.
-     *
-     * @var string
-     */
-    public $area = 'origin';
+    public string $area = 'origin';
 
-    /**
-     * Stores the bar of the plotOptions.
-     *
-     * @var array|collect
-     */
-    public $bar = [
+    public array $bar = [
         'horizontal' => false,
     ];
 
-    /**
-     * Stores the bubble of the plotOptions.
-     *
-     * @var array|collect
-     */
-    public $bubble = [];
+    public array $bubble = [];
 
-    /**
-     * Stores the bubble of the plotOptions.
-     *
-     * @var array|collect
-     */
-    public $candlestick = [];
+    public array $candlestick = [];
 
-    /**
-     * Stores the boxPlot of the plotOptions.
-     *
-     * @var array|collect
-     */
-    public $boxPlot = [];
+    public array $boxPlot = [];
 
-    /**
-     * Stores the heatmap of the plotOptions.
-     *
-     * @var array|collect
-     */
-    public $heatmap = [];
+    public array $heatmap = [];
 
-    /**
-     * Stores the treemap of the plotOptions.
-     *
-     * @var array|collect
-     */
-    public $treemap = [];
+    public array $treemap = [];
 
-    /**
-     * Stores the pie of the plotOptions.
-     *
-     * @var array|collect
-     */
-    public $pie = [];
+    public array $pie = [];
 
-    /**
-     * Stores the polarArea of the plotOptions.
-     *
-     * @var array|collect
-     */
-    public $polarArea = [];
+    public array $polarArea = [];
 
-    /**
-     * Stores the radar of the plotOptions.
-     *
-     * @var array|collect
-     */
-    public $radar = [];
+    public array $radar = [];
 
-    /**
-     * Stores the radialBar of the plotOptions.
-     *
-     * @var array|collect
-     */
-    public $radialBar = [];
+    public array $radialBar = [];
 
-    /**
-     * Set the plotOptions area.
-     *
-     * @param string $area
-     *
-     * @return this
-     */
-    public function setArea(string $area) :Charts
+    public function setArea(string $area): Chart
     {
         $this->area = $area;
 
@@ -105,22 +43,12 @@ trait PlotOptions
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getArea()
+    public function getArea(): string
     {
         return $this->area;
     }
 
-    /**
-     * Set the plotOptions bar.
-     *
-     * @param array $bar
-     *
-     * @return this
-     */
-    public function setBar(array $bar) :Charts
+    public function setBar(array $bar): Chart
     {
         $this->bar = $bar;
 
@@ -133,22 +61,12 @@ trait PlotOptions
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getBar()
+    public function getBar(): array
     {
         return $this->bar;
     }
 
-    /**
-     * Set the plotOptions bubble.
-     *
-     * @param array $bubble
-     *
-     * @return this
-     */
-    public function setBubble($bubble) :Charts
+    public function setBubble(array $bubble): Chart
     {
         $this->bubble = $bubble;
 
@@ -161,22 +79,12 @@ trait PlotOptions
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getBubble()
+    public function getBubble(): array
     {
         return $this->bubble;
     }
 
-    /**
-     * Set the plotOptions candlestick.
-     *
-     * @param array $candlestick
-     *
-     * @return this
-     */
-    public function setCandlestick($candlestick) :Charts
+    public function setCandlestick(array $candlestick): Chart
     {
         $this->candlestick = $candlestick;
 
@@ -189,22 +97,12 @@ trait PlotOptions
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getCandlestick()
+    public function getCandlestick(): array
     {
         return $this->candlestick;
     }
 
-    /**
-     * Set the plotOptions boxPlot.
-     *
-     * @param array $boxPlot
-     *
-     * @return this
-     */
-    public function setBoxPlot($boxPlot) :Charts
+    public function setBoxPlot(array $boxPlot): Chart
     {
         $this->boxPlot = $boxPlot;
 
@@ -217,22 +115,12 @@ trait PlotOptions
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getBoxPlot()
+    public function getBoxPlot(): array
     {
         return $this->boxPlot;
     }
 
-    /**
-     * Set the plotOptions heatmap.
-     *
-     * @param array $heatmap
-     *
-     * @return this
-     */
-    public function setHeatmap($heatmap) :Charts
+    public function setHeatmap(array $heatmap): Chart
     {
         $this->heatmap = $heatmap;
 
@@ -245,22 +133,12 @@ trait PlotOptions
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getHeatmap()
+    public function getHeatmap(): array
     {
         return $this->heatmap;
     }
 
-    /**
-     * Set the plotOptions treemap.
-     *
-     * @param array $treemap
-     *
-     * @return this
-     */
-    public function setTreemap($treemap) :Charts
+    public function setTreemap(array $treemap): Chart
     {
         $this->treemap = $treemap;
 
@@ -273,22 +151,12 @@ trait PlotOptions
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getTreemap()
+    public function getTreemap(): array
     {
         return $this->treemap;
     }
 
-    /**
-     * Set the plotOptions pie.
-     *
-     * @param array $pie
-     *
-     * @return this
-     */
-    public function setPie($pie) :Charts
+    public function setPie(array $pie): Chart
     {
         $this->pie = $pie;
 
@@ -301,22 +169,12 @@ trait PlotOptions
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getPie()
+    public function getPie(): array
     {
         return $this->pie;
     }
 
-    /**
-     * Set the plotOptions polarArea.
-     *
-     * @param array $polarArea
-     *
-     * @return this
-     */
-    public function setPolarArea($polarArea) :Charts
+    public function setPolarArea(array $polarArea): Chart
     {
         $this->polarArea = $polarArea;
 
@@ -329,22 +187,12 @@ trait PlotOptions
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getPolarArea()
+    public function getPolarArea(): array
     {
         return $this->polarArea;
     }
 
-    /**
-     * Set the plotOptions radar.
-     *
-     * @param array $radar
-     *
-     * @return this
-     */
-    public function setRadar($radar) :Charts
+    public function setRadar(array $radar): Chart
     {
         $this->radar = $radar;
 
@@ -357,22 +205,12 @@ trait PlotOptions
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getRadar()
+    public function getRadar(): array
     {
         return $this->radar;
     }
 
-    /**
-     * Set the plotOptions radialBar.
-     *
-     * @param array $radialBar
-     *
-     * @return this
-     */
-    public function setRadialBar($radialBar) :Charts
+    public function setRadialBar(array $radialBar): Chart
     {
         $this->radialBar = $radialBar;
 
@@ -385,10 +223,7 @@ trait PlotOptions
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getRadialBar()
+    public function getRadialBar(): array
     {
         return $this->radialBar;
     }

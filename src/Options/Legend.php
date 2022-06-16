@@ -6,175 +6,53 @@ use Akaunting\Apexcharts\Charts;
 
 trait Legend
 {
-    /**
-     * Stores the show of the grid.
-     *
-     * @var boolean
-     */
-    public $legendShow = true;
+    public bool $legendShow = true;
 
-    /**
-     * Stores the showForSingleSeries of the grid.
-     *
-     * @var boolean
-     */
-    public $legendShowForSingleSeries = false;
+    public bool $legendShowForSingleSeries = false;
 
-    /**
-     * Stores the showForNullSeries of the grid.
-     *
-     * @var boolean
-     */
-    public $legendShowForNullSeries = true;
+    public bool $legendShowForNullSeries = true;
 
-    /**
-     * Stores the showForZeroSeries of the grid.
-     *
-     * @var boolean
-     */
-    public $legendShowForZeroSeries = true;
+    public bool $legendShowForZeroSeries = true;
 
-    /**
-     * Stores the position of the grid.
-     *
-     * @var string
-     */
-    public $legendPosition = 'bottom';
+    public string $legendPosition = 'bottom';
 
-    /**
-     * Stores the horizontalAlign of the grid.
-     *
-     * @var string
-     */
-    public $legendHorizontalAlign = 'center';
+    public string $legendHorizontalAlign = 'center';
 
-    /**
-     * Stores the floating of the grid.
-     *
-     * @var boolean
-     */
-    public $legendFloating = false;
+    public bool $legendFloating = false;
 
-    /**
-     * Stores the fontSize of the grid.
-     *
-     * @var string
-     */
-    public $legendFontSize = '14px';
+    public string $legendFontSize = '14px';
 
-    /**
-     * Stores the fontFamily of the grid.
-     *
-     * @var string
-     */
-    public $legendFontFamily = 'Helvetica, Arial';
+    public string $legendFontFamily = 'Helvetica, Arial';
 
-    /**
-     * Stores the fontWeight of the grid.
-     *
-     * @var string|int
-     */
-    public $legendFontWeight = 400;
+    public int|string $legendFontWeight = 400;
 
-    /**
-     * Stores the formatter of the grid.
-     *
-     * @var function
-     */
-    public $legendFormatter;
+    public mixed $legendFormatter;
 
-    /**
-     * Stores the inverseOrder of the grid.
-     *
-     * @var boolean
-     */
-    public $legendInverseOrder = false;
+    public bool $legendInverseOrder = false;
 
-    /**
-     * Stores the width of the grid.
-     *
-     * @var int
-     */
-    public $legendWidth;
+    public int $legendWidth;
 
-    /**
-     * Stores the height of the grid.
-     *
-     * @var int
-     */
-    public $legendHeight;
+    public int $legendHeight;
 
-    /**
-     * Stores the tooltipHoverFormatter of the grid.
-     *
-     * @var function
-     */
-    public $legendTooltipHoverFormatter;
+    public mixed $legendTooltipHoverFormatter;
 
-    /**
-     * Stores the customLegendItems of the grid.
-     *
-     * @var array
-     */
-    public $legendCustomLegendItems = [];
+    public array $legendCustomLegendItems = [];
 
-    /**
-     * Stores the offsetX of the grid.
-     *
-     * @var int
-     */
-    public $legendOffsetX = 0;
+    public int $legendOffsetX = 0;
 
-    /**
-     * Stores the offsetY of the grid.
-     *
-     * @var int
-     */
-    public $legendOffsetY = 0;
+    public int $legendOffsetY = 0;
 
-    /**
-     * Stores the labels of the grid.
-     *
-     * @var array
-     */
-    public $legendLabels = [];
+    public array $legendLabels = [];
 
-    /**
-     * Stores the markers of the grid.
-     *
-     * @var array
-     */
-    public $legendMarkers = [];
+    public array $legendMarkers = [];
 
-    /**
-     * Stores the itemMargin of the grid.
-     *
-     * @var array
-     */
-    public $legendItemMargin = [];
+    public array $legendItemMargin = [];
 
-    /**
-     * Stores the onItemClick of the grid.
-     *
-     * @var array
-     */
-    public $legendOnItemClick = [];
+    public array $legendOnItemClick = [];
 
-    /**
-     * Stores the onItemHover of the grid.
-     *
-     * @var array
-     */
-    public $legendOnItemHover = [];
+    public array $legendOnItemHover = [];
 
-    /**
-     * Set the legend show.
-     *
-     * @param string $legendShow
-     *
-     * @return this
-     */
-    public function setLegendShow($legendShow) :Charts
+    public function setLegendShow(bool $legendShow): Chart
     {
         $this->legendShow = $legendShow;
 
@@ -187,22 +65,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendShow()
+    public function getLegendShow(): bool
     {
         return $this->legendShow;
     }
 
-    /**
-     * Set the legend showForSingleSeries.
-     *
-     * @param boolean $legendShowForSingleSeries
-     *
-     * @return this
-     */
-    public function setLegendShowForSingleSeries($legendShowForSingleSeries) :Charts
+    public function setLegendShowForSingleSeries(bool $legendShowForSingleSeries): Chart
     {
         $this->legendShowForSingleSeries = $legendShowForSingleSeries;
 
@@ -215,22 +83,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendShowForSingleSeries()
+    public function getLegendShowForSingleSeries(): bool
     {
         return $this->legendShowForSingleSeries;
     }
 
-    /**
-     * Set the legend showForNullSeries.
-     *
-     * @param string $legendShowForNullSeries
-     *
-     * @return this
-     */
-    public function setLegendShowForNullSeries($legendShowForNullSeries) :Charts
+    public function setLegendShowForNullSeries(bool $legendShowForNullSeries): Chart
     {
         $this->legendShowForNullSeries = $legendShowForNullSeries;
 
@@ -243,22 +101,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendShowForNullSeries()
+    public function getLegendShowForNullSeries(): bool
     {
         return $this->legendShowForNullSeries;
     }
 
-    /**
-     * Set the legend showForZeroSeries.
-     *
-     * @param string $legendShowForZeroSeries
-     *
-     * @return this
-     */
-    public function setLegendShowForZeroSeries($legendShowForZeroSeries) :Charts
+    public function setLegendShowForZeroSeries(bool $legendShowForZeroSeries): Chart
     {
         $this->legendShowForZeroSeries = $legendShowForZeroSeries;
 
@@ -271,22 +119,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendShowForZeroSeries()
+    public function getLegendShowForZeroSeries(): bool
     {
         return $this->legendShowForZeroSeries;
     }
 
-    /**
-     * Set the legend position.
-     *
-     * @param string $legendPosition
-     *
-     * @return this
-     */
-    public function setLegendPosition($legendPosition) :Charts
+    public function setLegendPosition(string $legendPosition): Chart
     {
         $this->legendPosition = $legendPosition;
 
@@ -299,22 +137,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLegendPosition()
+    public function getLegendPosition(): string
     {
         return $this->legendPosition;
     }
 
-    /**
-     * Set the legend horizontalAlign.
-     *
-     * @param string $legendHorizontalAlign
-     *
-     * @return this
-     */
-    public function setLegendHorizontalAlign($legendHorizontalAlign) :Charts
+    public function setLegendHorizontalAlign(string $legendHorizontalAlign): Chart
     {
         $this->legendHorizontalAlign = $legendHorizontalAlign;
 
@@ -327,22 +155,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLegendHorizontalAlign()
+    public function getLegendHorizontalAlign(): string
     {
         return $this->legendHorizontalAlign;
     }
 
-    /**
-     * Set the legend floating.
-     *
-     * @param boolean $legendShow
-     *
-     * @return this
-     */
-    public function setLegendFloating($legendFloating) :Charts
+    public function setLegendFloating(bool $legendFloating): Chart
     {
         $this->legendFloating = $legendFloating;
 
@@ -355,22 +173,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendFloating()
+    public function getLegendFloating(): bool
     {
         return $this->legendFloating;
     }
 
-    /**
-     * Set the legend fontSize.
-     *
-     * @param string $legendFontSize
-     *
-     * @return this
-     */
-    public function setLegendFontSize($legendFontSize) :Charts
+    public function setLegendFontSize(string $legendFontSize): Chart
     {
         $this->legendFontSize = $legendFontSize;
 
@@ -383,22 +191,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendFontSize()
+    public function getLegendFontSize(): string
     {
         return $this->legendFontSize;
     }
 
-    /**
-     * Set the legend fontFamily.
-     *
-     * @param string $legendFontFamily
-     *
-     * @return this
-     */
-    public function setLegendFontFamily($legendFontFamily) :Charts
+    public function setLegendFontFamily(string $legendFontFamily): Chart
     {
         $this->legendFontFamily = $legendFontFamily;
 
@@ -411,22 +209,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLegendFontFamily()
+    public function getLegendFontFamily(): string
     {
         return $this->legendFontFamily;
     }
 
-    /**
-     * Set the legend fontWeight.
-     *
-     * @param string $legendFontWeight
-     *
-     * @return this
-     */
-    public function setLegendFontWeight($legendFontWeight) :Charts
+    public function setLegendFontWeight(int|string $legendFontWeight): Chart
     {
         $this->legendFontWeight = $legendFontWeight;
 
@@ -439,22 +227,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendFontWeight()
+    public function getLegendFontWeight(): int|string
     {
         return $this->legendFontWeight;
     }
 
-    /**
-     * Set the legend formatter.
-     *
-     * @param string $legendFormatter
-     *
-     * @return this
-     */
-    public function setLegendFormatter($legendFormatter) :Charts
+    public function setLegendFormatter(mixed $legendFormatter): Chart
     {
         $this->legendFormatter = $legendFormatter;
 
@@ -467,22 +245,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendFormatter()
+    public function getLegendFormatter(): mixed
     {
         return $this->legendFormatter;
     }
 
-    /**
-     * Set the legend inverseOrder.
-     *
-     * @param string $legendInverseOrder
-     *
-     * @return this
-     */
-    public function setLegendInverseOrder($legendInverseOrder) :Charts
+    public function setLegendInverseOrder(string $legendInverseOrder): Chart
     {
         $this->legendInverseOrder = $legendInverseOrder;
 
@@ -495,22 +263,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendInverseOrder()
+    public function getLegendInverseOrder(): string
     {
         return $this->legendInverseOrder;
     }
 
-    /**
-     * Set the legend width.
-     *
-     * @param string $legendWidth
-     *
-     * @return this
-     */
-    public function setLegendWidth($legendWidth) :Charts
+    public function setLegendWidth(int $legendWidth): Chart
     {
         $this->legendWidth = $legendWidth;
 
@@ -523,22 +281,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendWidth()
+    public function getLegendWidth(): int
     {
         return $this->legendWidth;
     }
 
-    /**
-     * Set the legend height.
-     *
-     * @param string $legendHeight
-     *
-     * @return this
-     */
-    public function setLegendHeight($legendHeight) :Charts
+    public function setLegendHeight(int $legendHeight): Chart
     {
         $this->legendHeight = $legendHeight;
 
@@ -551,22 +299,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendHeight()
+    public function getLegendHeight(): int
     {
         return $this->legendHeight;
     }
 
-    /**
-     * Set the legend tooltipHoverFormatter.
-     *
-     * @param string $legendTooltipHoverFormatter
-     *
-     * @return this
-     */
-    public function setLegendTooltipHoverFormatter($legendTooltipHoverFormatter) :Charts
+    public function setLegendTooltipHoverFormatter(mixed $legendTooltipHoverFormatter): Chart
     {
         $this->legendTooltipHoverFormatter = $legendTooltipHoverFormatter;
 
@@ -579,22 +317,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendTooltipHoverFormatter()
+    public function getLegendTooltipHoverFormatter(): mixed
     {
         return $this->legendTooltipHoverFormatter;
     }
 
-    /**
-     * Set the legend customLegendItems.
-     *
-     * @param string $legendShow
-     *
-     * @return this
-     */
-    public function setLegendCustomLegendItems($legendCustomLegendItems) :Charts
+    public function setLegendCustomLegendItems(array $legendCustomLegendItems): Chart
     {
         $this->legendCustomLegendItems = $legendCustomLegendItems;
 
@@ -607,22 +335,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendCustomLegendItems()
+    public function getLegendCustomLegendItems(): array
     {
         return $this->legendCustomLegendItems;
     }
 
-    /**
-     * Set the legend offsetX.
-     *
-     * @param string $legendShow
-     *
-     * @return this
-     */
-    public function setLegendOffsetX($legendOffsetX) :Charts
+    public function setLegendOffsetX(int $legendOffsetX): Chart
     {
         $this->legendOffsetX = $legendOffsetX;
 
@@ -635,22 +353,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendOffsetX()
+    public function getLegendOffsetX(): int
     {
         return $this->legendOffsetX;
     }
 
-    /**
-     * Set the legend offsetY.
-     *
-     * @param string $legendOffsetY
-     *
-     * @return this
-     */
-    public function setLegendOffsetY($legendOffsetY) :Charts
+    public function setLegendOffsetY(int $legendOffsetY): Chart
     {
         $this->legendOffsetY = $legendOffsetY;
 
@@ -663,22 +371,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendOffsetY()
+    public function getLegendOffsetY():int
     {
         return $this->legendOffsetY;
     }
 
-    /**
-     * Set the legend labels.
-     *
-     * @param string $legendLabels
-     *
-     * @return this
-     */
-    public function setLegendLabels($legendLabels) :Charts
+    public function setLegendLabels(array $legendLabels): Chart
     {
         $this->legendLabels = $legendLabels;
 
@@ -691,22 +389,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendLabels()
+    public function getLegendLabels(): array
     {
         return $this->legendLabels;
     }
 
-    /**
-     * Set the legend markers.
-     *
-     * @param string $legendMarkers
-     *
-     * @return this
-     */
-    public function setLegendMarkers($legendMarkers) :Charts
+    public function setLegendMarkers(array $legendMarkers): Chart
     {
         $this->legendMarkers = $legendMarkers;
 
@@ -719,22 +407,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendMarkers()
+    public function getLegendMarkers(): array
     {
         return $this->legendMarkers;
     }
 
-    /**
-     * Set the legend itemMargin.
-     *
-     * @param string $legendItemMargin
-     *
-     * @return this
-     */
-    public function setLegendItemMargin($legendItemMargin) :Charts
+    public function setLegendItemMargin(array $legendItemMargin): Chart
     {
         $this->legendItemMargin = $legendItemMargin;
 
@@ -747,22 +425,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendItemMargin()
+    public function getLegendItemMargin(): array
     {
         return $this->legendItemMargin;
     }
 
-    /**
-     * Set the legend onItemClick.
-     *
-     * @param string $legendOnItemClick
-     *
-     * @return this
-     */
-    public function setLegendOnItemClick($legendOnItemClick) :Charts
+    public function setLegendOnItemClick(array $legendOnItemClick): Chart
     {
         $this->legendOnItemClick = $legendOnItemClick;
 
@@ -775,22 +443,12 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendOnItemClick()
+    public function getLegendOnItemClick(): array
     {
         return $this->legendOnItemClick;
     }
 
-    /**
-     * Set the legend onItemHover.
-     *
-     * @param string $legendOnItemHover
-     *
-     * @return this
-     */
-    public function setLegendOnItemHover($legendOnItemHover) :Charts
+    public function setLegendOnItemHover(array $legendOnItemHover): Chart
     {
         $this->legendOnItemHover = $legendOnItemHover;
 
@@ -803,10 +461,7 @@ trait Legend
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getLegendOnItemHover()
+    public function getLegendOnItemHover(): array
     {
         return $this->legendOnItemHover;
     }

@@ -6,133 +6,41 @@ use Akaunting\Apexcharts\Charts;
 
 trait Xaxis
 {
-    /**
-     * Stores the show of the xaxis.
-     *
-     * @var boolean
-     */
-    public $xaxisType = true;
+    public string $xaxisType = 'category';
 
-    /**
-     * Stores the categories of the xaxis.
-     *
-     * @var array
-     */
-    public $xaxisCategories = true;
+    public array $xaxisCategories = [];
 
-    /**
-     * Stores the tickAmount of the xaxis.
-     *
-     * @var int
-     */
-    public $xaxisTickAmount = 6;
+    public int $xaxisTickAmount = 6;
 
-    /**
-     * Stores the tickPlacement of the xaxis.
-     *
-     * @var string
-     */
-    public $xaxisTickPlacement = 'between';
+    public string $xaxisTickPlacement = 'between';
 
-    /**
-     * Stores the min of the xaxis.
-     *
-     * @var int
-     */
-    public $xaxisMin;
+    public int $xaxisMin;
 
-    /**
-     * Stores the max of the xaxis.
-     *
-     * @var int
-     */
-    public $xaxisMax;
+    public int $xaxisMax;
 
-    /**
-     * Stores the range of the xaxis.
-     *
-     * @var int
-     */
-    public $xaxisRange;
+    public int $xaxisRange;
 
-    /**
-     * Stores the floating of the xaxis.
-     *
-     * @var boolean
-     */
-    public $xaxisFloating = false;
+    public bool $xaxisFloating = false;
 
-    /**
-     * Stores the decimalsInFloat of the xaxis.
-     *
-     * @var string
-     */
-    public $xaxisDecimalsInFloat = '';
+    public int $xaxisDecimalsInFloat;
 
-    /**
-     * Stores the logarithmic of the xaxis.
-     *
-     * @var array
-     */
-    public $xaxisOverwriteCategories;
+    public array $xaxisOverwriteCategories;
 
-    /**
-     * Stores the logBase of the xaxis.
-     *
-     * @var string
-     */
-    public $xaxisPosition = 'bottom';
+    public string $xaxisPosition = 'bottom';
 
-    /**
-     * Stores the labels of the xaxis.
-     *
-     * @var array
-     */
-    public $xaxisLabels = [];
+    public array $xaxisLabels = [];
 
-    /**
-     * Stores the axisBorder of the xaxis.
-     *
-     * @var array
-     */
-    public $xaxisAxisBorder = [];
+    public array $xaxisAxisBorder = [];
 
-    /**
-     * Stores the axisTicks of the xaxis.
-     *
-     * @var array
-     */
-    public $xaxisAxisTicks = [];
+    public array $xaxisAxisTicks = [];
 
-    /**
-     * Stores the title of the xaxis.
-     *
-     * @var array
-     */
-    public $xaxisTitle = [];
+    public array $xaxisTitle = [];
 
-    /**
-     * Stores the crosshairs of the xaxis.
-     *
-     * @var array
-     */
-    public $xaxisCrosshairs = [];
+    public array $xaxisCrosshairs = [];
 
-    /**
-     * Stores the tooltip of the xaxis.
-     *
-     * @var array
-     */
-    public $xaxisTooltip = [];
+    public array $xaxisTooltip = [];
 
-    /**
-     * Set the xaxis type.
-     *
-     * @param boolean $xaxisType
-     *
-     * @return this
-     */
-    public function setXaxisType($xaxisType) :Charts
+    public function setXaxisType(string $xaxisType): Chart
     {
         $this->xaxisType = $xaxisType;
 
@@ -145,22 +53,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getXaxisType()
+    public function getXaxisType(): string
     {
         return $this->xaxisType;
     }
 
-    /**
-     * Set the xaxis categories.
-     *
-     * @param array $xaxisCategories
-     *
-     * @return this
-     */
-    public function setXaxisCategories($xaxisCategories) :Charts
+    public function setXaxisCategories(array $xaxisCategories): Chart
     {
         $this->xaxisCategories = $xaxisCategories;
 
@@ -173,22 +71,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getXaxisCategories()
+    public function getXaxisCategories(): array
     {
         return $this->xaxisCategories;
     }
 
-    /**
-     * Set the xaxis tickAmount.
-     *
-     * @param int $xaxisTickAmount
-     *
-     * @return this
-     */
-    public function setXaxisTickAmount($xaxisTickAmount) :Charts
+    public function setXaxisTickAmount(int $xaxisTickAmount): Chart
     {
         $this->xaxisTickAmount = $xaxisTickAmount;
 
@@ -201,22 +89,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getXaxisTickAmount()
+    public function getXaxisTickAmount(): int
     {
         return $this->xaxisTickAmount;
     }
 
-    /**
-     * Set the xaxis tickPlacement.
-     *
-     * @param string $xaxisTickPlacement
-     *
-     * @return this
-     */
-    public function setXaxisTickPlacement($xaxisTickPlacement) :Charts
+    public function setXaxisTickPlacement(string $xaxisTickPlacement): Chart
     {
         $this->xaxisTickPlacement = $xaxisTickPlacement;
 
@@ -229,22 +107,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getXaxisTickPlacement()
+    public function getXaxisTickPlacement(): string
     {
         return $this->xaxisTickPlacement;
     }
 
-    /**
-     * Set the xaxis min.
-     *
-     * @param int $xaxisMin
-     *
-     * @return this
-     */
-    public function setXaxisMin($xaxisMin) :Charts
+    public function setXaxisMin(int $xaxisMin): Chart
     {
         $this->xaxisMin = $xaxisMin;
 
@@ -257,22 +125,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getXaxisMin()
+    public function getXaxisMin(): int
     {
         return $this->xaxisMin;
     }
 
-    /**
-     * Set the xaxis max.
-     *
-     * @param int $xaxisMax
-     *
-     * @return this
-     */
-    public function setXaxisMax($xaxisMax) :Charts
+    public function setXaxisMax(int $xaxisMax): Chart
     {
         $this->xaxisMax = $xaxisMax;
 
@@ -285,22 +143,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getXaxisMax()
+    public function getXaxisMax(): int
     {
         return $this->xaxisMax;
     }
 
-    /**
-     * Set the xaxis range.
-     *
-     * @param int $xaxisRange
-     *
-     * @return this
-     */
-    public function setXaxisRange($xaxisRange) :Charts
+    public function setXaxisRange(int $xaxisRange): Chart
     {
         $this->xaxisRange = $xaxisRange;
 
@@ -313,22 +161,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getXaxisRange()
+    public function getXaxisRange(): int
     {
         return $this->xaxisRange;
     }
 
-    /**
-     * Set the xaxis floating.
-     *
-     * @param boolean $xaxisFloating
-     *
-     * @return this
-     */
-    public function setXaxisFloating($xaxisFloating) :Charts
+    public function setXaxisFloating(bool $xaxisFloating): Chart
     {
         $this->xaxisFloating = $xaxisFloating;
 
@@ -341,22 +179,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getXaxisFloating()
+    public function getXaxisFloating(): bool
     {
         return $this->xaxisFloating;
     }
 
-    /**
-     * Set the xaxis decimalsInFloat.
-     *
-     * @param string $xaxisDecimalsInFloat
-     *
-     * @return this
-     */
-    public function setXaxisDecimalsInFloat($xaxisDecimalsInFloat) :Charts
+    public function setXaxisDecimalsInFloat(int $xaxisDecimalsInFloat): Chart
     {
         $this->xaxisDecimalsInFloat = $xaxisDecimalsInFloat;
 
@@ -369,22 +197,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getXaxisDecimalsInFloat()
+    public function getXaxisDecimalsInFloat(): int
     {
         return $this->xaxisDecimalsInFloat;
     }
 
-    /**
-     * Set the xaxis overwriteCategories.
-     *
-     * @param array $xaxisOverwriteCategories
-     *
-     * @return this
-     */
-    public function setXaxisOverwriteCategories($xaxisOverwriteCategories) :Charts
+    public function setXaxisOverwriteCategories(array $xaxisOverwriteCategories): Chart
     {
         $this->xaxisOverwriteCategories = $xaxisOverwriteCategories;
 
@@ -397,22 +215,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getXaxisOverwriteCategories()
+    public function getXaxisOverwriteCategories(): array
     {
         return $this->xaxisOverwriteCategories;
     }
 
-    /**
-     * Set the xaxis position.
-     *
-     * @param boolean $xaxisPosition
-     *
-     * @return this
-     */
-    public function setXaxisPosition($xaxisPosition) :Charts
+    public function setXaxisPosition(string $xaxisPosition): Chart
     {
         $this->xaxisPosition = $xaxisPosition;
 
@@ -425,22 +233,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getXaxisPosition()
+    public function getXaxisPosition(): string
     {
         return $this->xaxisPosition;
     }
 
-    /**
-     * Set the xaxis labels.
-     *
-     * @param array $xaxisLabels
-     *
-     * @return this
-     */
-    public function setXaxisLabels($xaxisLabels) :Charts
+    public function setXaxisLabels(array $xaxisLabels): Chart
     {
         $this->xaxisLabels = $xaxisLabels;
 
@@ -453,22 +251,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getXaxisLabels()
+    public function getXaxisLabels(): array
     {
         return $this->xaxisLabels;
     }
 
-    /**
-     * Set the xaxis axisBorder.
-     *
-     * @param array $xaxisAxisBorder
-     *
-     * @return this
-     */
-    public function setXaxisAxisBorder($xaxisAxisBorder) :Charts
+    public function setXaxisAxisBorder(array $xaxisAxisBorder): Chart
     {
         $this->xaxisAxisBorder = $xaxisAxisBorder;
 
@@ -481,22 +269,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getXaxisAxisBorder()
+    public function getXaxisAxisBorder(): array
     {
         return $this->xaxisAxisBorder;
     }
 
-    /**
-     * Set the xaxis axisTicks.
-     *
-     * @param array $xaxisAxisTicks
-     *
-     * @return this
-     */
-    public function setXaxisAxisTicks($xaxisAxisTicks) :Charts
+    public function setXaxisAxisTicks(array $xaxisAxisTicks): Chart
     {
         $this->xaxisAxisTicks = $xaxisAxisTicks;
 
@@ -509,22 +287,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getXaxisAxisTicks()
+    public function getXaxisAxisTicks(): array
     {
         return $this->xaxisAxisTicks;
     }
 
-    /**
-     * Set the xaxis title.
-     *
-     * @param array $xaxisTitle
-     *
-     * @return this
-     */
-    public function setXaxisTitle($xaxisTitle) :Charts
+    public function setXaxisTitle(array $xaxisTitle): Chart
     {
         $this->xaxisTitle = $xaxisTitle;
 
@@ -537,22 +305,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getXaxisTitle()
+    public function getXaxisTitle(): array
     {
         return $this->xaxisTitle;
     }
 
-    /**
-     * Set the xaxis crosshairs.
-     *
-     * @param array $xaxisCrosshairs
-     *
-     * @return this
-     */
-    public function setXaxisCrosshairs($xaxisCrosshairs) :Charts
+    public function setXaxisCrosshairs(array $xaxisCrosshairs): Chart
     {
         $this->xaxisCrosshairs = $xaxisCrosshairs;
 
@@ -565,22 +323,12 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getXaxisCrosshairs()
+    public function getXaxisCrosshairs(): array
     {
         return $this->xaxisCrosshairs;
     }
 
-    /**
-     * Set the xaxis tooltip.
-     *
-     * @param boolean $xaxisTooltip
-     *
-     * @return this
-     */
-    public function setXaxisTooltip($xaxisTooltip) :Charts
+    public function setXaxisTooltip(array $xaxisTooltip): Chart
     {
         $this->xaxisTooltip = $xaxisTooltip;
 
@@ -593,10 +341,7 @@ trait Xaxis
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getXaxisTooltip()
+    public function getXaxisTooltip(): array
     {
         return $this->xaxisTooltip;
     }

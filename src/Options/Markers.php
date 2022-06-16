@@ -6,129 +6,42 @@ use Akaunting\Apexcharts\Charts;
 
 trait Markers
 {
-    /**
-     * Stores the size of the markers.
-     *
-     * @var int
-     */
-    public $markersSize = 4;
+    public int $markersSize = 4;
 
-    /**
-     * Stores the colors of the markers.
-     *
-     * @var array
-     */
-    public $markersColors = [];
+    public array $markersColors = [];
 
-    /**
-     * Stores the strokeColors of the markers.
-     *
-     * @var string|array
-     */
-    public $markersStrokeColors = '#fff';
+    public string|array $markersStrokeColors = '#fff';
 
-    /**
-     * Stores the strokeWidth of the markers.
-     *
-     * @var int|array
-     */
-    public $markersStrokeWidth = 2;
+    public int|array $markersStrokeWidth = 2;
 
-    /**
-     * Stores the strokeOpacity of the markers.
-     *
-     * @var int|array
-     */
-    public $markersStrokeOpacity = 0.9;
+    public int|float|array $markersStrokeOpacity = 0.9;
 
-    /**
-     * Stores the strokeDashArray of the markers.
-     *
-     * @var int|array
-     */
-    public $markersStrokeDashArray = 0;
+    public int|array $markersStrokeDashArray = 0;
 
-    /**
-     * Stores the fillOpacity of the markers.
-     *
-     * @var int|array
-     */
-    public $markersFillOpacity = 1;
+    public int|float|array $markersFillOpacity = 1;
 
-    /**
-     * Stores the discrete of the markers.
-     *
-     * @var array
-     */
-    public $markersDiscrete = [];
+    public array $markersDiscrete = [];
 
-    /**
-     * Stores the shape of the markers.
-     *
-     * @var string
-     */
-    public $markersShape = 'circle';
+    public string $markersShape = 'circle';
 
-    /**
-     * Stores the radius of the markers.
-     *
-     * @var int
-     */
-    public $markersRadius = 2;
+    public int $markersRadius = 2;
 
-    /**
-     * Stores the offsetX of the markers.
-     *
-     * @var int
-     */
-    public $markersOffsetX = 0;
+    public int $markersOffsetX = 0;
 
-    /**
-     * Stores the offsetY of the markers.
-     *
-     * @var int
-     */
-    public $markersOffsetY = 0;
+    public int $markersOffsetY = 0;
 
-    /**
-     * Stores the onClick of the markers.
-     *
-     * @var function
-     */
-    public $markersOnClick;
+    public mixed $markersOnClick;
 
-    /**
-     * Stores the onDblClick of the markers.
-     *
-     * @var function
-     */
-    public $markersOnDblClick;
+    public mixed $markersOnDblClick;
 
-    /**
-     * Stores the showNullDataPoints of the markers.
-     *
-     * @var boolean
-     */
-    public $markersShowNullDataPoints = true;
+    public bool $markersShowNullDataPoints = true;
 
-    /**
-     * Stores the hover of the markers.
-     *
-     * @var array
-     */
-    public $markersHover = [
+    public array $markersHover = [
         'size' => '',
         'sizeOffset' => 3,
     ];
 
-    /**
-     * Set the grid show.
-     *
-     * @param string $gridShow
-     *
-     * @return this
-     */
-    public function setMarkersSize($markersSize) :Charts
+    public function setMarkersSize(int $markersSize): Chart
     {
         $this->markersSize = $markersSize;
 
@@ -141,22 +54,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getMarkersSize()
+    public function getMarkersSize(): int
     {
         return $this->markersSize;
     }
 
-    /**
-     * Set the markers colors.
-     *
-     * @param array $markersColors
-     *
-     * @return this
-     */
-    public function setMarkersColors($markersColors) :Charts
+    public function setMarkersColors(array $markersColors): Chart
     {
         $this->markersColors = $markersColors;
 
@@ -169,22 +72,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersColors()
+    public function getMarkersColors(): array
     {
         return $this->markersColors;
     }
 
-    /**
-     * Set the markers strokeColors.
-     *
-     * @param array $markersStrokeColors
-     *
-     * @return this
-     */
-    public function setMarkersStrokeColors($markersStrokeColors) :Charts
+    public function setMarkersStrokeColors(string|array $markersStrokeColors): Chart
     {
         $this->markersStrokeColors = $markersStrokeColors;
 
@@ -197,22 +90,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersStrokeColors()
+    public function getMarkersStrokeColors(): string|array
     {
         return $this->markersStrokeColors;
     }
 
-    /**
-     * Set the markers strokeWidth.
-     *
-     * @param array $markersStrokeWidth
-     *
-     * @return this
-     */
-    public function setMarkersStrokeWidth($markersStrokeWidth) :Charts
+    public function setMarkersStrokeWidth(int|array $markersStrokeWidth): Chart
     {
         $this->markersStrokeWidth = $markersStrokeWidth;
 
@@ -225,22 +108,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersStrokeWidth()
+    public function getMarkersStrokeWidth(): int|array
     {
         return $this->markersStrokeWidth;
     }
 
-    /**
-     * Set the markers strokeOpacity.
-     *
-     * @param array $markersStrokeOpacity
-     *
-     * @return this
-     */
-    public function setMarkersStrokeOpacity($markersStrokeOpacity) :Charts
+    public function setMarkersStrokeOpacity(int|float|array $markersStrokeOpacity): Chart
     {
         $this->markersStrokeOpacity = $markersStrokeOpacity;
 
@@ -253,22 +126,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersStrokeOpacity()
+    public function getMarkersStrokeOpacity(): int|float|array
     {
         return $this->markersStrokeOpacity;
     }
 
-    /**
-     * Set the markers strokeDashArray.
-     *
-     * @param array $markersStrokeDashArray
-     *
-     * @return this
-     */
-    public function setMarkersStrokeDashArray($markersStrokeDashArray) :Charts
+    public function setMarkersStrokeDashArray(int|array $markersStrokeDashArray): Chart
     {
         $this->markersStrokeDashArray = $markersStrokeDashArray;
 
@@ -281,22 +144,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersStrokeDashArray()
+    public function getMarkersStrokeDashArray(): int|array
     {
         return $this->markersStrokeDashArray;
     }
 
-    /**
-     * Set the markers fillOpacity.
-     *
-     * @param array $markersFillOpacity
-     *
-     * @return this
-     */
-    public function setMarkersFillOpacity($markersFillOpacity) :Charts
+    public function setMarkersFillOpacity(int|float|array $markersFillOpacity): Chart
     {
         $this->markersFillOpacity = $markersFillOpacity;
 
@@ -309,22 +162,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersFillOpacity()
+    public function getMarkersFillOpacity(): int|float|array
     {
         return $this->markersFillOpacity;
     }
 
-    /**
-     * Set the markers discrete.
-     *
-     * @param array $markersDiscrete
-     *
-     * @return this
-     */
-    public function setMarkersDiscrete($markersDiscrete) :Charts
+    public function setMarkersDiscrete(array $markersDiscrete): Chart
     {
         $this->markersDiscrete = $markersDiscrete;
 
@@ -337,22 +180,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersDiscrete()
+    public function getMarkersDiscrete(): array
     {
         return $this->markersDiscrete;
     }
 
-    /**
-     * Set the markers shape.
-     *
-     * @param array $markersShape
-     *
-     * @return this
-     */
-    public function setMarkersShape($markersShape) :Charts
+    public function setMarkersShape(string $markersShape): Chart
     {
         $this->markersShape = $markersShape;
 
@@ -365,22 +198,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersShape()
+    public function getMarkersShape(): string
     {
         return $this->markersShape;
     }
 
-    /**
-     * Set the markers radius.
-     *
-     * @param array $markersRadius
-     *
-     * @return this
-     */
-    public function setMarkersRadius($markersRadius) :Charts
+    public function setMarkersRadius(int $markersRadius): Chart
     {
         $this->markersRadius = $markersRadius;
 
@@ -393,22 +216,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersRadius()
+    public function getMarkersRadius(): int
     {
         return $this->markersRadius;
     }
 
-    /**
-     * Set the markers offsetX.
-     *
-     * @param array $markersOffsetX
-     *
-     * @return this
-     */
-    public function setMarkersOffsetX($markersOffsetX) :Charts
+    public function setMarkersOffsetX(int $markersOffsetX): Chart
     {
         $this->markersOffsetX = $markersOffsetX;
 
@@ -421,22 +234,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersOffsetX()
+    public function getMarkersOffsetX(): int
     {
         return $this->markersOffsetX;
     }
 
-    /**
-     * Set the markers offsetY.
-     *
-     * @param array $markersOffsetY
-     *
-     * @return this
-     */
-    public function setMarkersOffsetY($markersOffsetY) :Charts
+    public function setMarkersOffsetY(int $markersOffsetY): Chart
     {
         $this->markersOffsetY = $markersOffsetY;
 
@@ -449,22 +252,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersOffsetY()
+    public function getMarkersOffsetY(): int
     {
         return $this->markersOffsetY;
     }
 
-    /**
-     * Set the markers onClick.
-     *
-     * @param array $markersOnClick
-     *
-     * @return this
-     */
-    public function setMarkersOnClick($markersOnClick) :Charts
+    public function setMarkersOnClick(mixed $markersOnClick): Chart
     {
         $this->markersOnClick = $markersOnClick;
 
@@ -477,22 +270,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersOnClick()
+    public function getMarkersOnClick(): mixed
     {
         return $this->markersOnClick;
     }
 
-    /**
-     * Set the markers onDblClick.
-     *
-     * @param array $markersOnDblClick
-     *
-     * @return this
-     */
-    public function setMarkersOnDblClick($markersOnDblClick) :Charts
+    public function setMarkersOnDblClick(mixed $markersOnDblClick): Chart
     {
         $this->markersOnDblClick = $markersOnDblClick;
 
@@ -505,22 +288,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersOnDblClick()
+    public function getMarkersOnDblClick(): mixed
     {
         return $this->markersOnDblClick;
     }
 
-    /**
-     * Set the markers showNullDataPoints.
-     *
-     * @param array $markersShowNullDataPoints
-     *
-     * @return this
-     */
-    public function setMarkersShowNullDataPoints($markersShowNullDataPoints) :Charts
+    public function setMarkersShowNullDataPoints(bool $markersShowNullDataPoints): Chart
     {
         $this->markersShowNullDataPoints = $markersShowNullDataPoints;
 
@@ -533,22 +306,12 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersShowNullDataPoints()
+    public function getMarkersShowNullDataPoints(): bool
     {
         return $this->markersShowNullDataPoints;
     }
 
-    /**
-     * Set the markers hover.
-     *
-     * @param array $markersHover
-     *
-     * @return this
-     */
-    public function setMarkersHover($markersHover) :Charts
+    public function setMarkersHover(array $markersHover): Chart
     {
         $this->markersHover = $markersHover;
 
@@ -561,10 +324,7 @@ trait Markers
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMarkersHover()
+    public function getMarkersHover(): array
     {
         return $this->markersHover;
     }

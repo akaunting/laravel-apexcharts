@@ -6,42 +6,15 @@ use Akaunting\Apexcharts\Charts;
 
 trait ForecastDataPoints
 {
-    /**
-     * Stores the count of the forecastDataPoints.
-     *
-     * @var int
-     */
-    public $forecastDataPointsCount = 0;
+    public int $forecastDataPointsCount = 0;
 
-    /**
-     * Stores the fillOpacity of the forecastDataPoints.
-     *
-     * @var int
-     */
-    public $forecastDataPointsFillOpacity = 0.5;
+    public int|float $forecastDataPointsFillOpacity = 0.5;
 
-    /**
-     * Stores the strokeWidth of the forecastDataPoints.
-     *
-     * @var int
-     */
-    public $forecastDataPointsStrokeWidth;
+    public int $forecastDataPointsStrokeWidth;
 
-    /**
-     * Stores the dashArray of the forecastDataPoints.
-     *
-     * @var int
-     */
-    public $forecastDataPointsDashArray = 4;
+    public int $forecastDataPointsDashArray = 4;
 
-    /**
-     * Set the forecastDataPoints count.
-     *
-     * @param int $forecastDataPointsCount
-     *
-     * @return this
-     */
-    public function setForecastDataPointsCount($forecastDataPointsCount) :Charts
+    public function setForecastDataPointsCount(int $forecastDataPointsCount): Chart
     {
         $this->forecastDataPointsCount = $forecastDataPointsCount;
 
@@ -54,22 +27,12 @@ trait ForecastDataPoints
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getForecastDataPointsCount()
+    public function getForecastDataPointsCount(): int
     {
         return $this->forecastDataPointsCount;
     }
 
-    /**
-     * Set the forecastDataPoints fillOpacity.
-     *
-     * @param int $forecastDataPointsFillOpacity
-     *
-     * @return this
-     */
-    public function setForecastDataPointsFillOpacity($forecastDataPointsFillOpacity) :Charts
+    public function setForecastDataPointsFillOpacity(int|float $forecastDataPointsFillOpacity): Chart
     {
         $this->forecastDataPointsFillOpacity = $forecastDataPointsFillOpacity;
 
@@ -82,22 +45,12 @@ trait ForecastDataPoints
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getForecastDataPointsFillOpacity()
+    public function getForecastDataPointsFillOpacity(): int|float
     {
         return $this->forecastDataPointsFillOpacity;
     }
 
-    /**
-     * Set the forecastDataPoints strokeWidth.
-     *
-     * @param int $forecastDataPointsStrokeWidth
-     *
-     * @return this
-     */
-    public function setForecastDataPointsStrokeWidth($forecastDataPointsStrokeWidth) :Charts
+    public function setForecastDataPointsStrokeWidth(int $forecastDataPointsStrokeWidth): Chart
     {
         $this->forecastDataPointsStrokeWidth = $forecastDataPointsStrokeWidth;
 
@@ -110,22 +63,12 @@ trait ForecastDataPoints
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getForecastDataPointsStrokeWidth()
+    public function getForecastDataPointsStrokeWidth(): int
     {
         return $this->forecastDataPointsStrokeWidth;
     }
 
-    /**
-     * Set the forecastDataPoints dashArray.
-     *
-     * @param int $forecastDataPointsDashArray
-     *
-     * @return this
-     */
-    public function setForecastDataPointsDashArray($forecastDataPointsDashArray) :Charts
+    public function setForecastDataPointsDashArray(int $forecastDataPointsDashArray): Chart
     {
         $this->forecastDataPointsDashArray = $forecastDataPointsDashArray;
 
@@ -138,10 +81,7 @@ trait ForecastDataPoints
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getForecastDataPointsDashArray()
+    public function getForecastDataPointsDashArray(): int
     {
         return $this->forecastDataPointsDashArray;
     }

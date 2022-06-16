@@ -9,7 +9,7 @@ class Facade extends BaseFacade
     /**
      * Get the registered name of the component.
      */
-    public static function getFacadeAccessor()
+    public static function getFacadeAccessor(): string
     {
         return 'apexcharts';
     }

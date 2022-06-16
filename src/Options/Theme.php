@@ -6,35 +6,13 @@ use Akaunting\Apexcharts\Charts;
 
 trait Theme
 {
-    /**
-     * Stores the mode of the theme.
-     *
-     * @var string
-     */
-    public $themeMode = 'light';
+    public string $themeMode = 'light';
 
-    /**
-     * Stores the palette of the theme.
-     *
-     * @var string
-     */
-    public $themePalette = 'palette1';
+    public string $themePalette = 'palette1';
 
-    /**
-     * Stores the monochrome of the theme.
-     *
-     * @var array
-     */
-    public $themeMonochrome = [];
+    public array $themeMonochrome = [];
 
-    /**
-     * Set the theme mode.
-     *
-     * @param string $themeMode
-     *
-     * @return this
-     */
-    public function setThemeMode($themeMode) :Charts
+    public function setThemeMode(string $themeMode): Chart
     {
         $this->themeMode = $themeMode;
 
@@ -47,22 +25,12 @@ trait Theme
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getThemeMode()
+    public function getThemeMode(): string
     {
         return $this->themeMode;
     }
 
-    /**
-     * Set the theme palette.
-     *
-     * @param string $themePalette
-     *
-     * @return this
-     */
-    public function setThemePalette($themePalette) :Charts
+    public function setThemePalette(string $themePalette): Chart
     {
         $this->themePalette = $themePalette;
 
@@ -75,22 +43,12 @@ trait Theme
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getThemePalette()
+    public function getThemePalette(): string
     {
         return $this->themePalette;
     }
 
-    /**
-     * Set the theme monochrome.
-     *
-     * @param array $themeMonochrome
-     *
-     * @return this
-     */
-    public function setThemeMonochrome($themeMonochrome) :Charts
+    public function setThemeMonochrome(array $themeMonochrome): Chart
     {
         $this->themeMonochrome = $themeMonochrome;
 
@@ -103,10 +61,7 @@ trait Theme
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getThemeMonochrome()
+    public function getThemeMonochrome(): array
     {
         return $this->themeMonochrome;
     }

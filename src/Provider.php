@@ -10,10 +10,8 @@ class Provider extends ServiceProvider
 {
     /**
      * Register the application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->alias(Charts::class, 'apexcharts');
 
@@ -22,10 +20,8 @@ class Provider extends ServiceProvider
 
     /**
      * When this method is apply we have all laravel providers and methods available
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->loadViewsFrom(__DIR__ . '/Views', 'apexcharts');
 
@@ -38,7 +34,7 @@ class Provider extends ServiceProvider
         $this->registerBladeDirectives();
     }
 
-    public function registerBladeDirectives()
+    public function registerBladeDirectives(): void
     {
         $this->app->afterResolving('blade.compiler', function (BladeCompiler $bladeCompiler) {
             $bladeCompiler->directive('apexchartsScripts', function ($expression) {

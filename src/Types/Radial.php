@@ -13,7 +13,7 @@ class Radial extends Charts
         $this->setType('radialBar');
     }
 
-    public function addRings(array $data) :Radial
+    public function addRings(array $data): Radial
     {
         return $this->setSeries($data);
     }

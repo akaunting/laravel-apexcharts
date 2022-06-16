@@ -6,28 +6,11 @@ use Akaunting\Apexcharts\Charts;
 
 trait Responsive
 {
-    /**
-     * Stores the breakpoint of the responsive.
-     *
-     * @var int
-     */
-    public $responsiveBreakpoint;
+    public int $responsiveBreakpoint;
 
-    /**
-     * Stores the options of the responsive.
-     *
-     * @var objcet
-     */
-    public $responsiveOptions;
+    public object $responsiveOptions;
 
-    /**
-     * Set the responsive breakpoint.
-     *
-     * @param int $responsiveBreakpoint
-     *
-     * @return this
-     */
-    public function setResponsiveBreakpoint($responsiveBreakpoint) :Charts
+    public function setResponsiveBreakpoint(int $responsiveBreakpoint): Chart
     {
         $this->responsiveBreakpoint = $responsiveBreakpoint;
 
@@ -40,22 +23,12 @@ trait Responsive
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getResponsiveBreakpoint()
+    public function getResponsiveBreakpoint(): int
     {
         return $this->responsiveBreakpoint;
     }
 
-    /**
-     * Set the responsive options.
-     *
-     * @param object $responsiveOptions
-     *
-     * @return this
-     */
-    public function setResponsiveOptions($responsiveOptions) :Charts
+    public function setResponsiveOptions(object $responsiveOptions): Chart
     {
         $this->responsiveOptions = $responsiveOptions;
 
@@ -68,10 +41,7 @@ trait Responsive
         return $this;
     }
 
-    /**
-     * @return object
-     */
-    public function getResponsiveOptions()
+    public function getResponsiveOptions(): object
     {
         return $this->responsiveOptions;
     }

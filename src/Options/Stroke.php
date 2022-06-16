@@ -6,56 +6,19 @@ use Akaunting\Apexcharts\Charts;
 
 trait Stroke
 {
-    /**
-     * Stores the show of the stroke.
-     *
-     * @var boolean
-     */
-    public $strokeShow = true;
+    public bool $strokeShow = true;
 
-    /**
-     * Stores the curve of the stroke.
-     *
-     * @var string|arrat
-     */
-    public $strokeCurve = 'smooth';
+    public string|array $strokeCurve = 'smooth';
 
-    /**
-     * Stores the lineCap of the stroke.
-     *
-     * @var string
-     */
-    public $strokeLineCap = 'butt';
+    public string $strokeLineCap = 'butt';
 
-    /**
-     * Stores the colors of the stroke.
-     *
-     * @var string
-     */
-    public $strokeColors = [];
+    public array $strokeColors = [];
 
-    /**
-     * Stores the width of the stroke.
-     *
-     * @var int|array
-     */
-    public $strokeWidth = 2;
+    public int|array $strokeWidth = 2;
 
-    /**
-     * Stores the dashArray of the stroke.
-     *
-     * @var int|array
-     */
-    public $strokeDashArray = 0;
+    public int|array $strokeDashArray = 0;
 
-    /**
-     * Set the stroke show.
-     *
-     * @param boolean $strokeShow
-     *
-     * @return this
-     */
-    public function setStrokeShow($strokeShow) :Charts
+    public function setStrokeShow(bool $strokeShow): Chart
     {
         $this->strokeShow = $strokeShow;
 
@@ -68,22 +31,12 @@ trait Stroke
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getStrokeShow()
+    public function getStrokeShow(): bool
     {
         return $this->strokeShow;
     }
 
-    /**
-     * Set the stroke curve.
-     *
-     * @param string $strokeCurve
-     *
-     * @return this
-     */
-    public function setStrokeCurve($strokeCurve) :Charts
+    public function setStrokeCurve(string|array $strokeCurve): Chart
     {
         $this->strokeCurve = $strokeCurve;
 
@@ -96,22 +49,12 @@ trait Stroke
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStrokeCurve()
+    public function getStrokeCurve(): string|array
     {
         return $this->strokeCurve;
     }
 
-    /**
-     * Set the stroke lineCap.
-     *
-     * @param string $strokeLineCap
-     *
-     * @return this
-     */
-    public function setStrokeLineCap($strokeLineCap) :Charts
+    public function setStrokeLineCap(string $strokeLineCap): Chart
     {
         $this->strokeLineCap = $strokeLineCap;
 
@@ -124,22 +67,12 @@ trait Stroke
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStrokeLineCap()
+    public function getStrokeLineCap(): string
     {
         return $this->strokeLineCap;
     }
 
-    /**
-     * Set the stroke colors.
-     *
-     * @param array $strokeColors
-     *
-     * @return this
-     */
-    public function setStrokeColors($strokeColors) :Charts
+    public function setStrokeColors(array $strokeColors): Chart
     {
         $this->strokeColors = $strokeColors;
 
@@ -152,22 +85,12 @@ trait Stroke
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getStrokeColors()
+    public function getStrokeColors(): array
     {
         return $this->strokeColors;
     }
 
-    /**
-     * Set the stroke width.
-     *
-     * @param string|array $strokeWidth
-     *
-     * @return this
-     */
-    public function setStrokeWidth($strokeWidth) :Charts
+    public function setStrokeWidth(int|array $strokeWidth): Chart
     {
         $this->strokeWidth = $strokeWidth;
 
@@ -180,22 +103,12 @@ trait Stroke
         return $this;
     }
 
-    /**
-     * @return string|array
-     */
-    public function getStrokeWidth()
+    public function getStrokeWidth(): int|array
     {
         return $this->strokeWidth;
     }
 
-    /**
-     * Set the stroke dashArray.
-     *
-     * @param int|array $strokeDashArray
-     *
-     * @return this
-     */
-    public function setStrokeDashArray($strokeDashArray) :Charts
+    public function setStrokeDashArray(int|array $strokeDashArray): Chart
     {
         $this->strokeDashArray = $strokeDashArray;
 
@@ -208,10 +121,7 @@ trait Stroke
         return $this;
     }
 
-    /**
-     * @return int|array
-     */
-    public function getStrokeDashArray()
+    public function getStrokeDashArray(): int|array
     {
         return $this->strokeDashArray;
     }

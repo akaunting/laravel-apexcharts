@@ -3,10 +3,11 @@
 ![Downloads](https://img.shields.io/packagist/dt/akaunting/laravel-apexcharts)
 ![Tests](https://img.shields.io/github/workflow/status/akaunting/laravel-apexcharts/Tests?label=tests)
 [![StyleCI](https://github.styleci.io/repos/452221855/shield?style=flat&branch=master)](https://styleci.io/repos/452221855)
-[![Quality](https://img.shields.io/scrutinizer/quality/g/akaunting/laravel-apexcharts?label=quality)](https://scrutinizer-ci.com/g/akaunting/laravel-apexcharts)
 [![License](https://img.shields.io/github/license/akaunting/laravel-apexcharts)](LICENSE.md)
 
-This package allows you to generate modern and interactive charts using the [ApexCharts](https://apexcharts.com) library directly from Laravel without interacting with JavaScript, CSS, etc.
+This package allows you to generate modern and interactive charts using the [ApexCharts](https://apexcharts.com) library directly from `Laravel` without interacting with JavaScript, CSS, etc.
+
+It covers all of the chart [types](https://apexcharts.com/docs/chart-types/line-chart) and [options](https://apexcharts.com/docs/options/annotations) available within the `ApexChart` library.
 
 ## Getting Started
 
@@ -28,14 +29,18 @@ php artisan vendor:publish --tag=apexcharts
 
 ### 3. Configure
 
-You can change the column sorting settings of your app from `config/apexcharts.php` file
+You can change the chart settings of your app from `config/apexcharts.php` file
 
 ## Usage
 
-```php
-use Akaunting\Apexcharts\Charts;
+First of all, create an instance of the `Chart` class and set the data and options according to your needs.
 
-$chart = new Charts();
+```php
+use Akaunting\Apexcharts\Chart;
+
+...
+
+$chart = new Chart();
 
 $chart->setType('donut')
     ->setWidth('100%')
@@ -45,28 +50,25 @@ $chart->setType('donut')
 $chart->setDataset('Name', 'donut', [1907, 1923]);
 ```
 
-## Blade
+Then, include the JavaScript (on every page using charts).
+
+```html
+...
+
+</head>
+<body>
+    ...
+
+    @apexchartsScripts
+</body>
+```
+
+Finally, call the `container` and `script` method wherever you want to display the chart.
 
 ```php
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8; charset=ISO-8859-1"/>
+{!! $chart->container() !!}
 
-        <title>Apexcharts Sample Donut Chart</title>
-    </head>
-
-    <body>
-        {!! $chart->container() !!}
-
-        @apexchartsScripts
-
-        {{ $chart->script() }}
-    </body>
-</html>
+{!! $chart->script() !!}
 ```
 
 ## Changelog

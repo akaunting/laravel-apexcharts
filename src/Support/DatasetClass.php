@@ -6,48 +6,16 @@ use Illuminate\Support\Collection;
 
 class DatasetClass
 {
-    /**
-     * Defines the name of the dataset.
-     *
-     * @var string
-     */
-    public $name = 'Undefined';
+    public string $name = 'Undefined';
 
-    /**
-     * Defines the dataset type.
-     *
-     * @var string
-     */
-    public $type = '';
+    public string $type = '';
 
-    /**
-     * Stores the dataset data.
-     *
-     * @var array
-     */
-    public $data = [];
+    public array $data = [];
 
-    /**
-     * Stores the dataset options.
-     *
-     * @var array
-     */
-    public $options = [];
+    public array $options = [];
 
-    /**
-     * Defines the undefined color.
-     *
-     * @var string
-     */
-    public $undefinedColor = '#22292F';
+    public string $undefinedColor = '#22292F';
 
-    /**
-     * Creates a new dataset with the given values.
-     *
-     * @param string $name
-     * @param string $type
-     * @param array  $values
-     */
     public function __construct(string $name, string $type, array $data)
     {
         $this->name = $name;
@@ -57,28 +25,14 @@ class DatasetClass
         return $this;
     }
 
-    /**
-     * Set the dataset type.
-     *
-     * @param string $type
-     *
-     * @return self
-     */
-    public function type(string $type)
+    public function type(string $type): DatasetClass
     {
         $this->type = $type;
 
         return $this;
     }
 
-    /**
-     * Set the dataset values.
-     *
-     * @param array|Collection $values
-     *
-     * @return self
-     */
-    public function data($data)
+    public function data(array|Collection $data): DatasetClass
     {
         if ($data instanceof Collection) {
             $data = $data->toArray();
@@ -89,15 +43,7 @@ class DatasetClass
         return $this;
     }
 
-    /**
-     * Set the dataset options.
-     *
-     * @param array|Collection $options
-     * @param bool             $overwrite
-     *
-     * @return self
-     */
-    public function options($options, bool $overwrite = false)
+    public function options(array|Collection $options, bool $overwrite = false): DatasetClass
     {
         if ($overwrite) {
             $this->options = $options;
@@ -110,13 +56,8 @@ class DatasetClass
 
     /**
      * Matches the data of the dataset with the given number.
-     *
-     * @param int  $data
-     * @param bool $strict
-     *
-     * @return void
      */
-    public function matchdata(int $data, bool $strict = false)
+    public function matchdata(int $data, bool $strict = false): void
     {
         while (count($this->data) < $data) {
             array_push($this->data, 0);

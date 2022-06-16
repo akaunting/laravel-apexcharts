@@ -13,7 +13,7 @@ class Donut extends Charts
         $this->setType('donut');
     }
 
-    public function addPieces(array $data) :Donut
+    public function addPieces(array $data): Donut
     {
         return $this->setSeries($data);
     }

@@ -3,6 +3,7 @@
 namespace Akaunting\Apexcharts\Types;
 
 use Akaunting\Apexcharts\Charts;
+use Illuminate\Support\Collection;
 
 class Bar extends Charts
 {
@@ -13,7 +14,7 @@ class Bar extends Charts
         $this->setType('bar');
     }
 
-    public function addBar(string $name, $data) :Bar
+    public function addBar(string $name, array|Collection $data): Bar
     {
         $type = $this->getType();
 

@@ -13,7 +13,7 @@ class PolarArea extends Charts
         $this->setType('polarArea');
     }
 
-    public function addPolarAreas(array $data) :PolarArea
+    public function addPolarAreas(array $data): PolarArea
     {
         return $this->setSeries($data);
     }

@@ -3,6 +3,7 @@
 namespace Akaunting\Apexcharts\Types;
 
 use Akaunting\Apexcharts\Charts;
+use Illuminate\Support\Collection;
 
 class HeatMap extends Charts
 {
@@ -13,7 +14,7 @@ class HeatMap extends Charts
         $this->setType('heatmap');
     }
 
-    public function addHeat(string $name, $data) :HeatMap
+    public function addHeat(string $name, array|Collection $data): HeatMap
     {
         $type = $this->getType();
 

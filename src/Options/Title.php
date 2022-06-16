@@ -6,63 +6,21 @@ use Akaunting\Apexcharts\Charts;
 
 trait Title
 {
-    /**
-     * Stores the title of the title.
-     *
-     * @var string
-     */
-    public $title = '';
+    public string $title = '';
 
-    /**
-     * Stores the titlePosition of the title.
-     *
-     * @var int|string
-     */
-    public $titleAlign = 'left';
+    public string $titleAlign = 'left';
 
-    /**
-     * Stores the margin of the title.
-     *
-     * @var int
-     */
-    public $titleMargin = 10;
+    public int $titleMargin = 10;
 
-    /**
-     * Stores the offsetX of the title.
-     *
-     * @var int
-     */
-    public $titleOffsetX = 0;
+    public int $titleOffsetX = 0;
 
-    /**
-     * Stores the offsetY of the title.
-     *
-     * @var int
-     */
-    public $titleOffsetY = 0;
+    public int $titleOffsetY = 0;
 
-    /**
-     * Stores the floating of the title.
-     *
-     * @var boolean
-     */
-    public $titleFloating = false;
+    public bool $titleFloating = false;
 
-    /**
-     * Stores the foreColor of the chart.
-     *
-     * @var array
-     */
-    public $titleStyle = [];
+    public array $titleStyle = [];
 
-    /**
-     * Set the title text.
-     *
-     * @param int $height
-     *
-     * @return this
-     */
-    public function setTitle(string $title) :Charts
+    public function setTitle(string $title): Chart
     {
         $this->title = $title;
 
@@ -75,44 +33,24 @@ trait Title
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    /**
-     * Set the title position.
-     *
-     * @param string $titlePosition
-     *
-     * @return this
-     */
-    public function setTitlePosition($titlePosition) :Charts
+    public function setTitlePosition(string $titlePosition): Chart
     {
         $this->setTitleAlign($titlePosition);
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitlePosition()
+    public function getTitlePosition(): string
     {
         return $this->getTitleAlign();
     }
 
-    /**
-     * Set the title align.
-     *
-     * @param string $titleAlign
-     *
-     * @return this
-     */
-    public function setTitleAlign($titleAlign) :Charts
+    public function setTitleAlign(string $titleAlign): Chart
     {
         $this->titleAlign = $titleAlign;
 
@@ -123,25 +61,14 @@ trait Title
         ]);
 
         return $this;
-        return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitleAlign()
+    public function getTitleAlign(): string
     {
         return $this->titleAlign;
     }
 
-    /**
-     * Set the title margin.
-     *
-     * @param array $titleMargin
-     *
-     * @return this
-     */
-    public function setTitleMargin($titleMargin) :Charts
+    public function setTitleMargin(int $titleMargin): Chart
     {
         $this->titleMargin = $titleMargin;
 
@@ -154,22 +81,12 @@ trait Title
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getTitleMargin()
+    public function getTitleMargin(): int
     {
         return $this->titleMargin;
     }
 
-    /**
-     * Set the title offsetX.
-     *
-     * @param int $titleOffsetX
-     *
-     * @return this
-     */
-    public function setTitleOffsetX($titleOffsetX) :Charts
+    public function setTitleOffsetX(int $titleOffsetX): Chart
     {
         $this->titleOffsetX = $titleOffsetX;
 
@@ -182,22 +99,12 @@ trait Title
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getTitleOffsetX()
+    public function getTitleOffsetX(): int
     {
         return $this->titleOffsetX;
     }
 
-    /**
-     * Set the title offsetY.
-     *
-     * @param int $titleOffsetY
-     *
-     * @return this
-     */
-    public function setTitleOffsetY($titleOffsetY) :Charts
+    public function setTitleOffsetY(int $titleOffsetY): Chart
     {
         $this->titleOffsetY = $titleOffsetY;
 
@@ -210,22 +117,12 @@ trait Title
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getTitleOffsetY()
+    public function getTitleOffsetY(): int
     {
         return $this->titleOffsetY;
     }
 
-    /**
-     * Set the title floating.
-     *
-     * @param string $titleFloating
-     *
-     * @return this
-     */
-    public function setTitleFloating(string $titleFloating) :Charts
+    public function setTitleFloating(bool $titleFloating): Chart
     {
         $this->titleFloating = $titleFloating;
 
@@ -238,22 +135,12 @@ trait Title
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitleFloating()
+    public function getTitleFloating(): bool
     {
         return $this->titleFloating;
     }
 
-    /**
-     * Set the title style.
-     *
-     * @param string $titleStyle
-     *
-     * @return this
-     */
-    public function setTitleStyle($titleStyle) :Charts
+    public function setTitleStyle(array $titleStyle): Chart
     {
         $this->titleStyle = $titleStyle;
 
@@ -266,10 +153,7 @@ trait Title
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitleStyle()
+    public function getTitleStyle(): array
     {
         return $this->titleStyle;
     }

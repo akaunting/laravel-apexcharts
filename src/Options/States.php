@@ -6,35 +6,13 @@ use Akaunting\Apexcharts\Charts;
 
 trait States
 {
-    /**
-     * Stores the normal of the states.
-     *
-     * @var array
-     */
-    public $statesNormal;
+    public array $statesNormal;
 
-    /**
-     * Stores the hover of the states.
-     *
-     * @var array
-     */
-    public $statesHover;
+    public array $statesHover;
 
-    /**
-     * Stores the active of the states.
-     *
-     * @var array
-     */
-    public $statesActive;
+    public array $statesActive;
 
-    /**
-     * Set the states normal.
-     *
-     * @param array $statesNormal
-     *
-     * @return this
-     */
-    public function setStatesNormal($statesNormal) :Charts
+    public function setStatesNormal(array $statesNormal): Chart
     {
         $this->statesNormal = $statesNormal;
 
@@ -47,22 +25,12 @@ trait States
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getStatesNormal()
+    public function getStatesNormal(): array
     {
         return $this->statesNormal;
     }
 
-    /**
-     * Set the states hover.
-     *
-     * @param string $statesHover
-     *
-     * @return this
-     */
-    public function setStatesHover($statesHover) :Charts
+    public function setStatesHover(array $statesHover): Chart
     {
         $this->statesHover = $statesHover;
 
@@ -75,22 +43,12 @@ trait States
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getStatesHover()
+    public function getStatesHover(): array
     {
         return $this->statesHover;
     }
 
-    /**
-     * Set the states active.
-     *
-     * @param array $statesActive
-     *
-     * @return this
-     */
-    public function setStatesActive($statesActive) :Charts
+    public function setStatesActive(array $statesActive): Chart
     {
         $this->statesActive = $statesActive;
 
@@ -103,10 +61,7 @@ trait States
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getStatesActive()
+    public function getStatesActive(): array
     {
         return $this->statesActive;
     }

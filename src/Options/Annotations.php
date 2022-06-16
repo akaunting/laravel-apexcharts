@@ -6,56 +6,19 @@ use Akaunting\Apexcharts\Charts;
 
 trait Annotations
 {
-    /**
-     * Stores the position of the annotations.
-     *
-     * @var string
-     */
-    public $annotationsPosition = '';
+    public string $annotationsPosition = '';
 
-    /**
-     * Stores the yaxis of the annotations.
-     *
-     * @var array
-     */
-    public $annotationsYaxis = [];
+    public array $annotationsYaxis = [];
 
-    /**
-     * Stores the xaxis of the annotations.
-     *
-     * @var array
-     */
-    public $annotationsXaxis = [];
+    public array $annotationsXaxis = [];
 
-    /**
-     * Stores the points of the annotations.
-     *
-     * @var array
-     */
-    public $annotationsPoints = [];
+    public array $annotationsPoints = [];
 
-    /**
-     * Stores the texts of the annotations.
-     *
-     * @var array
-     */
-    public $annotationsTexts = [];
+    public array $annotationsTexts = [];
 
-    /**
-     * Stores the images of the annotations.
-     *
-     * @var array
-     */
-    public $annotationsImages = [];
+    public array $annotationsImages = [];
 
-    /**
-     * Set the annotations position.
-     *
-     * @param string $annotationsPosition
-     *
-     * @return this
-     */
-    public function setAnnotationsPosition($annotationsPosition) :Charts
+    public function setAnnotationsPosition(string $annotationsPosition): Chart
     {
         $this->annotationsPosition = $annotationsPosition;
 
@@ -68,22 +31,12 @@ trait Annotations
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getAnnotationsPosition()
+    public function getAnnotationsPosition(): string
     {
         return $this->annotationsPosition;
     }
 
-    /**
-     * Set the annotations yaxis.
-     *
-     * @param array $annotationsYaxis
-     *
-     * @return this
-     */
-    public function setAnnotationsYaxis($annotationsYaxis) :Charts
+    public function setAnnotationsYaxis(array $annotationsYaxis): Chart
     {
         $this->annotationsYaxis = $annotationsYaxis;
 
@@ -96,22 +49,12 @@ trait Annotations
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getAnnotationsYaxis()
+    public function getAnnotationsYaxis(): array
     {
         return $this->annotationsYaxis;
     }
 
-    /**
-     * Set the annotations xaxis.
-     *
-     * @param array $annotationsXaxis
-     *
-     * @return this
-     */
-    public function setAnnotationsXaxis($annotationsXaxis) :Charts
+    public function setAnnotationsXaxis(array $annotationsXaxis): Chart
     {
         $this->annotationsXaxis = $annotationsXaxis;
 
@@ -124,22 +67,12 @@ trait Annotations
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getAnnotationsXaxis()
+    public function getAnnotationsXaxis(): array
     {
         return $this->annotationsXaxis;
     }
 
-    /**
-     * Set the annotations points.
-     *
-     * @param array $annotationsPoints
-     *
-     * @return this
-     */
-    public function setAnnotationsPoints($annotationsPoints) :Charts
+    public function setAnnotationsPoints(array $annotationsPoints): Chart
     {
         $this->annotationsPoints = $annotationsPoints;
 
@@ -152,22 +85,12 @@ trait Annotations
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getAnnotationsPoints()
+    public function getAnnotationsPoints(): array
     {
         return $this->annotationsPoints;
     }
 
-    /**
-     * Set the annotations texts.
-     *
-     * @param array $annotationsTexts
-     *
-     * @return this
-     */
-    public function setAnnotationsTexts($annotationsTexts) :Charts
+    public function setAnnotationsTexts(array $annotationsTexts): Chart
     {
         $this->annotationsTexts = $annotationsTexts;
 
@@ -180,22 +103,12 @@ trait Annotations
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getAnnotationsTexts()
+    public function getAnnotationsTexts(): array
     {
         return $this->annotationsTexts;
     }
 
-    /**
-     * Set the annotations images.
-     *
-     * @param array $annotationsImages
-     *
-     * @return this
-     */
-    public function setAnnotationsImages($annotationsImages) :Charts
+    public function setAnnotationsImages(array $annotationsImages): Chart
     {
         $this->annotationsImages = $annotationsImages;
 
@@ -208,10 +121,7 @@ trait Annotations
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getAnnotationsImages()
+    public function getAnnotationsImages(): array
     {
         return $this->annotationsImages;
     }

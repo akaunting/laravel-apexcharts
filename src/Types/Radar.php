@@ -3,6 +3,7 @@
 namespace Akaunting\Apexcharts\Types;
 
 use Akaunting\Apexcharts\Charts;
+use Illuminate\Support\Collection;
 
 class Radar extends Charts
 {
@@ -13,7 +14,7 @@ class Radar extends Charts
         $this->setType('radar');
     }
 
-    public function addArea(string $name, $data) :Radar
+    public function addArea(string $name, array|Collection $data): Radar
     {
         $type = $this->getType();
 

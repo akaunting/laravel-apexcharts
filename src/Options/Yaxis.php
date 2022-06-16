@@ -6,154 +6,47 @@ use Akaunting\Apexcharts\Charts;
 
 trait Yaxis
 {
-    /**
-     * Stores the show of the yaxis.
-     *
-     * @var boolean
-     */
-    public $yaxisShow = true;
+    public bool $yaxisShow = true;
 
-    /**
-     * Stores the showAlways of the yaxis.
-     *
-     * @var boolean
-     */
-    public $yaxisShowAlways = true;
+    public bool $yaxisShowAlways = true;
 
-    /**
-     * Stores the showForNullSeries of the yaxis.
-     *
-     * @var boolean
-     */
-    public $yaxisShowForNullSeries = true;
+    public bool $yaxisShowForNullSeries = true;
 
-    /**
-     * Stores the seriesName of the yaxis.
-     *
-     * @var string
-     */
-    public $yaxisSeriesName = '';
+    public string $yaxisSeriesName = '';
 
-    /**
-     * Stores the opposite of the yaxis.
-     *
-     * @var boolean
-     */
-    public $yaxisOpposite = false;
+    public bool $yaxisOpposite = false;
 
-    /**
-     * Stores the reversed of the yaxis.
-     *
-     * @var boolean
-     */
-    public $yaxisReversed = false;
+    public bool $yaxisReversed = false;
 
-    /**
-     * Stores the logarithmic of the yaxis.
-     *
-     * @var boolean
-     */
-    public $yaxisLogarithmic = false;
+    public bool $yaxisLogarithmic = false;
 
-    /**
-     * Stores the logBase of the yaxis.
-     *
-     * @var int
-     */
-    public $yaxisLogBase = 10;
+    public int $yaxisLogBase = 10;
 
-    /**
-     * Stores the tickAmount of the yaxis.
-     *
-     * @var int
-     */
-    public $yaxisTickAmount = 6;
+    public int $yaxisTickAmount = 6;
 
-    /**
-     * Stores the min of the yaxis.
-     *
-     * @var int
-     */
-    public $yaxisMin = 6;
+    public int $yaxisMin = 6;
 
-    /**
-     * Stores the max of the yaxis.
-     *
-     * @var int
-     */
-    public $yaxisMax = 6;
+    public int $yaxisMax = 6;
 
-    /**
-     * Stores the forceNiceScale of the yaxis.
-     *
-     * @var boolean
-     */
-    public $yaxisForceNiceScale = false;
+    public bool $yaxisForceNiceScale = false;
 
-    /**
-     * Stores the floating of the yaxis.
-     *
-     * @var boolean
-     */
-    public $yaxisFloating = false;
+    public bool $yaxisFloating = false;
 
-    /**
-     * Stores the decimalsInFloat of the yaxis.
-     *
-     * @var string
-     */
-    public $yaxisDecimalsInFloat = '';
+    public int $yaxisDecimalsInFloat;
 
-    /**
-     * Stores the labels of the yaxis.
-     *
-     * @var array
-     */
-    public $yaxisLabels = [];
+    public array $yaxisLabels = [];
 
-    /**
-     * Stores the axisBorder of the yaxis.
-     *
-     * @var array
-     */
-    public $yaxisAxisBorder = [];
+    public array$yaxisAxisBorder = [];
 
-    /**
-     * Stores the axisTicks of the yaxis.
-     *
-     * @var array
-     */
-    public $yaxisAxisTicks = [];
+    public array $yaxisAxisTicks = [];
 
-    /**
-     * Stores the title of the yaxis.
-     *
-     * @var array
-     */
-    public $yaxisTitle = [];
+    public array $yaxisTitle = [];
 
-    /**
-     * Stores the crosshairs of the yaxis.
-     *
-     * @var array
-     */
-    public $yaxisCrosshairs = [];
+    public array $yaxisCrosshairs = [];
 
-    /**
-     * Stores the tooltip of the yaxis.
-     *
-     * @var array
-     */
-    public $yaxisTooltip = [];
+    public array $yaxisTooltip = [];
 
-    /**
-     * Set the yaxis show.
-     *
-     * @param boolean $yaxisShow
-     *
-     * @return this
-     */
-    public function setYaxisShow($yaxisShow) :Charts
+    public function setYaxisShow(bool $yaxisShow): Chart
     {
         $this->yaxisShow = $yaxisShow;
 
@@ -166,22 +59,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getYaxisShow()
+    public function getYaxisShow(): bool
     {
         return $this->yaxisShow;
     }
 
-    /**
-     * Set the yaxis showAlways.
-     *
-     * @param boolean $yaxisShowAlways
-     *
-     * @return this
-     */
-    public function setYaxisShowAlways($yaxisShowAlways) :Charts
+    public function setYaxisShowAlways(bool $yaxisShowAlways): Chart
     {
         $this->yaxisShowAlways = $yaxisShowAlways;
 
@@ -194,22 +77,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getYaxisShowAlways()
+    public function getYaxisShowAlways(): bool
     {
         return $this->yaxisShowAlways;
     }
 
-    /**
-     * Set the yaxis showForNullSeries.
-     *
-     * @param boolean $yaxisShowForNullSeries
-     *
-     * @return this
-     */
-    public function setYaxisShowForNullSeries($yaxisShowForNullSeries) :Charts
+    public function setYaxisShowForNullSeries(bool $yaxisShowForNullSeries): Chart
     {
         $this->yaxisShowForNullSeries = $yaxisShowForNullSeries;
 
@@ -222,22 +95,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getYaxisShowForNullSeries()
+    public function getYaxisShowForNullSeries(): bool
     {
         return $this->yaxisShowForNullSeries;
     }
 
-    /**
-     * Set the yaxis seriesName.
-     *
-     * @param string $yaxisSeriesName
-     *
-     * @return this
-     */
-    public function setYaxisSeriesName($yaxisSeriesName) :Charts
+    public function setYaxisSeriesName(string $yaxisSeriesName): Chart
     {
         $this->yaxisSeriesName = $yaxisSeriesName;
 
@@ -250,22 +113,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getYaxisSeriesName()
+    public function getYaxisSeriesName(): string
     {
         return $this->yaxisSeriesName;
     }
 
-    /**
-     * Set the yaxis opposite.
-     *
-     * @param boolean $yaxisOpposite
-     *
-     * @return this
-     */
-    public function setYaxisOpposite($yaxisOpposite) :Charts
+    public function setYaxisOpposite(bool $yaxisOpposite): Chart
     {
         $this->yaxisOpposite = $yaxisOpposite;
 
@@ -278,22 +131,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getYaxisOpposite()
+    public function getYaxisOpposite(): bool
     {
         return $this->yaxisOpposite;
     }
 
-    /**
-     * Set the yaxis reversed.
-     *
-     * @param boolean $yaxisReversed
-     *
-     * @return this
-     */
-    public function setYaxisReversed($yaxisReversed) :Charts
+    public function setYaxisReversed(bool $yaxisReversed): Chart
     {
         $this->yaxisReversed = $yaxisReversed;
 
@@ -306,22 +149,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getYaxisReversed()
+    public function getYaxisReversed(): bool
     {
         return $this->yaxisReversed;
     }
 
-    /**
-     * Set the yaxis logarithmic.
-     *
-     * @param boolean $yaxisLogarithmic
-     *
-     * @return this
-     */
-    public function setYaxisLogarithmic($yaxisLogarithmic) :Charts
+    public function setYaxisLogarithmic(bool $yaxisLogarithmic): Chart
     {
         $this->yaxisLogarithmic = $yaxisLogarithmic;
 
@@ -334,22 +167,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getYaxisLogarithmic()
+    public function getYaxisLogarithmic(): bool
     {
         return $this->yaxisLogarithmic;
     }
 
-    /**
-     * Set the yaxis logBase.
-     *
-     * @param int $yaxisLogBase
-     *
-     * @return this
-     */
-    public function setYaxisLogBase($yaxisLogBase) :Charts
+    public function setYaxisLogBase(int $yaxisLogBase): Chart
     {
         $this->yaxisLogBase = $yaxisLogBase;
 
@@ -362,22 +185,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getYaxisLogBase()
+    public function getYaxisLogBase(): int
     {
         return $this->yaxisLogBase;
     }
 
-    /**
-     * Set the yaxis tickAmount.
-     *
-     * @param int $yaxisTickAmount
-     *
-     * @return this
-     */
-    public function setYaxisTickAmount($yaxisTickAmount) :Charts
+    public function setYaxisTickAmount(int $yaxisTickAmount): Chart
     {
         $this->yaxisTickAmount = $yaxisTickAmount;
 
@@ -390,22 +203,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getYaxisTickAmount()
+    public function getYaxisTickAmount(): int
     {
         return $this->yaxisTickAmount;
     }
 
-    /**
-     * Set the yaxis min.
-     *
-     * @param int $yaxisMin
-     *
-     * @return this
-     */
-    public function setYaxisMin($yaxisMin) :Charts
+    public function setYaxisMin(int $yaxisMin): Chart
     {
         $this->yaxisMin = $yaxisMin;
 
@@ -418,22 +221,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getYaxisMin()
+    public function getYaxisMin(): int
     {
         return $this->yaxisMin;
     }
 
-    /**
-     * Set the yaxis max.
-     *
-     * @param int $yaxisMax
-     *
-     * @return this
-     */
-    public function setYaxisMax($yaxisMax) :Charts
+    public function setYaxisMax(int $yaxisMax): Chart
     {
         $this->yaxisMax = $yaxisMax;
 
@@ -446,22 +239,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getYaxisMax()
+    public function getYaxisMax(): int
     {
         return $this->yaxisMax;
     }
 
-    /**
-     * Set the yaxis forceNiceScale.
-     *
-     * @param boolean $yaxisForceNiceScale
-     *
-     * @return this
-     */
-    public function setYaxisForceNiceScale($yaxisForceNiceScale) :Charts
+    public function setYaxisForceNiceScale(bool $yaxisForceNiceScale): Chart
     {
         $this->yaxisForceNiceScale = $yaxisForceNiceScale;
 
@@ -474,22 +257,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getYaxisForceNiceScale()
+    public function getYaxisForceNiceScale(): bool
     {
         return $this->yaxisForceNiceScale;
     }
 
-    /**
-     * Set the yaxis floating.
-     *
-     * @param boolean $yaxisFloating
-     *
-     * @return this
-     */
-    public function setYaxisFloating($yaxisFloating) :Charts
+    public function setYaxisFloating(bool $yaxisFloating): Chart
     {
         $this->yaxisFloating = $yaxisFloating;
 
@@ -502,22 +275,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getYaxisFloating()
+    public function getYaxisFloating(): bool
     {
         return $this->yaxisFloating;
     }
 
-    /**
-     * Set the yaxis decimalsInFloat.
-     *
-     * @param string $yaxisDecimalsInFloat
-     *
-     * @return this
-     */
-    public function setYaxisDecimalsInFloat($yaxisDecimalsInFloat) :Charts
+    public function setYaxisDecimalsInFloat(int $yaxisDecimalsInFloat): Chart
     {
         $this->yaxisDecimalsInFloat = $yaxisDecimalsInFloat;
 
@@ -530,22 +293,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getYaxisDecimalsInFloat()
+    public function getYaxisDecimalsInFloat(): int
     {
         return $this->yaxisDecimalsInFloat;
     }
 
-    /**
-     * Set the yaxis labels.
-     *
-     * @param array $yaxisLabels
-     *
-     * @return this
-     */
-    public function setYaxisLabels($yaxisLabels) :Charts
+    public function setYaxisLabels(array $yaxisLabels): Chart
     {
         $this->yaxisLabels = $yaxisLabels;
 
@@ -558,22 +311,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getYaxisLabels()
+    public function getYaxisLabels(): array
     {
         return $this->yaxisLabels;
     }
 
-    /**
-     * Set the yaxis axisBorder.
-     *
-     * @param array $yaxisAxisBorder
-     *
-     * @return this
-     */
-    public function setYaxisAxisBorder($yaxisAxisBorder) :Charts
+    public function setYaxisAxisBorder(array $yaxisAxisBorder): Chart
     {
         $this->yaxisAxisBorder = $yaxisAxisBorder;
 
@@ -586,22 +329,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getYaxisAxisBorder()
+    public function getYaxisAxisBorder(): array
     {
         return $this->yaxisAxisBorder;
     }
 
-    /**
-     * Set the yaxis axisTicks.
-     *
-     * @param array $yaxisAxisTicks
-     *
-     * @return this
-     */
-    public function setYaxisAxisTicks($yaxisAxisTicks) :Charts
+    public function setYaxisAxisTicks(array $yaxisAxisTicks): Chart
     {
         $this->yaxisAxisTicks = $yaxisAxisTicks;
 
@@ -614,22 +347,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getYaxisAxisTicks()
+    public function getYaxisAxisTicks(): array
     {
         return $this->yaxisAxisTicks;
     }
 
-    /**
-     * Set the yaxis title.
-     *
-     * @param array $yaxisTitle
-     *
-     * @return this
-     */
-    public function setYaxisTitle($yaxisTitle) :Charts
+    public function setYaxisTitle(array $yaxisTitle): Chart
     {
         $this->yaxisTitle = $yaxisTitle;
 
@@ -642,22 +365,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getYaxisTitle()
+    public function getYaxisTitle(): array
     {
         return $this->yaxisTitle;
     }
 
-    /**
-     * Set the yaxis crosshairs.
-     *
-     * @param array $yaxisCrosshairs
-     *
-     * @return this
-     */
-    public function setYaxisCrosshairs($yaxisCrosshairs) :Charts
+    public function setYaxisCrosshairs(array $yaxisCrosshairs): Chart
     {
         $this->yaxisCrosshairs = $yaxisCrosshairs;
 
@@ -670,22 +383,12 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getYaxisCrosshairs()
+    public function getYaxisCrosshairs(): array
     {
         return $this->yaxisCrosshairs;
     }
 
-    /**
-     * Set the yaxis tooltip.
-     *
-     * @param boolean $yaxisTooltip
-     *
-     * @return this
-     */
-    public function setYaxisTooltip($yaxisTooltip) :Charts
+    public function setYaxisTooltip(array $yaxisTooltip): Chart
     {
         $this->yaxisTooltip = $yaxisTooltip;
 
@@ -698,10 +401,7 @@ trait Yaxis
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getYaxisTooltip()
+    public function getYaxisTooltip(): array
     {
         return $this->yaxisTooltip;
     }

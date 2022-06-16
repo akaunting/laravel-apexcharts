@@ -13,7 +13,7 @@ class Pie extends Charts
         $this->setType('pie');
     }
 
-    public function addPieces(array $data) :Pie
+    public function addPieces(array $data): Pie
     {
         return $this->setSeries($data);
     }

@@ -6,84 +6,27 @@ use Akaunting\Apexcharts\Charts;
 
 trait DataLabels
 {
-    /**
-     * Stores the enabled of the dataLabels.
-     *
-     * @var boolean
-     */
-    public $dataLabelsEnabled = true;
+    public bool $dataLabelsEnabled = true;
 
-    /**
-     * Stores the enabledOnSeries of the dataLabels.
-     *
-     * @var array|int
-     */
-    public $dataLabelsEnabledOnSeries;
+    public array $dataLabelsEnabledOnSeries;
 
-    /**
-     * Stores the formatter of the dataLabels.
-     *
-     * @var function
-     */
-    public $dataLabelsFormatter;
+    public mixed $dataLabelsFormatter;
 
-    /**
-     * Stores the textAnchor of the dataLabels.
-     *
-     * @var string
-     */
-    public $dataLabelsTextAnchor = 'middle';
+    public string $dataLabelsTextAnchor = 'middle';
 
-    /**
-     * Stores the distributed of the dataLabels.
-     *
-     * @var boolean
-     */
-    public $dataLabelsDistributed = false;
+    public bool $dataLabelsDistributed = false;
 
-    /**
-     * Stores the offsetX of the dataLabels.
-     *
-     * @var int
-     */
-    public $dataLabelsOffsetX = 0;
+    public int $dataLabelsOffsetX = 0;
 
-    /**
-     * Stores the offsetY of the dataLabels.
-     *
-     * @var int
-     */
-    public $dataLabelsOffsetY = 0;
+    public int $dataLabelsOffsetY = 0;
 
-    /**
-     * Stores the style of the dataLabels.
-     *
-     * @var array
-     */
-    public $dataLabelsStyle = [];
+    public array $dataLabelsStyle = [];
 
-    /**
-     * Stores the background of the dataLabels.
-     *
-     * @var array
-     */
-    public $dataLabelsBackground = [];
+    public array $dataLabelsBackground = [];
 
-    /**
-     * Stores the dropShadow of the dataLabels.
-     *
-     * @var array
-     */
-    public $dataLabelsDropShadow = [];
+    public array $dataLabelsDropShadow = [];
 
-    /**
-     * Set the dataLabels show.
-     *
-     * @param string $dataLabelsEnabled
-     *
-     * @return this
-     */
-    public function setDataLabelsEnabled($dataLabelsEnabled) :Charts
+    public function setDataLabelsEnabled(bool $dataLabelsEnabled): Chart
     {
         $this->dataLabelsEnabled = $dataLabelsEnabled;
 
@@ -96,22 +39,12 @@ trait DataLabels
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getDataLabelsEnabled()
+    public function getDataLabelsEnabled(): bool
     {
         return $this->dataLabelsEnabled;
     }
 
-    /**
-     * Set the dataLabels enabledOnSeries.
-     *
-     * @param array|int $dataLabelsEnabledOnSeries
-     *
-     * @return this
-     */
-    public function setDataLabelsEnabledOnSeries($dataLabelsEnabledOnSeries) :Charts
+    public function setDataLabelsEnabledOnSeries(array $dataLabelsEnabledOnSeries): Chart
     {
         $this->dataLabelsEnabledOnSeries = $dataLabelsEnabledOnSeries;
 
@@ -124,22 +57,12 @@ trait DataLabels
         return $this;
     }
 
-    /**
-     * @return array|int
-     */
-    public function getDataLabelsEnabledOnSeries()
+    public function getDataLabelsEnabledOnSeries(): array
     {
         return $this->dataLabelsEnabledOnSeries;
     }
 
-    /**
-     * Set the dataLabels formatter.
-     *
-     * @param function $dataLabelsFormatter
-     *
-     * @return this
-     */
-    public function setDataLabelsFormatter($dataLabelsFormatter) :Charts
+    public function setDataLabelsFormatter(mixed $dataLabelsFormatter): Chart
     {
         $this->dataLabelsFormatter = $dataLabelsFormatter;
 
@@ -152,22 +75,12 @@ trait DataLabels
         return $this;
     }
 
-    /**
-     * @return function
-     */
-    public function getDataLabelsFormatter()
+    public function getDataLabelsFormatter(): mixed
     {
         return $this->dataLabelsFormatter;
     }
 
-    /**
-     * Set the dataLabels textAnchor.
-     *
-     * @param string $dataLabelsTextAnchor
-     *
-     * @return this
-     */
-    public function setDataLabelsTextAnchor($dataLabelsTextAnchor) :Charts
+    public function setDataLabelsTextAnchor(string $dataLabelsTextAnchor): Chart
     {
         $this->dataLabelsTextAnchor = $dataLabelsTextAnchor;
 
@@ -180,22 +93,12 @@ trait DataLabels
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDataLabelsTextAnchor()
+    public function getDataLabelsTextAnchor(): string
     {
         return $this->dataLabelsTextAnchor;
     }
 
-    /**
-     * Set the dataLabels distributed.
-     *
-     * @param boolean $dataLabelsDistributed
-     *
-     * @return this
-     */
-    public function setDataLabelsDistributed($dataLabelsDistributed) :Charts
+    public function setDataLabelsDistributed(bool $dataLabelsDistributed): Chart
     {
         $this->dataLabelsDistributed = $dataLabelsDistributed;
 
@@ -208,22 +111,12 @@ trait DataLabels
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getDataLabelsDistributed()
+    public function getDataLabelsDistributed(): bool
     {
         return $this->dataLabelsDistributed;
     }
 
-    /**
-     * Set the dataLabels offsetX.
-     *
-     * @param int $dataLabelsOffsetX
-     *
-     * @return this
-     */
-    public function setDataLabelsOffsetX($dataLabelsOffsetX) :Charts
+    public function setDataLabelsOffsetX(int $dataLabelsOffsetX): Chart
     {
         $this->dataLabelsOffsetX = $dataLabelsOffsetX;
 
@@ -236,22 +129,12 @@ trait DataLabels
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getDataLabelsOffsetX()
+    public function getDataLabelsOffsetX(): int
     {
         return $this->dataLabelsOffsetX;
     }
 
-    /**
-     * Set the dataLabels offsetY.
-     *
-     * @param int $dataLabelsOffsetY
-     *
-     * @return this
-     */
-    public function setDataLabelsOffsetY($dataLabelsOffsetY) :Charts
+    public function setDataLabelsOffsetY(int $dataLabelsOffsetY): Chart
     {
         $this->dataLabelsOffsetY = $dataLabelsOffsetY;
 
@@ -264,22 +147,12 @@ trait DataLabels
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getDataLabelsOffsetY()
+    public function getDataLabelsOffsetY(): int
     {
         return $this->dataLabelsOffsetY;
     }
 
-    /**
-     * Set the dataLabels style.
-     *
-     * @param array $dataLabelsStyle
-     *
-     * @return this
-     */
-    public function setDataLabelsStyle($dataLabelsStyle) :Charts
+    public function setDataLabelsStyle(array $dataLabelsStyle): Chart
     {
         $this->dataLabelsStyle = $dataLabelsStyle;
 
@@ -292,22 +165,12 @@ trait DataLabels
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getDataLabelsStyle()
+    public function getDataLabelsStyle(): array
     {
         return $this->dataLabelsStyle;
     }
 
-    /**
-     * Set the dataLabels background.
-     *
-     * @param array $dataLabelsBackground
-     *
-     * @return this
-     */
-    public function setDataLabelsBackground($dataLabelsBackground) :Charts
+    public function setDataLabelsBackground(array $dataLabelsBackground): Chart
     {
         $this->dataLabelsBackground = $dataLabelsBackground;
 
@@ -320,22 +183,12 @@ trait DataLabels
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getDataLabelsBackground()
+    public function getDataLabelsBackground(): array
     {
         return $this->dataLabelsBackground;
     }
 
-    /**
-     * Set the dataLabels dropShadow.
-     *
-     * @param string $dataLabelsDropShadow
-     *
-     * @return this
-     */
-    public function setDataLabelsDropShadow($dataLabelsDropShadow) :Charts
+    public function setDataLabelsDropShadow(array $dataLabelsDropShadow): Chart
     {
         $this->dataLabelsDropShadow = $dataLabelsDropShadow;
 
@@ -348,10 +201,7 @@ trait DataLabels
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getDataLabelsDropShadow()
+    public function getDataLabelsDropShadow(): array
     {
         return $this->dataLabelsDropShadow;
     }

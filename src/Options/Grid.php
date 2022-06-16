@@ -6,77 +6,25 @@ use Akaunting\Apexcharts\Charts;
 
 trait Grid
 {
-    /**
-     * Stores the show of the grid.
-     *
-     * @var boolean
-     */
-    public $gridShow = true;
+    public bool $gridShow = true;
 
-    /**
-     * Stores the borderColor of the grid.
-     *
-     * @var string
-     */
-    public $gridBorderColor = '#90A4AE';
+    public string $gridBorderColor = '#90A4AE';
 
-    /**
-     * Stores the strokeDashArray of the grid.
-     *
-     * @var int
-     */
-    public $gridStrokeDashArray = 0;
+    public int $gridStrokeDashArray = 0;
 
-    /**
-     * Stores the position of the grid.
-     *
-     * @var string
-     */
-    public $gridPosition = 'back';
+    public string $gridPosition = 'back';
 
-    /**
-     * Stores the xaxis of the grid.
-     *
-     * @var array
-     */
-    public $gridXaxis = [];
+    public array $gridXaxis = [];
 
-    /**
-     * Stores the yaxis of the grid.
-     *
-     * @var array
-     */
-    public $gridYaxis = [];
+    public array $gridYaxis = [];
 
-    /**
-     * Stores the row of the grid.
-     *
-     * @var array
-     */
-    public $gridRow = [];
+    public array $gridRow = [];
 
-    /**
-     * Stores the column of the grid.
-     *
-     * @var array
-     */
-    public $gridColumn = [];
+    public array $gridColumn = [];
 
-    /**
-     * Stores the padding of the grid.
-     *
-     * @var array
-     */
-    public $gridPadding = [];
+    public array $gridPadding = [];
 
-    /**
-     * Set the grid show.
-     *
-     * @param string $gridShow
-     *
-     * @return this
-     */
-    public function setGridShow($gridShow) :Charts
+    public function setGridShow(bool $gridShow): Chart
     {
         $this->gridShow = $gridShow;
 
@@ -89,22 +37,12 @@ trait Grid
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getGridShow()
+    public function getGridShow(): bool
     {
         return $this->gridShow;
     }
 
-    /**
-     * Set the grid borderColor.
-     *
-     * @param string $gridBorderColor
-     *
-     * @return this
-     */
-    public function setGridBorderColor($gridBorderColor) :Charts
+    public function setGridBorderColor(string $gridBorderColor): Chart
     {
         $this->gridBorderColor = $gridBorderColor;
 
@@ -117,22 +55,12 @@ trait Grid
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getGridBorderColor()
+    public function getGridBorderColor(): string
     {
         return $this->gridBorderColor;
     }
 
-    /**
-     * Set the grid strokeDashArray.
-     *
-     * @param int $gridStrokeDashArray
-     *
-     * @return this
-     */
-    public function setGridStrokeDashArray($gridStrokeDashArray) :Charts
+    public function setGridStrokeDashArray(int $gridStrokeDashArray): Chart
     {
         $this->gridStrokeDashArray = $gridStrokeDashArray;
 
@@ -145,22 +73,12 @@ trait Grid
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getGridStrokeDashArray()
+    public function getGridStrokeDashArray(): int
     {
         return $this->gridStrokeDashArray;
     }
 
-    /**
-     * Set the grid position.
-     *
-     * @param string $gridPosition
-     *
-     * @return this
-     */
-    public function setGridPosition($gridPosition) :Charts
+    public function setGridPosition(string $gridPosition): Chart
     {
         $this->gridPosition = $gridPosition;
 
@@ -173,22 +91,12 @@ trait Grid
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getGridPosition()
+    public function getGridPosition(): string
     {
         return $this->gridPosition;
     }
 
-    /**
-     * Set the grid xaxis.
-     *
-     * @param array $gridXaxis
-     *
-     * @return this
-     */
-    public function setGridXaxis($gridXaxis) :Charts
+    public function setGridXaxis(array $gridXaxis): Chart
     {
         $this->gridXaxis = $gridXaxis;
 
@@ -201,22 +109,12 @@ trait Grid
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getGridXaxis()
+    public function getGridXaxis(): array
     {
         return $this->gridXaxis;
     }
 
-    /**
-     * Set the grid yaxis.
-     *
-     * @param array $gridYaxis
-     *
-     * @return this
-     */
-    public function setGridYaxis($gridYaxis) :Charts
+    public function setGridYaxis(array $gridYaxis): Chart
     {
         $this->gridYaxis = $gridYaxis;
 
@@ -229,22 +127,12 @@ trait Grid
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getGridYaxis()
+    public function getGridYaxis(): array
     {
         return $this->gridYaxis;
     }
 
-    /**
-     * Set the grid row.
-     *
-     * @param array $gridRow
-     *
-     * @return this
-     */
-    public function setGridRow($gridRow) :Charts
+    public function setGridRow(array $gridRow): Chart
     {
         $this->gridRow = $gridRow;
 
@@ -257,22 +145,12 @@ trait Grid
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getGridRow()
+    public function getGridRow():array
     {
         return $this->gridRow;
     }
 
-    /**
-     * Set the grid column.
-     *
-     * @param array $gridColumn
-     *
-     * @return this
-     */
-    public function setGridColumn($gridColumn) :Charts
+    public function setGridColumn(array $gridColumn): Chart
     {
         $this->gridColumn = $gridColumn;
 
@@ -285,22 +163,12 @@ trait Grid
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getGridColumn()
+    public function getGridColumn(): array
     {
         return $this->gridColumn;
     }
 
-    /**
-     * Set the grid padding.
-     *
-     * @param array $gridPadding
-     *
-     * @return this
-     */
-    public function setGridPadding($gridPadding) :Charts
+    public function setGridPadding(array $gridPadding): Chart
     {
         $this->gridPadding = $gridPadding;
 
@@ -313,10 +181,7 @@ trait Grid
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getGridPadding()
+    public function getGridPadding(): array
     {
         return $this->gridPadding;
     }

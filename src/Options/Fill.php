@@ -6,56 +6,19 @@ use Akaunting\Apexcharts\Charts;
 
 trait Fill
 {
-    /**
-     * Stores the colors of the fill.
-     *
-     * @var array
-     */
-    public $fillColors = [];
+    public array $fillColors = [];
 
-    /**
-     * Stores the opacity of the fill.
-     *
-     * @var int
-     */
-    public $fillOpacity = 0.9;
+    public int|float $fillOpacity = 0.9;
 
-    /**
-     * Stores the type of the fill.
-     *
-     * @var string
-     */
-    public $fillType = 'solid';
+    public string $fillType = 'solid';
 
-    /**
-     * Stores the gradient of the fill.
-     *
-     * @var array
-     */
-    public $fillGradient = [];
+    public array $fillGradient = [];
 
-    /**
-     * Stores the image of the fill.
-     *
-     * @var array
-     */
-    public $fillImage = [];
+    public array $fillImage = [];
 
-    /**
-     * Stores the pattern of the fill.
-     *
-     * @var array
-     */
-    public $fillPattern = [];
+    public array $fillPattern = [];
 
-    /**
-     * Set the fill colors.
-     *
-     * @param array $fillColors
-     *
-     * @return this
-     */
-    public function setFillColors($fillColors) :Charts
+    public function setFillColors(array $fillColors): Chart
     {
         $this->fillColors = $fillColors;
 
@@ -68,22 +31,12 @@ trait Fill
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getFillColors()
+    public function getFillColors(): array
     {
         return $this->fillColors;
     }
 
-    /**
-     * Set the fill opacity.
-     *
-     * @param array $fillOpacity
-     *
-     * @return this
-     */
-    public function setFillOpacity($fillOpacity) :Charts
+    public function setFillOpacity(int|float $fillOpacity): Chart
     {
         $this->fillOpacity = $fillOpacity;
 
@@ -96,22 +49,12 @@ trait Fill
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getFillOpacity()
+    public function getFillOpacity(): int|float
     {
         return $this->fillOpacity;
     }
 
-    /**
-     * Set the fill type.
-     *
-     * @param string $fillType
-     *
-     * @return this
-     */
-    public function setFillType($fillType) :Charts
+    public function setFillType(string $fillType): Chart
     {
         $this->fillType = $fillType;
 
@@ -124,22 +67,12 @@ trait Fill
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFillType()
+    public function getFillType(): string
     {
         return $this->fillType;
     }
 
-    /**
-     * Set the fill gradient.
-     *
-     * @param array $fillGradient
-     *
-     * @return this
-     */
-    public function setFillGradient($fillGradient) :Charts
+    public function setFillGradient(array $fillGradient): Chart
     {
         $this->fillGradient = $fillGradient;
 
@@ -152,22 +85,12 @@ trait Fill
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getFillGradient()
+    public function getFillGradient(): array
     {
         return $this->fillGradient;
     }
 
-    /**
-     * Set the fill image.
-     *
-     * @param array $fillImage
-     *
-     * @return this
-     */
-    public function setFillImage($fillImage) :Charts
+    public function setFillImage(array $fillImage): Chart
     {
         $this->fillImage = $fillImage;
 
@@ -180,22 +103,12 @@ trait Fill
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getFillImage()
+    public function getFillImage(): array
     {
         return $this->fillImage;
     }
 
-    /**
-     * Set the fill pattern.
-     *
-     * @param array $fillPattern
-     *
-     * @return this
-     */
-    public function setFillPattern($fillPattern) :Charts
+    public function setFillPattern(array $fillPattern): Chart
     {
         $this->fillPattern = $fillPattern;
 
@@ -208,10 +121,7 @@ trait Fill
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getFillPattern()
+    public function getFillPattern(): array
     {
         return $this->fillPattern;
     }

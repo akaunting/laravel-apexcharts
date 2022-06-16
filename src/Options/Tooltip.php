@@ -6,133 +6,41 @@ use Akaunting\Apexcharts\Charts;
 
 trait Tooltip
 {
-    /**
-     * Stores the enabled of the tooltip.
-     *
-     * @var boolean
-     */
-    public $tooltipEnabled = true;
+    public bool $tooltipEnabled = true;
 
-    /**
-     * Stores the enabled of the tooltip.
-     *
-     * @var array
-     */
-    public $tooltipEnabledOnSeries = [];
+    public array $tooltipEnabledOnSeries = [];
 
-    /**
-     * Stores the shared of the tooltip.
-     *
-     * @var boolean
-     */
-    public $tooltipShared = true;
+    public bool $tooltipShared = true;
 
-    /**
-     * Stores the followCursor of the tooltip.
-     *
-     * @var boolean
-     */
-    public $tooltipFollowCursor = false;
+    public bool $tooltipFollowCursor = false;
 
-    /**
-     * Stores the intersect of the tooltip.
-     *
-     * @var boolean
-     */
-    public $tooltipIntersect = false;
+    public bool $tooltipIntersect = false;
 
-    /**
-     * Stores the inverseOrder of the tooltip.
-     *
-     * @var boolean
-     */
-    public $tooltipInverseOrder = false;
+    public bool $tooltipInverseOrder = false;
 
-    /**
-     * Stores the custom of the tooltip.
-     *
-     * @var function
-     */
-    public $tooltipCustom;
+    public mixed $tooltipCustom;
 
-    /**
-     * Stores the fillSeriesColor of the tooltip.
-     *
-     * @var boolean
-     */
-    public $tooltipFillSeriesColor = false;
+    public bool $tooltipFillSeriesColor = false;
 
-    /**
-     * Stores the theme of the tooltip.
-     *
-     * @var string
-     */
-    public $tooltipTheme = false;
+    public bool $tooltipTheme = false;
 
-    /**
-     * Stores the style of the tooltip.
-     *
-     * @var array
-     */
-    public $tooltipStyle = [];
+    public array $tooltipStyle = [];
 
-    /**
-     * Stores the onDatasetHover of the tooltip.
-     *
-     * @var array
-     */
-    public $tooltipOnDatasetHover = [];
+    public array $tooltipOnDatasetHover = [];
 
-    /**
-     * Stores the x of the tooltip.
-     *
-     * @var array
-     */
-    public $tooltipX = [];
+    public array $tooltipX = [];
 
-    /**
-     * Stores the y of the tooltip.
-     *
-     * @var array
-     */
-    public $tooltipY = [];
+    public array $tooltipY = [];
 
-    /**
-     * Stores the z of the tooltip.
-     *
-     * @var array
-     */
-    public $tooltipZ = [];
+    public array $tooltipZ = [];
 
-    /**
-     * Stores the marker of the tooltip.
-     *
-     * @var array
-     */
-    public $tooltipMarker = [];
+    public array $tooltipMarker = [];
 
-    /**
-     * Stores the items of the tooltip.
-     *
-     * @var array
-     */
-    public $tooltipItems = [];
+    public array $tooltipItems = [];
 
-    /**
-     * Stores the fixed of the tooltip.
-     *
-     * @var array
-     */
-    public $tooltipFixed = [];
+    public array $tooltipFixed = [];
 
-    /**
-     * Set the enabled tooltip.
-     *
-     * @param string $tooltipEnabled
-     *
-     * @return this
-     */
-    public function setTooltipEnabled($tooltipEnabled) :Charts
+    public function setTooltipEnabled(bool $tooltipEnabled): Chart
     {
         $this->tooltipEnabled = $tooltipEnabled;
 
@@ -145,22 +53,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipEnabled()
+    public function getTooltipEnabled(): bool
     {
         return $this->tooltipEnabled;
     }
 
-    /**
-     * Set the enabledOnSeries tooltip.
-     *
-     * @param string $tooltipEnabledOnSeries
-     *
-     * @return this
-     */
-    public function setTooltipEnabledOnSeries($tooltipEnabledOnSeries) :Charts
+    public function setTooltipEnabledOnSeries(array $tooltipEnabledOnSeries): Chart
     {
         $this->tooltipEnabledOnSeries = $tooltipEnabledOnSeries;
 
@@ -173,22 +71,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipEnabledOnSeries()
+    public function getTooltipEnabledOnSeries(): array
     {
         return $this->tooltipEnabledOnSeries;
     }
 
-    /**
-     * Set the shared tooltip.
-     *
-     * @param string $tooltipShared
-     *
-     * @return this
-     */
-    public function setTooltipShared($tooltipShared) :Charts
+    public function setTooltipShared(bool $tooltipShared): Chart
     {
         $this->tooltipShared = $tooltipShared;
 
@@ -201,22 +89,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipShared()
+    public function getTooltipShared(): bool
     {
         return $this->tooltipShared;
     }
 
-    /**
-     * Set the followCursor tooltip.
-     *
-     * @param string $tooltipFollowCursor
-     *
-     * @return this
-     */
-    public function setTooltipFollowCursor($tooltipFollowCursor) :Charts
+    public function setTooltipFollowCursor(bool $tooltipFollowCursor): Chart
     {
         $this->tooltipFollowCursor = $tooltipFollowCursor;
 
@@ -229,22 +107,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipFollowCursor()
+    public function getTooltipFollowCursor(): bool
     {
         return $this->tooltipFollowCursor;
     }
 
-    /**
-     * Set the intersect tooltip.
-     *
-     * @param string $tooltipIntersect
-     *
-     * @return this
-     */
-    public function setTooltipIntersect($tooltipIntersect) :Charts
+    public function setTooltipIntersect(bool $tooltipIntersect): Chart
     {
         $this->tooltipIntersect = $tooltipIntersect;
 
@@ -257,22 +125,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipIntersect()
+    public function getTooltipIntersect(): bool
     {
         return $this->tooltipIntersect;
     }
 
-    /**
-     * Set the inverseOrder tooltip.
-     *
-     * @param string $tooltipInverseOrder
-     *
-     * @return this
-     */
-    public function setTooltipInverseOrder($tooltipInverseOrder) :Charts
+    public function setTooltipInverseOrder(bool $tooltipInverseOrder): Chart
     {
         $this->tooltipInverseOrder = $tooltipInverseOrder;
 
@@ -285,22 +143,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipInverseOrder()
+    public function getTooltipInverseOrder(): bool
     {
         return $this->tooltipInverseOrder;
     }
 
-    /**
-     * Set the custom tooltip.
-     *
-     * @param string $tooltipCustom
-     *
-     * @return this
-     */
-    public function setTooltipCustom($tooltipCustom) :Charts
+    public function setTooltipCustom(mixed $tooltipCustom): Chart
     {
         $this->tooltipCustom = $tooltipCustom;
 
@@ -313,22 +161,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipCustom()
+    public function getTooltipCustom(): mixed
     {
         return $this->tooltipCustom;
     }
 
-    /**
-     * Set the fillSeriesColor tooltip.
-     *
-     * @param string $tooltipFillSeriesColor
-     *
-     * @return this
-     */
-    public function setTooltipFillSeriesColor($tooltipFillSeriesColor) :Charts
+    public function setTooltipFillSeriesColor(bool $tooltipFillSeriesColor): Chart
     {
         $this->tooltipFillSeriesColor = $tooltipFillSeriesColor;
 
@@ -341,22 +179,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipFillSeriesColor()
+    public function getTooltipFillSeriesColor(): bool
     {
         return $this->tooltipFillSeriesColor;
     }
 
-    /**
-     * Set the theme tooltip.
-     *
-     * @param string $tooltipTheme
-     *
-     * @return this
-     */
-    public function setTooltipTheme($tooltipTheme) :Charts
+    public function setTooltipTheme(bool $tooltipTheme): Chart
     {
         $this->tooltipTheme = $tooltipTheme;
 
@@ -369,22 +197,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipTheme()
+    public function getTooltipTheme(): bool
     {
         return $this->tooltipTheme;
     }
 
-    /**
-     * Set the style tooltip.
-     *
-     * @param string $tooltipStyle
-     *
-     * @return this
-     */
-    public function setTooltipStyle($tooltipStyle) :Charts
+    public function setTooltipStyle(array $tooltipStyle): Chart
     {
         $this->tooltipStyle = $tooltipStyle;
 
@@ -397,22 +215,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipStyle()
+    public function getTooltipStyle(): array
     {
         return $this->tooltipStyle;
     }
 
-    /**
-     * Set the onDatasetHover tooltip.
-     *
-     * @param string $tooltipOnDatasetHover
-     *
-     * @return this
-     */
-    public function setTooltipOnDatasetHover($tooltipOnDatasetHover) :Charts
+    public function setTooltipOnDatasetHover(array $tooltipOnDatasetHover): Chart
     {
         $this->tooltipOnDatasetHover = $tooltipOnDatasetHover;
 
@@ -425,22 +233,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipOnDatasetHover()
+    public function getTooltipOnDatasetHover(): array
     {
         return $this->tooltipOnDatasetHover;
     }
 
-    /**
-     * Set the x tooltip.
-     *
-     * @param string $tooltipX
-     *
-     * @return this
-     */
-    public function setTooltipX($tooltipX) :Charts
+    public function setTooltipX(array $tooltipX): Chart
     {
         $this->tooltipX = $tooltipX;
 
@@ -453,22 +251,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipX()
+    public function getTooltipX(): array
     {
         return $this->tooltipX;
     }
 
-    /**
-     * Set the y tooltip.
-     *
-     * @param string $tooltipY
-     *
-     * @return this
-     */
-    public function setTooltipY($tooltipY) :Charts
+    public function setTooltipY(array $tooltipY): Chart
     {
         $this->tooltipY = $tooltipY;
 
@@ -481,22 +269,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipY()
+    public function getTooltipY(): array
     {
         return $this->tooltipY;
     }
 
-    /**
-     * Set the z tooltip.
-     *
-     * @param string $tooltipZ
-     *
-     * @return this
-     */
-    public function setTooltipZ($tooltipZ) :Charts
+    public function setTooltipZ(array $tooltipZ): Chart
     {
         $this->tooltipZ = $tooltipZ;
 
@@ -509,22 +287,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipZ()
+    public function getTooltipZ(): array
     {
         return $this->tooltipZ;
     }
 
-    /**
-     * Set the marker tooltip.
-     *
-     * @param string $tooltipShared
-     *
-     * @return this
-     */
-    public function setTooltipMarker($tooltipMarker) :Charts
+    public function setTooltipMarker(array $tooltipMarker): Chart
     {
         $this->tooltipMarker = $tooltipMarker;
 
@@ -537,10 +305,7 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipMarker()
+    public function getTooltipMarker(): array
     {
         return $this->tooltipMarker;
     }
@@ -552,7 +317,7 @@ trait Tooltip
      *
      * @return this
      */
-    public function setTooltipItems($tooltipItems) :Charts
+    public function setTooltipItems(array $tooltipItems): Chart
     {
         $this->tooltipItems = $tooltipItems;
 
@@ -565,22 +330,12 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipItems()
+    public function getTooltipItems(): array
     {
         return $this->tooltipItems;
     }
 
-    /**
-     * Set the fixed tooltip.
-     *
-     * @param string $tooltipFixed
-     *
-     * @return this
-     */
-    public function setTooltipFixed($tooltipFixed) :Charts
+    public function setTooltipFixed(array $tooltipFixed): Chart
     {
         $this->tooltipFixed = $tooltipFixed;
 
@@ -593,10 +348,7 @@ trait Tooltip
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getTooltipFixed()
+    public function getTooltipFixed(): array
     {
         return $this->tooltipFixed;
     }

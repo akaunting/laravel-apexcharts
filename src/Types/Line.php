@@ -3,6 +3,7 @@
 namespace Akaunting\Apexcharts\Types;
 
 use Akaunting\Apexcharts\Charts;
+use Illuminate\Support\Collection;
 
 class Line extends Charts
 {
@@ -13,7 +14,7 @@ class Line extends Charts
         $this->setType('line');
     }
 
-    public function addLine(string $name, $data) :Line
+    public function addLine(string $name, array|Collection $data): Line
     {
         $type = $this->getType();
 
