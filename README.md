@@ -9,6 +9,8 @@ This package allows you to generate modern and interactive charts using the [Ape
 
 It covers all of the chart [types](https://apexcharts.com/docs/chart-types/line-chart) and [options](https://apexcharts.com/docs/options/annotations) available within the `ApexChart` library.
 
+Check out the [Akaunting](https://github.com/akaunting/akaunting) project to see it live.
+
 ## Getting Started
 
 ### 1. Install
