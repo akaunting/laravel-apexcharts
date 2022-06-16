@@ -73,6 +73,12 @@ Finally, call the `container` and `script` method wherever you want to display t
 {!! $chart->script() !!}
 ```
 
+## Testing
+
+```bash
+composer test
+```
+
 ## Changelog
 
 Please see [Releases](../../releases) for more information what has changed recently.
