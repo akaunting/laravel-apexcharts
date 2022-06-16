@@ -13,9 +13,7 @@ class HorizontalBar extends Chart
 
         $this->setType('bar');
 
-        $this->setBar([
-            'horizontal' => true,
-        ]);
+        $this->setHorizontal(true);
     }
 
     public function addBar(string $name, array|Collection $data): HorizontalBar

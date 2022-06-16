@@ -14,96 +14,96 @@ class ChartsTest extends TestCase
     public function it_tests_apexcharts_can_render_pie_charts_by_default()
     {
         $chart = (new Chart)->setTitle('Users Test Chart');
-        $this->assertEquals('donut', $chart->type());
+        $this->assertEquals('line', $chart->getType());
 
-        $anotherChart = (new Chart)->areaChart();
-        $this->assertEquals('area', $anotherChart->type());
+        $anotherChart = (new Chart)->setType('area');
+        $this->assertEquals('area', $anotherChart->getType());
     }
 
     /** @test */
     public function it_tests_apexcharts_can_render_pie_chart()
     {
-        $chart = (new Chart)->pieChart()
+        $chart = (new Chart)->setType('pie')
             ->setTitle('Posts')
             ->setSubtitle('From January To March')
             ->setLabels(['Product One', 'Product Two', 'Product Three'])
-            ->setXAxis(['Jan', 'Feb', 'Mar'])
-            ->setDataset([150, 120]);
+            ->setSeries(['Jan', 'Feb', 'Mar'])
+            ->setDataset('posts', 'pie', [150, 120]);
 
         $this->assertEquals($chart, $chart->script()['chart']);
-        $this->assertEquals('pie', $chart->type());
+        $this->assertEquals('pie', $chart->getType());
     }
 
     /** @test */
     public function it_tests_apexcharts_can_render_donut_chart()
     {
-        $chart = (new Chart)->donutChart()
+        $chart = (new Chart)->setType('donut')
             ->setTitle('Posts')
-            ->setXAxis(['Jan', 'Feb', 'Mar'])
-            ->setDataset([150, 120]);
+            ->setSeries(['Jan', 'Feb', 'Mar'])
+            ->setDataset('posts', 'donut', [150, 120]);
 
         $this->assertEquals($chart, $chart->script()['chart']);
-        $this->assertEquals('donut', $chart->type());
+        $this->assertEquals('donut', $chart->getType());
     }
 
     /** @test */
     public function it_tests_larapex_can_render_radial_bar_charts()
     {
-        $chart = (new Chart)->radialChart()
+        $chart = (new Chart)->setType('radial')
             ->setTitle('Products with more profit')
-            ->setXAxis(['Jan', 'Feb', 'Mar'])
-            ->setDataset([60, 40, 79]);
+            ->setSeries(['Jan', 'Feb', 'Mar'])
+            ->setDataset('products', 'radial', [60, 40, 79]);
 
         $this->assertEquals($chart, $chart->script()['chart']);
-        $this->assertEquals('radialBar', $chart->type());
+        $this->assertEquals('radial', $chart->getType());
     }
 
     /** @test */
     public function it_tests_apexcharts_can_render_polar_chart()
     {
-        $chart = (new Chart)->polarAreaChart()
+        $chart = (new Chart)->setType('polarArea')
             ->setTitle('Products with more profit')
-            ->setXAxis(['Jan', 'Feb', 'Mar'])
-            ->setDataset([60, 40, 79]);
+            ->setSeries(['Jan', 'Feb', 'Mar'])
+            ->setDataset('polarArea', 'radial', [60, 40, 79]);
 
         $this->assertEquals($chart, $chart->script()['chart']);
-        $this->assertEquals('polarArea', $chart->type());
+        $this->assertEquals('polarArea', $chart->getType());
     }
 
     /** @test */
     public function larapex_can_render_line_charts()
     {
-        $chart = (new Chart)->lineChart()
+        $chart = (new Chart)->setType('line')
             ->setTitle('Total Users Monthly')
             ->setSubtitle('From January to March')
-            ->setXAxis([
+            ->setSeries([
                 'Jan', 'Feb', 'Mar'
             ])
-            ->setDataset([
+            ->setDataset('line', 'users', [
                 [
                     'name'  =>  'Active Users',
                     'data'  =>  [250, 700, 1200]
                 ]
             ])
             ->setHeight(250)
-            ->setGrid(true)
-            ->setStroke(1);
+            ->setGridShow(true)
+            ->setStrokeShow(true);
 
-        $this->assertEquals($chart->id(), $chart->container()['id']);
+        $this->assertEquals($chart->getId(), $chart->container()['chart']->getId());
         $this->assertEquals($chart, $chart->script()['chart']);
-        $this->assertEquals('line', $chart->type());
+        $this->assertEquals('line', $chart->getType());
     }
 
     /** @test */
     public function it_tests_apexcharts_can_create_an_area_chart()
     {
-        $chart = (new Chart)->areaChart()
+        $chart = (new Chart)->setType('area')
             ->setTitle('Total Users Monthly')
             ->setSubtitle('From January to March')
-            ->setXAxis([
+            ->setSeries([
                 'Jan', 'Feb', 'Mar'
             ])
-            ->setDataset([
+            ->setDataset('area', 'users', [
                 [
                     'name'  =>  'Active Users',
                     'data'  =>  [250, 700, 1200]
@@ -114,18 +114,18 @@ class ChartsTest extends TestCase
                 ]
             ]);
 
-        $this->assertEquals($chart->id(), $chart->container()['id']);
+        $this->assertEquals($chart->getId(), $chart->container()['chart']->getId());
         $this->assertEquals($chart, $chart->script()['chart']);
-        $this->assertEquals('area', $chart->type());
+        $this->assertEquals('area', $chart->getType());
     }
 
     /** @test */
     public function it_tests_apexcharts_can_render_bar_charts()
     {
-        $chart = (new Chart)->barChart()
+        $chart = (new Chart)->setType('bar')
             ->setTitle('Net Profit')
-            ->setXAxis(['Jan', 'Feb', 'Mar'])
-            ->setDataset([
+            ->setSeries(['Jan', 'Feb', 'Mar'])
+            ->setDataset('bar', 'profit', [
                 [
                     'name'  => 'Company A',
                     'data'  =>  [500, 1000, 1900]
@@ -152,19 +152,19 @@ class ChartsTest extends TestCase
                 ]
             ]);
 
-        $this->assertEquals($chart->id(), $chart->container()['id']);
+        $this->assertEquals($chart->getId(), $chart->container()['chart']->getId());
         $this->assertEquals($chart, $chart->script()['chart']);
-        $this->assertEquals('bar', $chart->type());
+        $this->assertEquals('bar', $chart->getType());
     }
 
     /** @test */
     public function it_tests_apexcharts_can_render_horizontal_bar_chart()
     {
-        $chart = (new Chart)->barChart()
+        $chart = (new Chart)->setType('bar')
             ->setTitle('Net Profit')
             ->setHorizontal(true)
-            ->setXAxis(['Jan', 'Feb', 'Mar'])
-            ->setDataset([
+            ->setSeries(['Jan', 'Feb', 'Mar'])
+            ->setDataset('bar', 'profit', [
                 [
                     'name'  => 'Company A',
                     'data'  =>  [500, 1000, 1900]
@@ -179,22 +179,21 @@ class ChartsTest extends TestCase
                 ]
             ]);
 
-        $this->assertEquals($chart->id(), $chart->container()['id']);
+        $this->assertEquals($chart->getId(), $chart->container()['chart']->getId());
         $this->assertEquals($chart, $chart->script()['chart']);
-        $this->assertEquals('bar', $chart->type());
-        $chartHorizontalOrientation = json_decode($chart->horizontal(), 1)['horizontal'];
-        $this->assertTrue($chartHorizontalOrientation);
+        $this->assertEquals('bar', $chart->getType());
+        $this->assertTrue($chart->getHorizontal());
     }
 
     /** @test */
     public function it_tests_apexcharts_can_render_heatmap_chart()
     {
-        $chart = (new Chart)->heatMapChart()
+        $chart = (new Chart)->setType('heatmap')
             ->setTitle('Total Users')
-            ->setXAxis([
+            ->setSeries([
                 'Jan', 'Feb', 'Mar'
             ])
-            ->setDataset([
+            ->setDataset('heatmap', 'users', [
                 [
                     'name'  =>  'Users of Basic Plan',
                     'data'  =>  [250, 700, 1200]
@@ -205,20 +204,20 @@ class ChartsTest extends TestCase
                 ]
             ]);
 
-        $this->assertEquals($chart->id(), $chart->container()['id']);
+        $this->assertEquals($chart->getId(), $chart->container()['chart']->getId());
         $this->assertEquals($chart, $chart->script()['chart']);
-        $this->assertEquals('heatmap', $chart->type());
+        $this->assertEquals('heatmap', $chart->getType());
     }
 
     /** @test */
     public function it_tests_apexcharts_can_render_radar_chart()
     {
-        $chart = (new Chart)->radarChart()
+        $chart = (new Chart)->setType('radar')
             ->setTitle('Total Users')
-            ->setXAxis([
+            ->setSeries([
                 'Jan', 'Feb', 'Mar'
             ])
-            ->setDataset([
+            ->setDataset('radar', 'users', [
                 [
                     'name'  =>  'Users of Basic Plan',
                     'data'  =>  [250, 700, 1200]
@@ -229,8 +228,8 @@ class ChartsTest extends TestCase
                 ]
             ]);
 
-        $this->assertEquals($chart->id(), $chart->container()['id']);
+        $this->assertEquals($chart->getId(), $chart->container()['chart']->getId());
         $this->assertEquals($chart, $chart->script()['chart']);
-        $this->assertEquals('radar', $chart->type());
+        $this->assertEquals('radar', $chart->getType());
     }
 }

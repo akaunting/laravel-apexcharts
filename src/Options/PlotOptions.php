@@ -227,4 +227,18 @@ trait PlotOptions
     {
         return $this->radialBar;
     }
+
+    public function setHorizontal(bool $horizontal): Chart
+    {
+        $this->setBar([
+            'horizontal' => $horizontal,
+        ]);
+
+        return $this;
+    }
+
+    public function getHorizontal(): bool
+    {
+        return $this->getBar()['horizontal'];
+    }
 }
