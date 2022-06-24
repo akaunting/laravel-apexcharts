@@ -24,6 +24,7 @@ use Akaunting\Apexcharts\Options\Yaxis;
 use Akaunting\Apexcharts\Support\DatasetClass;
 use Akaunting\Apexcharts\Traits\Formatter;
 use Akaunting\Apexcharts\Traits\Types;
+use Balping\JsonRaw\Encoder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\View as ViewFacade;
 use Illuminate\View\View;
@@ -182,9 +183,9 @@ class Chart
         return $this;
     }
 
-    public function getOptions(): array
+    public function getOptions(): string
     {
-        return $this->options;
+        return Encoder::encode($this->options);
     }
 
     public function container(string $container = null): Chart|View
