@@ -51,7 +51,7 @@ return [
         ],
 
         'subtitle' => [
-            'text' => 'undefined',
+            'text' => new \Balping\JsonRaw\Raw('undefined'),
             'align' => 'left',
         ],
 
