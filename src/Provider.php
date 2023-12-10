@@ -36,7 +36,7 @@ class Provider extends ServiceProvider
 
     public function registerBladeDirectives(): void
     {
-        $this->app->afterResolving('blade.compiler', function (BladeCompiler $bladeCompiler) {
+        $this->callAfterResolving('blade.compiler', function (BladeCompiler $bladeCompiler) {
             $bladeCompiler->directive('apexchartsScripts', function ($expression) {
                 return '{!! \Akaunting\Apexcharts\Chart::loadScript(' . $expression . ') !!}';
             });
