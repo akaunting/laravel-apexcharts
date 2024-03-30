@@ -266,18 +266,13 @@ class ChartsTest extends TestCase
 
         $response = $chart->toJson();
 
-        $this->assertEquals(
-            [
+        $this->assertEquals([
             'id',
             'height',
             'width',
             'type',
             'options',
             'series',
-        ],
-            array_keys(
-            json_decode($response->content(), true)
-        )
-        );
+        ], array_keys(json_decode($response->content(), true)));
     }
 }
