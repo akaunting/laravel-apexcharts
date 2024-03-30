@@ -7,7 +7,6 @@ use Akaunting\Apexcharts\Tests\TestCase;
 
 class ChartsTest extends TestCase
 {
-    /** @test */
     public function testDefaultChart()
     {
         $chart = (new Chart)->setTitle('Users Test Chart');
@@ -16,7 +15,6 @@ class ChartsTest extends TestCase
         $this->assertEquals('line', $chart->getType());
     }
 
-    /** @test */
     public function testPieChart()
     {
         $chart = (new Chart)->setType('pie')
@@ -30,7 +28,6 @@ class ChartsTest extends TestCase
         $this->assertEquals('pie', $chart->getType());
     }
 
-    /** @test */
     public function testDonutChart()
     {
         $chart = (new Chart)->setType('donut')
@@ -42,7 +39,6 @@ class ChartsTest extends TestCase
         $this->assertEquals('donut', $chart->getType());
     }
 
-    /** @test */
     public function testRadialChart()
     {
         $chart = (new Chart)->setType('radial')
@@ -54,7 +50,6 @@ class ChartsTest extends TestCase
         $this->assertEquals('radial', $chart->getType());
     }
 
-    /** @test */
     public function testPolarChart()
     {
         $chart = (new Chart)->setType('polarArea')
@@ -66,7 +61,6 @@ class ChartsTest extends TestCase
         $this->assertEquals('polarArea', $chart->getType());
     }
 
-    /** @test */
     public function testLineChart()
     {
         $chart = (new Chart)->setType('line')
@@ -90,7 +84,6 @@ class ChartsTest extends TestCase
         $this->assertEquals('line', $chart->getType());
     }
 
-    /** @test */
     public function testAreaChart()
     {
         $chart = (new Chart)->setType('area')
@@ -115,7 +108,6 @@ class ChartsTest extends TestCase
         $this->assertEquals('area', $chart->getType());
     }
 
-    /** @test */
     public function testBarChart()
     {
         $chart = (new Chart)->setType('bar')
@@ -153,7 +145,6 @@ class ChartsTest extends TestCase
         $this->assertEquals('bar', $chart->getType());
     }
 
-    /** @test */
     public function testHorizontalBarChart()
     {
         $chart = (new Chart)->setType('bar')
@@ -181,7 +172,6 @@ class ChartsTest extends TestCase
         $this->assertTrue($chart->getHorizontal());
     }
 
-    /** @test */
     public function testHeatmapChart()
     {
         $chart = (new Chart)->setType('heatmap')
@@ -205,7 +195,6 @@ class ChartsTest extends TestCase
         $this->assertEquals('heatmap', $chart->getType());
     }
 
-    /** @test */
     public function testRadarChart()
     {
         $chart = (new Chart)->setType('radar')
@@ -227,5 +216,65 @@ class ChartsTest extends TestCase
         $this->assertEquals($chart->getId(), $chart->container()['chart']->getId());
         $this->assertEquals($chart, $chart->script()['chart']);
         $this->assertEquals('radar', $chart->getType());
+    }
+
+    public function testToVue()
+    {
+        $chart = (new Chart)->setType('line')
+            ->setTitle('Total Users Monthly')
+            ->setSubtitle('From January to March')
+            ->setSeries([
+                'Jan', 'Feb', 'Mar'
+            ])
+            ->setDataset('Users', 'line', [
+                [
+                    'name'  =>  'Active Users',
+                    'data'  =>  [250, 700, 1200]
+                ]
+            ])
+            ->setHeight(250)
+            ->setGridShow(true)
+            ->setStrokeShow(true);
+
+        $this->assertEquals([
+            'id',
+            'height',
+            'width',
+            'type',
+            'options',
+            'series',
+        ] , array_keys($chart->toVue()));
+    }
+
+    public function testToJson()
+    {
+        $chart = (new Chart)->setType('line')
+            ->setTitle('Total Users Monthly')
+            ->setSubtitle('From January to March')
+            ->setSeries([
+                'Jan', 'Feb', 'Mar'
+            ])
+            ->setDataset('Users', 'line', [
+                [
+                    'name'  =>  'Active Users',
+                    'data'  =>  [250, 700, 1200]
+                ]
+            ])
+            ->setHeight(250)
+            ->setGridShow(true)
+            ->setStrokeShow(true);
+
+        $response = $chart->toJson();
+
+        $this->assertEquals([
+            'id',
+            'height',
+            'width',
+            'type',
+            'options',
+            'series',
+        ] , array_keys(
+            json_decode($response->content(), true))
+        );
     }
 }
