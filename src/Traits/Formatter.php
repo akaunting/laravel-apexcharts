@@ -16,7 +16,7 @@ trait Formatter
     {
         return [
             'height'    => $this->getHeight(),
-            'width'     => $this->getWidth(),
+            'width'     => $this->getWidth() ?? '100%',
             'type'      => $this->getType(),
             'options'   => $this->getOptions(),
             'series'    => json_decode($this->getSeries()),
