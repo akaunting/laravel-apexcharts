@@ -2,24 +2,25 @@
 
 namespace Akaunting\Apexcharts\Traits;
 
+use Illuminate\Http\JsonResponse;
+
+/** @mixin \Akaunting\Apexcharts\Chart */
 trait Formatter
 {
-    public function toJson()
+    public function toJson(): JsonResponse
     {
-        return response()->json([
-            'id'        => $this->id(),
-            'options'   => $this->getOptions(),
-        ]);
+        return response()->json($this->toVue());
     }
 
     public function toVue(): array
     {
         return [
+            'id'        => $this->getId(),
             'height'    => $this->getHeight(),
             'width'     => $this->getWidth(),
             'type'      => $this->getType(),
-            'options'   => $this->getOptions(),
-            'series'    => json_decode($this->getSeries()),
+            'options'   => json_decode($this->getOptions(), true),
+            'series'    => $this->getSeries(),
         ];
     }
 }
