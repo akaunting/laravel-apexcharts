@@ -274,7 +274,8 @@ class ChartsTest extends TestCase
             'type',
             'options',
             'series',
-        ], array_keys(
+        ],
+            array_keys(
             json_decode($response->content(), true)
         )
         );
