@@ -27,7 +27,7 @@ return [
             'zoom' => [
                 'enabled' => true,
             ],
-            'fontFamily' => 'Nunito',
+            'fontFamily' => 'inherit',
             'foreColor' => '#373d3f',
         ],
 
