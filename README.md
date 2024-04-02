@@ -35,12 +35,14 @@ You can change the chart settings of your app from `config/apexcharts.php` file
 
 ## Usage
 
-First of all, create an instance of the `Chart` class and set the data and options according to your needs.
+### Blade
+
+Create an instance of the `Chart` class and set the data and options according to your needs.
 
 ```php
 use Akaunting\Apexcharts\Chart;
 
-...
+// ...
 
 $chart = (new Chart)->setType('donut')
     ->setWidth('100%')
@@ -52,11 +54,10 @@ $chart = (new Chart)->setType('donut')
 Then, include the JavaScript (on every page using charts).
 
 ```html
-...
+<!-- layout.blade.php -->
 
-</head>
 <body>
-    ...
+    <!-- ... -->
 
     @apexchartsScripts
 </body>
@@ -65,9 +66,87 @@ Then, include the JavaScript (on every page using charts).
 Finally, call the `container` and `script` method wherever you want to display the chart.
 
 ```php
+<!-- dashboard.blade.php -->
+
 {!! $chart->container() !!}
 
 {!! $chart->script() !!}
+```
+
+### Vue
+
+If you're using Vue and Inertia, install Apexcharts and their Vue 3 adapter:
+
+```bash
+npm install --save apexcharts
+npm install --save vue3-apexcharts
+```
+
+```js
+// resources/js/app.js
+
+import VueApexCharts from 'vue3-apexcharts';
+
+createInertiaApp({
+    // ...
+    setup({el, App, props, plugin}) {
+        return createApp({ render: () => h(App, props) })
+            .use(VueApexCharts)
+            .mount(el);
+    },
+});
+```
+
+Then, create a simple `chart.vue` component:
+
+```vue
+<!-- components/chart.vue -->
+
+<template>
+    <apexchart
+        :type="chart.type"
+        :width="chart.width"
+        :height="chart.height"
+        :series="chart.series"
+        :options="chart.options"
+    />
+</template>
+
+<script setup>
+defineProps({
+    chart: Object,
+});
+</script>
+```
+
+Create an instance of `Chart` and call `toVue()` before passing it to your page:
+
+```php
+Route::get('dashboard', function () {
+    $chart = (new Chart)->setType('...');
+
+    return inertia('dashboard', [
+        'chart' => $chart->toVue(),
+    ]);
+});
+```
+
+Finally, render the chart:
+
+```vue
+<!-- pages/dashboard.vue -->
+
+<template>
+    <Chart :chart="chart" />
+</template>
+
+<script setup>
+import Chart from './components/chart.vue';
+
+defineProps({
+    chart: Object,
+});
+</script>
 ```
 
 ## Testing
