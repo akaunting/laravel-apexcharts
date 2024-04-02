@@ -35,12 +35,14 @@ You can change the chart settings of your app from `config/apexcharts.php` file
 
 ## Usage
 
-First of all, create an instance of the `Chart` class and set the data and options according to your needs.
+### Blade
+
+Create an instance of the `Chart` class and set the data and options according to your needs.
 
 ```php
 use Akaunting\Apexcharts\Chart;
 
-...
+// ...
 
 $chart = (new Chart)->setType('donut')
     ->setWidth('100%')
@@ -52,11 +54,10 @@ $chart = (new Chart)->setType('donut')
 Then, include the JavaScript (on every page using charts).
 
 ```html
-...
+<!-- layout.blade.php -->
 
-</head>
 <body>
-    ...
+    <!-- ... -->
 
     @apexchartsScripts
 </body>
@@ -65,9 +66,65 @@ Then, include the JavaScript (on every page using charts).
 Finally, call the `container` and `script` method wherever you want to display the chart.
 
 ```php
+<!-- dashboard.blade.php -->
+
 {!! $chart->container() !!}
 
 {!! $chart->script() !!}
+```
+
+### Vue
+
+If you're using Vue and Inertia, create a simple `chart.vue` component:
+
+```vue
+<!-- chart.vue -->
+
+<template>
+    <apexchart
+        :type="chart.type"
+        :width="chart.width"
+        :height="chart.height"
+        :series="chart.series"
+        :options="chart.options"
+    />
+</template>
+
+<script setup>
+defineProps({
+    chart: Object,
+});
+</script>
+```
+
+Then, create an instance of `Chart` and call `toVue()` when passing it to your page:
+
+```php
+Route::get('dashboard', function () {
+    $chart = (new Chart)->setType('...');
+
+    return inertia('dashboard', [
+        'chart' => $chart->toVue(),
+    ]);
+});
+```
+
+Finally, render the chart:
+
+```vue
+<!-- dashboard.vue -->
+
+<template>
+    <Chart :chart="chart" />
+</template>
+
+<script setup>
+import Chart from './components/chart.vue';
+
+defineProps({
+    chart: Object,
+});
+</script>
 ```
 
 ## Testing
