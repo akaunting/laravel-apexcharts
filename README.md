@@ -75,10 +75,32 @@ Finally, call the `container` and `script` method wherever you want to display t
 
 ### Vue
 
-If you're using Vue and Inertia, create a simple `chart.vue` component:
+If you're using Vue and Inertia, install Apexcharts and their Vue 3 adapter:
+
+```bash
+npm install --save apexcharts
+npm install --save vue3-apexcharts
+```
+
+```js
+// resources/js/app.js
+
+import VueApexCharts from 'vue3-apexcharts';
+
+createInertiaApp({
+    // ...
+    setup({el, App, props, plugin}) {
+        return createApp({ render: () => h(App, props) })
+            .use(VueApexCharts)
+            .mount(el);
+    },
+});
+```
+
+Then, create a simple `chart.vue` component:
 
 ```vue
-<!-- chart.vue -->
+<!-- components/chart.vue -->
 
 <template>
     <apexchart
@@ -97,7 +119,7 @@ defineProps({
 </script>
 ```
 
-Then, create an instance of `Chart` and call `toVue()` when passing it to your page:
+Create an instance of `Chart` and call `toVue()` before passing it to your page:
 
 ```php
 Route::get('dashboard', function () {
@@ -112,7 +134,7 @@ Route::get('dashboard', function () {
 Finally, render the chart:
 
 ```vue
-<!-- dashboard.vue -->
+<!-- pages/dashboard.vue -->
 
 <template>
     <Chart :chart="chart" />
