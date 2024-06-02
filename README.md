@@ -104,6 +104,8 @@ Then, create a simple `chart.vue` component:
 
 <template>
     <apexchart
+        :id="chart.id"
+        :key="chart.id"
         :type="chart.type"
         :width="chart.width"
         :height="chart.height"
