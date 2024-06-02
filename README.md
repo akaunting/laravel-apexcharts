@@ -53,7 +53,7 @@ $chart = (new Chart)->setType('donut')
 
 Then, include the JavaScript (on every page using charts).
 
-```html
+```blade
 <!-- layout.blade.php -->
 
 <body>
@@ -65,7 +65,7 @@ Then, include the JavaScript (on every page using charts).
 
 Finally, call the `container` and `script` method wherever you want to display the chart.
 
-```php
+```blade
 <!-- dashboard.blade.php -->
 
 {!! $chart->container() !!}
