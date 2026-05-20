@@ -208,8 +208,8 @@ class Chart
     {
         $path = 'https://cdn.jsdelivr.net/npm/apexcharts';
 
-        if (is_file('public/vendor/apexcharts/apexcharts.js')) {
-            $path = asset('public/vendor/apexcharts/apexcharts.js');
+        if (is_file(public_path('vendor/apexcharts/apexcharts.js'))) {
+            $path = asset('vendor/apexcharts/apexcharts.js');
         }
 
         return '<script src="' . $path . '"></script>';
