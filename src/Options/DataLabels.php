@@ -176,7 +176,7 @@ trait DataLabels
 
         $this->setOption([
             'dataLabels' => [
-                'enabled' => $dataLabelsBackground,
+                'background' => $dataLabelsBackground,
             ],
         ]);
 
