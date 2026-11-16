@@ -73,6 +73,45 @@ Finally, call the `container` and `script` method wherever you want to display t
 {!! $chart->script() !!}
 ```
 
+### JavaScript Functions (Formatters)
+
+Options like `formatter` expect a JavaScript function. Wrap it with `Balping\JsonRaw\Raw` so it is rendered as code instead of a string:
+
+```php
+use Akaunting\Apexcharts\Chart;
+use Balping\JsonRaw\Raw;
+
+$chart = (new Chart)->setType('bar')
+    ->setXaxisLabels([
+        'formatter' => new Raw('function (value) { return value + "%"; }'),
+    ])
+    ->setTooltipY([
+        'formatter' => new Raw('function (value) { return value + "%"; }'),
+    ]);
+```
+
+> Raw JavaScript only works with the Blade `script()` output. It can't be sent as JSON via `toVue()` / `toJson()`, so define formatters on the JavaScript side when using Vue.
+
+### Responsive
+
+ApexCharts takes a list of breakpoints. Add one entry per breakpoint:
+
+```php
+$chart = (new Chart)->setType('donut')
+    ->addResponsive(480, [
+        'chart' => ['width' => 200],
+        'legend' => ['position' => 'bottom'],
+    ])
+    ->addResponsive(1024, [
+        'chart' => ['width' => 400],
+    ]);
+
+// or set them all at once
+$chart->setResponsive([
+    ['breakpoint' => 480, 'options' => ['legend' => ['show' => false]]],
+]);
+```
+
 ### Vue
 
 If you're using Vue and Inertia, install Apexcharts and their Vue 3 adapter:
