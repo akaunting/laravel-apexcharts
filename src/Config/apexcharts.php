@@ -4,6 +4,26 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | ApexCharts Script
+    |--------------------------------------------------------------------------
+    |
+    | The @apexchartsScripts directive loads the published local copy of
+    | ApexCharts when it exists, otherwise the CDN version below.
+    |
+    | "file" is checked against the public path, "url" is passed to asset().
+    | Set "url" to "public/vendor/apexcharts/apexcharts.js" if your document
+    | root is the project root instead of the public folder.
+    |
+    */
+
+    'script' => [
+        'file' => 'vendor/apexcharts/apexcharts.js',
+        'url' => 'vendor/apexcharts/apexcharts.js',
+        'cdn' => 'https://cdn.jsdelivr.net/npm/apexcharts@4.7.0/dist/apexcharts.min.js',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | ApexCharts Default Options
     |--------------------------------------------------------------------------
     |

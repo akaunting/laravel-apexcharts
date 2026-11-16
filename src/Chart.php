@@ -206,10 +206,13 @@ class Chart
 
     public static function loadScript(): string
     {
-        $path = 'https://cdn.jsdelivr.net/npm/apexcharts';
+        $file = config('apexcharts.script.file', 'vendor/apexcharts/apexcharts.js');
+        $url = config('apexcharts.script.url', 'vendor/apexcharts/apexcharts.js');
 
-        if (is_file('public/vendor/apexcharts/apexcharts.js')) {
-            $path = asset('public/vendor/apexcharts/apexcharts.js');
+        $path = config('apexcharts.script.cdn', 'https://cdn.jsdelivr.net/npm/apexcharts@4.7.0/dist/apexcharts.min.js');
+
+        if ($file && $url && is_file(public_path($file))) {
+            $path = asset($url);
         }
 
         return '<script src="' . $path . '"></script>';
