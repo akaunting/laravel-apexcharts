@@ -45,6 +45,16 @@ The package ships with ApexCharts `4.7.0`, the latest MIT licensed version. The 
 ],
 ```
 
+To use a newer ApexCharts version, set `file` to `null` and point `cdn` to that version, or set `file` and `url` to your own copy. Options without a dedicated setter can be passed with `setOption()`:
+
+```php
+$chart->setOption([
+    'chart' => [
+        'someNewOption' => true,
+    ],
+]);
+```
+
 ## Usage
 
 ### Blade
