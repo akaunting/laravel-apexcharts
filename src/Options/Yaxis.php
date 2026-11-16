@@ -24,9 +24,9 @@ trait Yaxis
 
     public int $yaxisTickAmount = 6;
 
-    public int $yaxisMin = 6;
+    public int|float $yaxisMin = 6;
 
-    public int $yaxisMax = 6;
+    public int|float $yaxisMax = 6;
 
     public bool $yaxisForceNiceScale = false;
 
@@ -208,7 +208,7 @@ trait Yaxis
         return $this->yaxisTickAmount;
     }
 
-    public function setYaxisMin(int $yaxisMin): Chart
+    public function setYaxisMin(int|float $yaxisMin): Chart
     {
         $this->yaxisMin = $yaxisMin;
 
@@ -221,12 +221,12 @@ trait Yaxis
         return $this;
     }
 
-    public function getYaxisMin(): int
+    public function getYaxisMin(): int|float
     {
         return $this->yaxisMin;
     }
 
-    public function setYaxisMax(int $yaxisMax): Chart
+    public function setYaxisMax(int|float $yaxisMax): Chart
     {
         $this->yaxisMax = $yaxisMax;
 
@@ -239,7 +239,7 @@ trait Yaxis
         return $this;
     }
 
-    public function getYaxisMax(): int
+    public function getYaxisMax(): int|float
     {
         return $this->yaxisMax;
     }

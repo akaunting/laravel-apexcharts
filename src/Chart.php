@@ -35,7 +35,7 @@ class Chart
 
     public string $id;
 
-    public string $type = 'line';
+    public ?string $type = 'line';
 
     public array $colors = [];
 
@@ -65,7 +65,7 @@ class Chart
         return $this->id;
     }
 
-    public function setType(string|null $type = null): Chart
+    public function setType(?string $type = null): Chart
     {
         $this->type = $type;
 
@@ -188,7 +188,7 @@ class Chart
         return Encoder::encode($this->options);
     }
 
-    public function container(string $container = null): Chart|View
+    public function container(?string $container = null): Chart|View
     {
         if (! $container) {
             return ViewFacade::make($this->container, ['chart' => $this]);

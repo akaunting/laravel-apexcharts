@@ -14,9 +14,9 @@ trait Xaxis
 
     public string $xaxisTickPlacement = 'between';
 
-    public int $xaxisMin;
+    public int|float $xaxisMin;
 
-    public int $xaxisMax;
+    public int|float $xaxisMax;
 
     public int $xaxisRange;
 
@@ -112,7 +112,7 @@ trait Xaxis
         return $this->xaxisTickPlacement;
     }
 
-    public function setXaxisMin(int $xaxisMin): Chart
+    public function setXaxisMin(int|float $xaxisMin): Chart
     {
         $this->xaxisMin = $xaxisMin;
 
@@ -125,12 +125,12 @@ trait Xaxis
         return $this;
     }
 
-    public function getXaxisMin(): int
+    public function getXaxisMin(): int|float
     {
         return $this->xaxisMin;
     }
 
-    public function setXaxisMax(int $xaxisMax): Chart
+    public function setXaxisMax(int|float $xaxisMax): Chart
     {
         $this->xaxisMax = $xaxisMax;
 
@@ -143,7 +143,7 @@ trait Xaxis
         return $this;
     }
 
-    public function getXaxisMax(): int
+    public function getXaxisMax(): int|float
     {
         return $this->xaxisMax;
     }

@@ -22,7 +22,7 @@ trait Tooltip
 
     public bool $tooltipFillSeriesColor = false;
 
-    public bool $tooltipTheme = false;
+    public string|bool $tooltipTheme = false;
 
     public array $tooltipStyle = [];
 
@@ -184,7 +184,7 @@ trait Tooltip
         return $this->tooltipFillSeriesColor;
     }
 
-    public function setTooltipTheme(bool $tooltipTheme): Chart
+    public function setTooltipTheme(string|bool $tooltipTheme): Chart
     {
         $this->tooltipTheme = $tooltipTheme;
 
@@ -197,7 +197,7 @@ trait Tooltip
         return $this;
     }
 
-    public function getTooltipTheme(): bool
+    public function getTooltipTheme(): string|bool
     {
         return $this->tooltipTheme;
     }
