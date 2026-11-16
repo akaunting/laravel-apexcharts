@@ -46,6 +46,8 @@ trait Yaxis
 
     public array $yaxisTooltip = [];
 
+    public int|float|null $yaxisStepSize = null;
+
     public function setYaxisShow(bool $yaxisShow): Chart
     {
         $this->yaxisShow = $yaxisShow;
@@ -404,5 +406,23 @@ trait Yaxis
     public function getYaxisTooltip(): array
     {
         return $this->yaxisTooltip;
+    }
+
+    public function setYaxisStepSize(int|float $yaxisStepSize): Chart
+    {
+        $this->yaxisStepSize = $yaxisStepSize;
+
+        $this->setOption([
+            'yaxis' => [
+                'stepSize' => $yaxisStepSize,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getYaxisStepSize(): int|float|null
+    {
+        return $this->yaxisStepSize;
     }
 }

@@ -52,6 +52,12 @@ trait Chart
 
     public array $zoom = [];
 
+    public string $nonce = '';
+
+    public string $chartId = '';
+
+    public bool $stackOnlyBar = true;
+
     public function setAnimations(array $animations): MainChart
     {
         $this->animations = $animations;
@@ -464,5 +470,59 @@ trait Chart
     public function getZoom(): array
     {
         return $this->zoom;
+    }
+
+    public function setNonce(string $nonce): MainChart
+    {
+        $this->nonce = $nonce;
+
+        $this->setOption([
+            'chart' => [
+                'nonce' => $nonce,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getNonce(): string
+    {
+        return $this->nonce;
+    }
+
+    public function setChartId(string $chartId): MainChart
+    {
+        $this->chartId = $chartId;
+
+        $this->setOption([
+            'chart' => [
+                'id' => $chartId,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getChartId(): string
+    {
+        return $this->chartId;
+    }
+
+    public function setStackOnlyBar(bool $stackOnlyBar): MainChart
+    {
+        $this->stackOnlyBar = $stackOnlyBar;
+
+        $this->setOption([
+            'chart' => [
+                'stackOnlyBar' => $stackOnlyBar,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getStackOnlyBar(): bool
+    {
+        return $this->stackOnlyBar;
     }
 }

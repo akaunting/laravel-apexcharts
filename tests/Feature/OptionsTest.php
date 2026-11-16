@@ -101,6 +101,46 @@ class OptionsTest extends TestCase
         $this->assertSame(99.9, $chart->options['yaxis']['max']);
     }
 
+    public function testApexcharts4Options()
+    {
+        $chart = (new Chart)
+            ->setNonce('abc')
+            ->setChartId('sales')
+            ->setStackOnlyBar(false)
+            ->setLegendClusterGroupedSeries(false)
+            ->setLegendClusterGroupedSeriesOrientation('horizontal')
+            ->setLine(['isSlopeChart' => true])
+            ->setStrokeFill(['type' => 'gradient'])
+            ->setTooltipCssClass('my-tooltip')
+            ->setTooltipHideEmptySeries(false)
+            ->setXaxisOffsetX(5)
+            ->setXaxisOffsetY(10)
+            ->setXaxisSorted(true)
+            ->setXaxisGroup(['groups' => []])
+            ->setXaxisStepSize(2)
+            ->setYaxisStepSize(0.5);
+
+        $options = $chart->options;
+
+        $this->assertSame('abc', $options['chart']['nonce']);
+        $this->assertSame('sales', $options['chart']['id']);
+        $this->assertFalse($options['chart']['stackOnlyBar']);
+        $this->assertFalse($options['legend']['clusterGroupedSeries']);
+        $this->assertSame('horizontal', $options['legend']['clusterGroupedSeriesOrientation']);
+        $this->assertSame(['isSlopeChart' => true], $options['plotOptions']['line']);
+        $this->assertSame(['type' => 'gradient'], $options['stroke']['fill']);
+        $this->assertSame('my-tooltip', $options['tooltip']['cssClass']);
+        $this->assertFalse($options['tooltip']['hideEmptySeries']);
+        $this->assertSame(5, $options['xaxis']['offsetX']);
+        $this->assertSame(10, $options['xaxis']['offsetY']);
+        $this->assertTrue($options['xaxis']['sorted']);
+        $this->assertSame(['groups' => []], $options['xaxis']['group']);
+        $this->assertSame(2, $options['xaxis']['stepSize']);
+        $this->assertSame(0.5, $options['yaxis']['stepSize']);
+        $this->assertSame(0.5, $chart->getYaxisStepSize());
+        $this->assertSame('sales', $chart->getChartId());
+    }
+
     public function testTypeCanBeNull()
     {
         $chart = (new Chart)->setType(null)->setDataset('Sales', 'bar', [1, 2]);

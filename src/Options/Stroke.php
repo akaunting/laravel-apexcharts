@@ -18,6 +18,8 @@ trait Stroke
 
     public int|array $strokeDashArray = 0;
 
+    public array $strokeFill = [];
+
     public function setStrokeShow(bool $strokeShow): Chart
     {
         $this->strokeShow = $strokeShow;
@@ -124,5 +126,23 @@ trait Stroke
     public function getStrokeDashArray(): int|array
     {
         return $this->strokeDashArray;
+    }
+
+    public function setStrokeFill(array $strokeFill): Chart
+    {
+        $this->strokeFill = $strokeFill;
+
+        $this->setOption([
+            'stroke' => [
+                'fill' => $strokeFill,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getStrokeFill(): array
+    {
+        return $this->strokeFill;
     }
 }

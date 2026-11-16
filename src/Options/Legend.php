@@ -52,6 +52,10 @@ trait Legend
 
     public array $legendOnItemHover = [];
 
+    public bool $legendClusterGroupedSeries = true;
+
+    public string $legendClusterGroupedSeriesOrientation = 'vertical';
+
     public function setLegendShow(bool $legendShow): Chart
     {
         $this->legendShow = $legendShow;
@@ -464,5 +468,41 @@ trait Legend
     public function getLegendOnItemHover(): array
     {
         return $this->legendOnItemHover;
+    }
+
+    public function setLegendClusterGroupedSeries(bool $legendClusterGroupedSeries): Chart
+    {
+        $this->legendClusterGroupedSeries = $legendClusterGroupedSeries;
+
+        $this->setOption([
+            'legend' => [
+                'clusterGroupedSeries' => $legendClusterGroupedSeries,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getLegendClusterGroupedSeries(): bool
+    {
+        return $this->legendClusterGroupedSeries;
+    }
+
+    public function setLegendClusterGroupedSeriesOrientation(string $legendClusterGroupedSeriesOrientation): Chart
+    {
+        $this->legendClusterGroupedSeriesOrientation = $legendClusterGroupedSeriesOrientation;
+
+        $this->setOption([
+            'legend' => [
+                'clusterGroupedSeriesOrientation' => $legendClusterGroupedSeriesOrientation,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getLegendClusterGroupedSeriesOrientation(): string
+    {
+        return $this->legendClusterGroupedSeriesOrientation;
     }
 }

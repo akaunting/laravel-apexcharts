@@ -40,6 +40,16 @@ trait Xaxis
 
     public array $xaxisTooltip = [];
 
+    public int $xaxisOffsetX = 0;
+
+    public int $xaxisOffsetY = 0;
+
+    public bool $xaxisSorted = false;
+
+    public array $xaxisGroup = [];
+
+    public int|float|null $xaxisStepSize = null;
+
     public function setXaxisType(string $xaxisType): Chart
     {
         $this->xaxisType = $xaxisType;
@@ -344,5 +354,95 @@ trait Xaxis
     public function getXaxisTooltip(): array
     {
         return $this->xaxisTooltip;
+    }
+
+    public function setXaxisOffsetX(int $xaxisOffsetX): Chart
+    {
+        $this->xaxisOffsetX = $xaxisOffsetX;
+
+        $this->setOption([
+            'xaxis' => [
+                'offsetX' => $xaxisOffsetX,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getXaxisOffsetX(): int
+    {
+        return $this->xaxisOffsetX;
+    }
+
+    public function setXaxisOffsetY(int $xaxisOffsetY): Chart
+    {
+        $this->xaxisOffsetY = $xaxisOffsetY;
+
+        $this->setOption([
+            'xaxis' => [
+                'offsetY' => $xaxisOffsetY,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getXaxisOffsetY(): int
+    {
+        return $this->xaxisOffsetY;
+    }
+
+    public function setXaxisSorted(bool $xaxisSorted): Chart
+    {
+        $this->xaxisSorted = $xaxisSorted;
+
+        $this->setOption([
+            'xaxis' => [
+                'sorted' => $xaxisSorted,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getXaxisSorted(): bool
+    {
+        return $this->xaxisSorted;
+    }
+
+    public function setXaxisGroup(array $xaxisGroup): Chart
+    {
+        $this->xaxisGroup = $xaxisGroup;
+
+        $this->setOption([
+            'xaxis' => [
+                'group' => $xaxisGroup,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getXaxisGroup(): array
+    {
+        return $this->xaxisGroup;
+    }
+
+    public function setXaxisStepSize(int|float $xaxisStepSize): Chart
+    {
+        $this->xaxisStepSize = $xaxisStepSize;
+
+        $this->setOption([
+            'xaxis' => [
+                'stepSize' => $xaxisStepSize,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getXaxisStepSize(): int|float|null
+    {
+        return $this->xaxisStepSize;
     }
 }

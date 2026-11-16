@@ -30,6 +30,8 @@ trait PlotOptions
 
     public array $radialBar = [];
 
+    public array $line = [];
+
     public function setArea(string $area): Chart
     {
         $this->area = $area;
@@ -240,5 +242,23 @@ trait PlotOptions
     public function getHorizontal(): bool
     {
         return $this->getBar()['horizontal'];
+    }
+
+    public function setLine(array $line): Chart
+    {
+        $this->line = $line;
+
+        $this->setOption([
+            'plotOptions' => [
+                'line' => $line,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getLine(): array
+    {
+        return $this->line;
     }
 }

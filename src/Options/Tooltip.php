@@ -40,6 +40,10 @@ trait Tooltip
 
     public array $tooltipFixed = [];
 
+    public string $tooltipCssClass = '';
+
+    public bool $tooltipHideEmptySeries = true;
+
     public function setTooltipEnabled(bool $tooltipEnabled): Chart
     {
         $this->tooltipEnabled = $tooltipEnabled;
@@ -351,5 +355,41 @@ trait Tooltip
     public function getTooltipFixed(): array
     {
         return $this->tooltipFixed;
+    }
+
+    public function setTooltipCssClass(string $tooltipCssClass): Chart
+    {
+        $this->tooltipCssClass = $tooltipCssClass;
+
+        $this->setOption([
+            'tooltip' => [
+                'cssClass' => $tooltipCssClass,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getTooltipCssClass(): string
+    {
+        return $this->tooltipCssClass;
+    }
+
+    public function setTooltipHideEmptySeries(bool $tooltipHideEmptySeries): Chart
+    {
+        $this->tooltipHideEmptySeries = $tooltipHideEmptySeries;
+
+        $this->setOption([
+            'tooltip' => [
+                'hideEmptySeries' => $tooltipHideEmptySeries,
+            ],
+        ]);
+
+        return $this;
+    }
+
+    public function getTooltipHideEmptySeries(): bool
+    {
+        return $this->tooltipHideEmptySeries;
     }
 }
