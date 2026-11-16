@@ -29,9 +29,21 @@ Publish configuration
 php artisan vendor:publish --tag=apexcharts
 ```
 
+This also publishes ApexCharts to `public/vendor/apexcharts`. Re-publish it with `--force` after updating the package.
+
 ### 3. Configure
 
 You can change the chart settings of your app from `config/apexcharts.php` file
+
+The package ships with ApexCharts `4.7.0`, the latest MIT licensed version. The `@apexchartsScripts` directive loads the published copy, or the same version from the CDN if it isn't published. If your document root is the project root instead of the `public` folder, change the script url:
+
+```php
+'script' => [
+    'file' => 'vendor/apexcharts/apexcharts.js',
+    'url' => 'public/vendor/apexcharts/apexcharts.js',
+    'cdn' => 'https://cdn.jsdelivr.net/npm/apexcharts@4.7.0/dist/apexcharts.min.js',
+],
+```
 
 ## Usage
 
@@ -117,9 +129,11 @@ $chart->setResponsive([
 If you're using Vue and Inertia, install Apexcharts and their Vue 3 adapter:
 
 ```bash
-npm install --save apexcharts
-npm install --save vue3-apexcharts
+npm install --save apexcharts@4.7.0
+npm install --save vue3-apexcharts@1.8.0
 ```
+
+> Later versions of both packages are not MIT licensed anymore. Check the [ApexCharts license](https://apexcharts.com/license) before upgrading.
 
 ```js
 // resources/js/app.js
